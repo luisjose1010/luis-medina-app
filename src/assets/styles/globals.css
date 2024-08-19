@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body.dark {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Background images */
+.bg-forest {
+  background-image: url('./../forest.jpg');
+}
+
+.bg-clouds {
+  background-image: url('./../clouds.png');
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOffTop {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    display: hidden;
+    transform: translateY(-50vh);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(50vh);
+    display: hidden;
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.slide-off-top {
+  animation: slideOffTop 0.2s ease-in-out both;
+}
+
+.slide-in-bottom {
+  animation: slideInBottom 0.3s ease-in-out both;
+}
