@@ -2,6 +2,8 @@ import Link from "next/link";
 
 interface ButtonProps {
   children?: React.ReactNode; // Element | React.FC;
+  customColors?: boolean; // Not text colors 
+  dark?: boolean;
   size?: 'small' | 'medium' | 'large' | 'largest';
   onClick?: () => void;
   className?: string;
@@ -9,11 +11,13 @@ interface ButtonProps {
 
 interface LinkProps {
   children: React.ReactNode; // Element | React.FC;
+  customColors?: boolean; // Not text colors 
+  dark?: boolean;
   size?: 'small' | 'medium' | 'large' | 'largest';
   href: string;
   target?: string;
   rel?: string;
-  className? : string;
+  className?: string;
 }
 
 function getSizeClass(size: string) {
@@ -29,42 +33,42 @@ function getSizeClass(size: string) {
   }
 }
 
-const Solid = ({ children, size = 'medium', onClick, className = '' }: ButtonProps) => {
+const Solid = ({ children, size = 'medium', customColors = false, dark = false, onClick, className = '' }: ButtonProps) => {
   let buttonSizeClass = getSizeClass(size); // Default to medium size if no size prop is provided.
 
   return (
-    <button onClick={onClick} className={`${buttonSizeClass} ${className} bg-seasalt hover:bg-desert_sand-600 rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <button onClick={onClick} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
       {children}
     </button>
   );
 };
 
-const Outline = ({ children, size = 'medium', onClick, className = '' }: ButtonProps) => {
+const Outline = ({ children, size = 'medium', customColors = false, dark = false, onClick, className = '' }: ButtonProps) => {
   let buttonSizeClass = getSizeClass(size);
 
   return (
-    <button onClick={onClick} className={`${buttonSizeClass} ${className} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <button onClick={onClick} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
       {children}
     </button>
   );
 };
 
 
-const LinkSolid = ({ children, size = 'medium', href, target, rel, className = '' }: LinkProps) => {
+const LinkSolid = ({ children, customColors = false, size = 'medium', dark = false, href, target, rel, className = '' }: LinkProps) => {
   let buttonSizeClass = getSizeClass(size);
 
   return (
-    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} bg-seasalt hover:bg-desert_sand-600 rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
       {children}
     </Link>
   );
 };
 
-const LinkOutline = ({ children, size = 'medium', href, target, rel, className = '' }: LinkProps) => {
+const LinkOutline = ({ children, size = 'medium', customColors = false, dark = false, href, target, rel, className = '' }: LinkProps) => {
   let buttonSizeClass = getSizeClass(size);
 
   return (
-    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
       {children}
     </Link>
   );

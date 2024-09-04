@@ -1,3 +1,5 @@
+import { HomeIcon, ProjectsIcon, ExperienceIcon, SkillsIcon, ContactIcon } from "@/assets/Icons"
+
 /* El código siguiente exporta un arreglo llamado `devProjects`, contiene objetos que representan
 proyectos de desarrollo diversos. Cada objeto en el arreglo incluye propiedades como `name`, `description`
 y `url` para proyectos como React Native, Node.js y Express. Este arreglo puede ser importado y usado
@@ -76,6 +78,14 @@ export const projects = [
     tags: ['JavaScript', 'React'],
   },
 ];
+
+export const navLinks = [
+  { name: 'Inicio', url: '/', icon: HomeIcon },
+  { name: 'Proyectos', url: '/#projects', icon: ProjectsIcon },
+  { name: 'Experiencia', url: '/#experience', icon: ExperienceIcon },
+  { name: 'Habilidades', url: '/#skills', icon: SkillsIcon },
+  { name: 'Contáctame', url: '/#', icon: ContactIcon },
+]
 
 export const skills = [
   { src: "js", alt: "JavaScript Logo" },

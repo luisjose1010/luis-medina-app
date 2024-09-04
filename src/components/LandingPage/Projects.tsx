@@ -18,7 +18,7 @@ const ProjectCard = ({ title, description, link, className }: ProjectProps) => (
       <Button.LinkSolid href={link} size="small" className="text-caribbean_current">
         Explorar
       </Button.LinkSolid>
-      <Button.LinkOutline href={link} size="small" className="hover:bg-seasalt hover:text-caribbean_current hover:outline-seasalt">
+      <Button.LinkOutline href={link} size="small" className="hover:text-caribbean_current">
         GitHub
       </Button.LinkOutline>
     </section>
@@ -27,8 +27,8 @@ const ProjectCard = ({ title, description, link, className }: ProjectProps) => (
 
 const Projects = () => {
   return (
-    <section id="projects" className="flex h-screen p-12 flex-col-reverse gap-2 text-seasalt justify-evenly items-center bg-forest bg-cover">
-      <article className="p-6 w-1/2 self-start">
+    <section id="projects" className="flex h-auto p-6 flex-col-reverse gap-2 text-seasalt justify-evenly items-center bg-forest bg-cover lg:p-12 xl:h-screen">
+      <article className="p-6 sm:w-full lg:self-start lg:w-1/2">
         <h2 className="text-5xl font-bold mb-3">Proyectos</h2>
         <p className="mb-5">
           Explora mi experiencia en el desarrollo de proyectos de software y soluciones web a lo largo de mi trayectoria. En la sección a continuación, encontrarás detalles sobre los trabajos más destacados que he realizado.
@@ -37,12 +37,12 @@ const Projects = () => {
           <Button.LinkSolid href="#" size="large" className="text-black">
             Explorar
           </Button.LinkSolid>
-          <Button.LinkOutline href="#" size="large" className="hover:text-black hover:bg-seasalt hover:outline-seasalt">
+          <Button.LinkOutline href="#" size="large" className="hover:text-black">
             GitHub
           </Button.LinkOutline>
         </section>
       </article>
-      <article className="flex gap-12 justify-center mt-10">
+      <article className="flex gap-12 justify-center mt-10 max-lg:hidden">
         <ProjectCard
           title="Project 1"
           description="This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1."

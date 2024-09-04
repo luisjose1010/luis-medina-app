@@ -3,9 +3,9 @@ import { skills, tools } from "@/lib/consts";
 
 const Skills = () => {
     return (
-        <section id="skills" className="flex flex-col h-screen p-12 gap-4 justify-center items-center">
-            <h2 className="mt-4 text-4xl font-bold text-caribbean_current">Habilidades y tecnologías</h2>
-            <p className="text-neutral-500 text-lg text-center mt-2">
+        <section id="skills" className="flex flex-col h-auto p-6 gap-4 justify-center items-center lg:h-screen lg:p-12">
+            <h2 className="text-center mt-4 text-4xl font-bold text-caribbean_current">Habilidades y tecnologías</h2>
+            <p className="text-dark_purple/60 text-lg text-center mt-2">
                 Como profesional, he adquirido una amplia variedad de habilidades y experiencia con diversas tecnologías.
             </p>
 
@@ -22,6 +22,7 @@ const Skills = () => {
                                 alt={logo.alt}
                                 width={48}
                                 height={48}
+                                className="h-12"
                             />
                         </li>
                     ))
@@ -41,6 +42,7 @@ const Skills = () => {
                                 alt={logo.alt}
                                 width={48}
                                 height={48}
+                                className="h-12"
                             />
                         </li>
                     ))

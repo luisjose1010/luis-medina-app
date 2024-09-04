@@ -12,9 +12,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ }) => {
         <>
             <Header />
             <ProjectsSection />
-            <SkillsSection />
-            <CallToAction />
             <ExperienceSection />
+            <CallToAction />
+            <SkillsSection />
         </>
     );
 };
