@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, SyntheticEvent } from "react";
 import Image from "next/image";
+import { links } from "@/lib/consts";
 import PersonalImage from "@/assets/luis-medina.png";
 import NavBar from "../NavBar";
 import Button from "../Button";
@@ -16,7 +17,7 @@ const Presentation = ({ title = 'Luis José Medina Sandoval', text, children }: 
         <>
             <h1 className="text-4xl font-bold mb-4 bg-white">{title}</h1>
             <span className="text-dark_purple/60">{text}</span>
-            <div>
+            <div className="flex flex-wrap gap-1 mt-3 ml-1 mb-1 lg:gap-3">
                 {children}
             </div>
         </>
@@ -27,8 +28,15 @@ const presentations = [
     (
         <Presentation
             key={0}
-            text="Soy un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero una persona muy determinada, analítica y comunicativamente asertiva, con un gran interés por aprender y resolver problemas de manera creativa y estructurada."
-        ></Presentation>
+            text="Soy ingeniero en informática y un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero muy determinado, analítico y asertivo, con un gran interés por aprender y resolver problemas."
+        >
+            <Button.LinkSolid dark={true} size="small" href="/contacto" className="mb-1 text-seasalt">
+                Contáctame
+            </Button.LinkSolid>
+            <Button.LinkOutline dark={true} size="small" href="/assets/luis-medina-cv.pdf" target="_blank" className="mb-1 hover:text-seasalt">
+                Descargar CV
+            </Button.LinkOutline>
+        </Presentation>
     ),
     (
         <Presentation
@@ -36,9 +44,9 @@ const presentations = [
             title="GitHub"
             text="Aquí encontrarás un vistazo a mis proyectos personales y laborales. Desde pequeño, me encantaron las computadoras, entenderlas y disfrutar de crear programas que resolviesen problemas. Ahora, he convertido esa pasión en mi carrera profesional."
         >
-            <Button.Outline dark={true} size="small" onClick={() => window.open('https://github.com/luisjose1010', '_blank')} className="ml-2 mt-3 mb-1 hover:text-seasalt">
+            <Button.LinkOutline dark={true} size="small" href="https://github.com/luisjose1010" target="_blank" className="hover:text-seasalt">
                 GitHub
-            </Button.Outline>
+            </Button.LinkOutline>
         </Presentation>
     ),
     (
@@ -47,9 +55,9 @@ const presentations = [
             title="LinkedIn"
             text="Si deseas más información sobre mis proyectos, experiencia laboral o cualquier otro tema, no dudes en visitar mi perfil en LinkedIn. Allí encontrarás toda la información necesaria para que te sientas en el lugar correcto."
         >
-            <Button.Outline dark={true} size="small" onClick={() => window.open('https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/', '_blank')} className="ml-2 mt-3 mb-1 hover:text-seasalt">
+            <Button.LinkOutline dark={true} size="small" href="https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/" target="_blank" className="hover:text-seasalt">
                 LinkedIn
-            </Button.Outline>
+            </Button.LinkOutline>
         </Presentation>
     ),
     (
@@ -58,26 +66,25 @@ const presentations = [
             title="Currículum Vitae"
             text="Clickea aquí para descargar mi currículum vitae y obtener información detallada sobre mis experiencias laborales, habilidades y proyectos destacados."
         >
-            <Button.Outline dark={true} size="small" onClick={() => window.open('assets/luis-medina-cv.pdf', '_blank')} className="ml-2 mt-3 mb-1 hover:text-seasalt">
+            <Button.LinkOutline dark={true} size="small" href="/assets/luis-medina-cv.pdf" target="_blank" className="hover:text-seasalt">
                 Descargar CV
-            </Button.Outline>
+            </Button.LinkOutline>
         </Presentation>
     ),
-    // (
-    //     <Presentation
-    //         key={4}
-    //         title="Todos mis proyectos"
-    //         text="En la página a continuación se encuentran mis principales proyectos académicos y profesionales."
-    //     >
-    //         <Button.Outline size="small" onClick={() => window.open('/proyectos')} className="ml-2 mt-4">
-    //             Proyectos
-    //         </Button.Outline>
-    //     </Presentation>
-    // ),
+    (
+        <Presentation
+            key={4}
+            title="Proyectos"
+            text="A lo largo de mi carrera profesional y académica he desarrollado varios proyectos que te presento a continuación."
+        >
+            <Button.LinkOutline dark={true} size="small" href="/proyectos" className="hover:text-seasalt">
+                Proyectos
+            </Button.LinkOutline>
+        </Presentation>
+    ),
 ]
 
 const Header: React.FC = ({ }) => {
-    const [open, setOpen] = useState(false)
     const [step, setStep] = useState(0)
     const [animation, setAnimation] = useState('')
 
@@ -105,7 +112,7 @@ const Header: React.FC = ({ }) => {
         }
     }
 
-    // Activa el slide cada 5 segundos
+    // Activate the slide every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             handleNextStep()
@@ -124,29 +131,16 @@ const Header: React.FC = ({ }) => {
                 ))}
             </div>
             <article className="w-full">
-                <article className="flex flex-wrap mt-4 py-2 text-caribbean_current px-12 ml-4 lg:min-h-40">
-                    <article className="flex justify-center items-end w-full max-h-9 lg:mt-6">
-                        <svg className="fill-current h-6 w-6 sm:mr-4 lg:mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" /></svg>
-                        <span className="font-semibold tracking-tight">Luis Medina App</span>
-                        <button id="nav-button" className="fill-current h-3 w-3 ml-auto relative z-50 focus:outline-none lg:hidden" onClick={() => { setOpen(!open) }
-                        }>
-                            <span className="sr-only">Open main menu</span>
-                            <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                <span aria-hidden="true" className={`${open ? 'rotate-45' : '-translate-y-1.5'} block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out`}></span>
-                                <span aria-hidden="true" className={`${open ? 'opacity-0' : ''} block absolute  h-0.5 w-5 bg-current transform transition duration-500 ease-in-out`}></span>
-                                <span aria-hidden="true" className={`${open ? '-rotate-45' : 'translate-y-1.5'} block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out`}></span>
-                            </div>
-                        </button>
-                    </article>
-
-                    <NavBar
-                        open={open}
-                        onClose={() => setOpen(false)}
-                    />
-                </article>
+                <NavBar links={[
+                    links.home,
+                    links.projects,
+                    links.experience,
+                    links.skills,
+                    links.contact,
+                ]} className="ml-4" />
                 <main id="main" className="flex px-12 ml-4 mt-4 overflow-hidden text-caribbean_current gap-5 cursor-pointer lg:gap-12 xl:gap-60 max-lg:flex-wrap" onClick={handleNextStep}>
                     <div className="overflow-hidden lg:max-w-md xl:max-w-lg 2xl:max-w-3xl">
-                        <div onAnimationEnd={handleEndAnimation} className={`${animation}`}>
+                        <div onAnimationEnd={handleEndAnimation} className={`${animation} ${animation !== '' && 'relative -z-10' /* behind while animated */}`}>
                             {presentations[step]}
                         </div>
                     </div>

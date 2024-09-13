@@ -19,7 +19,12 @@ export const HomeIcon = ({ ...props }) => {
 
 export const ProjectsIcon = ({ ...props }) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            {...props}
+        >
             <path d="M2 9h7V2H2Zm2-5h3v3H4Zm7-2v7h7V2Zm5 5h-3V4h3ZM2 18h7v-7H2Zm2-5h3v3H4Zm7 5h7v-7h-7Zm2-5h3v3h-3Z" />
         </svg>
     )
@@ -86,6 +91,32 @@ export const UpArrowIcon = ({ ...props }) => {
             {...props}
         >
             <path d="M247.5 0 34.2 213.3v128l170.6-170.6V512h85.4V170.7l170.6 170.6v-128z" />
+        </svg>
+    )
+}
+
+export const LeftArrowIcon = ({ ...props }) => {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g>
+        </svg>
+    )
+}
+
+export const RightArrowIcon = ({ ...props }) => {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g>
         </svg>
     )
 }

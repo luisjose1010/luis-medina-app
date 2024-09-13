@@ -1,26 +1,29 @@
+import { projects } from '@/lib/consts';
 import Button from "../Button";
 
 interface ProjectProps {
-  title: string;
-  description: string;
-  link: string;
-  className?: string;
+  project: Project
+  className?: string
 }
 
-const ProjectCard = ({ title, description, link, className }: ProjectProps) => (
+const ProjectCard = ({ project, className = '' }: ProjectProps) => (
   <article className={`flex flex-col justify-between gap-4 bg-caribbean_current text-seasalt rounded-2xl shadow-md p-6 transition ${className}`}>
     <section>
-      <h3 className="text-3xl font-bold mb-2">{title}</h3>
-      <p className="text-base line-clamp-4">{description}</p>
+      <h3 className="text-3xl font-bold mb-2">{project.name}</h3>
+      <p className="text-base line-clamp-3">{project.description}</p>
     </section>
 
     <section className="flex gap-3">
-      <Button.LinkSolid href={link} size="small" className="text-caribbean_current">
+      <Button.LinkSolid href={`/proyectos/${project.slug}`} size="small" className="text-caribbean_current">
         Explorar
       </Button.LinkSolid>
-      <Button.LinkOutline href={link} size="small" className="hover:text-caribbean_current">
-        GitHub
-      </Button.LinkOutline>
+      {
+        project.source
+        &&
+        <Button.LinkOutline size="small" href={typeof project.source === 'string' ? project.source : project.source?.app} target="_blank" className="hover:text-caribbean_current">
+          GitHub
+        </Button.LinkOutline>
+      }
     </section>
   </article>
 );
@@ -34,33 +37,24 @@ const Projects = () => {
           Explora mi experiencia en el desarrollo de proyectos de software y soluciones web a lo largo de mi trayectoria. En la sección a continuación, encontrarás detalles sobre los trabajos más destacados que he realizado.
         </p>
         <section className="flex items-center gap-8 justify-start">
-          <Button.LinkSolid href="#" size="large" className="text-black">
+          <Button.LinkSolid href="/proyectos" size="large" className="text-black">
             Explorar
           </Button.LinkSolid>
-          <Button.LinkOutline href="#" size="large" className="hover:text-black">
+          <Button.LinkOutline href="https://github.com/luisjose1010?tab=repositories" target="_blank" size="large" className="hover:text-black">
             GitHub
           </Button.LinkOutline>
         </section>
       </article>
       <article className="flex gap-12 justify-center mt-10 max-lg:hidden">
-        <ProjectCard
-          title="Project 1"
-          description="This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1.This is a description of Project 1."
-          link="#projects"
-          className="w-full max-w-xs"
-        />
-        <ProjectCard
-          title="Project 2"
-          description="This is a description of Project 2."
-          link="#projects"
-          className="w-full max-w-xs"
-        />
-        <ProjectCard
-          title="Project 3"
-          description="This is a description of Project 3."
-          link="#projects"
-          className="w-full max-w-xs"
-        />
+        {
+          projects.slice(0, 3).map((project, index) => (
+            <ProjectCard
+              key={index}
+              project={project}
+              className="w-full max-w-xs"
+            />
+          ))
+        }
       </article>
     </section>
   );

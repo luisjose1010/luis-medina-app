@@ -1,3 +1,4 @@
+import { links } from '@/lib/consts';
 import Button from '../Button';
 
 const CallToAction = () => {
@@ -8,7 +9,7 @@ const CallToAction = () => {
                 No te quedes con la duda, podemos hacerlo realidad, estoy aquí para ayudarte.
             </p>
             <section className="flex justify-center">
-                <Button.LinkSolid href="#cta" size="largest" className="text-dark_purple">
+                <Button.LinkSolid href="/contacto" size="largest" className="text-dark_purple">
                     Contáctame
                 </Button.LinkSolid>
             </section>

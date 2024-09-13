@@ -15,7 +15,7 @@ const ScrollToTop = ({ }) => {
 
     useEffect(() => {
         const onScroll = () => {
-            if(window.scrollY > 50) {
+            if (window.scrollY > 50) {
                 setShow(true)
             } else {
                 setShow(false)
@@ -26,6 +26,15 @@ const ScrollToTop = ({ }) => {
 
         return () => window.removeEventListener("scroll", onScroll)
     }, [scroll])
+
+    // Hide the button after 3 seconds
+    useEffect(() => {
+        if (show) {
+            setTimeout(() => {
+                setShow(false)
+            }, 3000);
+        }
+    }, [show])
 
     return (
         <Button.Solid dark={true} size="small" onClick={scrollToTop} className={`${!show && 'translate-y-[200%]'} text-seasalt fixed shadow-lg bottom-6 right-6 rounded-full aspect-square z-50 transition-transform duration-300 md:bottom-7 lg:right-7`}>

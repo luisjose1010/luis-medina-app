@@ -2,18 +2,19 @@ import Link from "next/link";
 
 interface ButtonProps {
   children?: React.ReactNode; // Element | React.FC;
-  customColors?: boolean; // Not text colors 
+  customColors?: boolean; // No bg and outline colors
   dark?: boolean;
-  size?: 'small' | 'medium' | 'large' | 'largest';
+  size?: 'none' | 'small' | 'medium' | 'large' | 'largest';
   onClick?: () => void;
+  type?: "submit" | "reset" | "button" | undefined;
   className?: string;
 }
 
 interface LinkProps {
   children: React.ReactNode; // Element | React.FC;
-  customColors?: boolean; // Not text colors 
+  customColors?: boolean; // No bg and outline colors
   dark?: boolean;
-  size?: 'small' | 'medium' | 'large' | 'largest';
+  size?: 'none' | 'small' | 'medium' | 'large' | 'largest';
   href: string;
   target?: string;
   rel?: string;
@@ -22,6 +23,8 @@ interface LinkProps {
 
 function getSizeClass(size: string) {
   switch (size) {
+    case 'none':
+      return '';
     case 'small':
       return 'px-5 py-1.5 text-sm';
     case 'large':
@@ -33,21 +36,21 @@ function getSizeClass(size: string) {
   }
 }
 
-const Solid = ({ children, size = 'medium', customColors = false, dark = false, onClick, className = '' }: ButtonProps) => {
+const Solid = ({ children, size = 'medium', customColors = false, dark = false, type = undefined, onClick, className = '' }: ButtonProps) => {
   let buttonSizeClass = getSizeClass(size); // Default to medium size if no size prop is provided.
 
   return (
-    <button onClick={onClick} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <button onClick={onClick} type={type} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
       {children}
     </button>
   );
 };
 
-const Outline = ({ children, size = 'medium', customColors = false, dark = false, onClick, className = '' }: ButtonProps) => {
+const Outline = ({ children, size = 'medium', customColors = false, dark = false, type = undefined, onClick, className = '' }: ButtonProps) => {
   let buttonSizeClass = getSizeClass(size);
 
   return (
-    <button onClick={onClick} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <button onClick={onClick} type={type} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
       {children}
     </button>
   );

@@ -1,91 +1,58 @@
 import { HomeIcon, ProjectsIcon, ExperienceIcon, SkillsIcon, ContactIcon } from "@/assets/Icons"
 
-/* El código siguiente exporta un arreglo llamado `devProjects`, contiene objetos que representan
-proyectos de desarrollo diversos. Cada objeto en el arreglo incluye propiedades como `name`, `description`
-y `url` para proyectos como React Native, Node.js y Express. Este arreglo puede ser importado y usado
-en otras partes del codebase. */
-export const projects = [
+export const projects: Project[] = [
   {
     name: 'Plataforma Crowdfunding',
-    description: 'Un sitio web con la finalidad de gestionar las donaciones y promocionar proyectos de impacto social en Venezuela.',
-    source: ' https://github.com/luisjose1010/PlataformaCrowdfunding',
-    live: 'http://plataformacrowdfunding.herokuapp.com/',
-    url: '/plataforma-crowdfunding',
+    description: 'Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general.',
+    imagesCount: 9,
+    source: {
+      app: 'https://github.com/luisjose1010/plataforma-crowdfunding',
+      api: 'https://github.com/luisjose1010/plataforma-crowdfunding-api',
+    },
+    live: {
+      app: 'https://plataforma-crowdfunding.vercel.app/',
+      api: 'https://plataforma-crowdfunding-api.onrender.com/docs',
+    },
+    slug: 'plataforma-crowdfunding',
     tags: ['JavaScript', 'React', 'Python', 'FastAPI', 'SQLAlchemy', 'Bootstrap', 'Styled Components'],
   },
   {
-    name: 'App de Productividad',
-    description: 'Una aplicación web para ayudar a los usuarios a gestionar sus tareas y proyectos.',
-    source: 'https://github.com/luisjose1010/TodoList-React',
-    live: 'https://todolist-react-app.netlify.app/',
-    url: '/productividad-app',
-    tags: ['JavaScript', 'React'],
+    name: 'Romano\'s Pizza System',
+    description: 'Un sistema de venta web responsivo para una pizzería, con todo catálogo de productos y combos disponibles de la franquicia, otorgando una interfaz accesible para el procesamiento de pedidos, la gestión de clientes y la impresión de facturas.',
+    imagesCount: 6,
+    notes: "Credenciales de prueba: usuario 'admin' y contraseña '1234'",
+    source: 'https://github.com/luisjose1010/romanos-system',
+    live: 'http://romanos-system.atwebpages.com/',
+    slug: 'romanos-system',
+    tags: ['JavaScript', 'VueJS', 'PHP', 'Vite', 'Vuetify', 'Composer', 'Eloquent/Laravel'],
   },
   {
-    name: 'Sitio Web de Tienda Online',
-    description: 'Un sitio web para vender productos electrónicos en línea.',
-    source: 'https://github.com/luisjose1010/ecommerce-website',
-    live: 'https://ecommerce-website-louisjose1010.netlify.app/',
-    url: '/tienda-online',
-    tags: ['JavaScript', 'React', 'Node.js', 'Express'],
+    name: 'SabedeSeguros Quoters',
+    description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
+    imagesCount: 9,
+    live: 'https://sabedeseguros.com/cotizacion/',
+    slug: 'sabedeseguros-quoters',
+    tags: ['JavaScript', 'VueJS', 'PHP', 'Wordpress', 'Vite', 'Vuetify'],
   },
   {
-    name: 'API RESTful para Blogs',
-    description: 'Una API que permite gestionar artículos y categorías de un blog.',
-    source: 'https://github.com/luisjose1010/blog-api',
-    live: 'https://blog-api-louisjose1010.herokuapp.com/api/v1',
-    url: '/api-restful',
-    tags: ['JavaScript', 'Node.js', 'Express'],
-  },
-  {
-    name: 'Aplicación de Chat en tiempo real',
-    description: 'Una aplicación web para enviar y recibir mensajes en tiempo real.',
-    source: 'https://github.com/luisjose1010/realtime-chat-app',
-    live: 'https://realtimechatapplouisjose1010.netlify.app/',
-    url: '/chat-en-tiempo-real',
-    tags: ['JavaScript', 'React', 'Socket.io'],
-  },
-  {
-    name: 'Aplicación de Gestión de Inventario',
-    description: 'Una aplicación web para gestionar el inventario de una tienda.',
-    source: 'https://github.com/luisjose1010/inventory-management-app',
-    live: 'https://inventorymanagementapplouisjose1010.netlify.app/',
-    url: '/gestion-de-inventario',
-    tags: ['JavaScript', 'React', 'Node.js', 'Express'],
-  },
-  {
-    name: 'Aplicación de Gestión de Personal',
-    description: 'Una aplicación web para gestionar información sobre empleados y proyectos asignados.',
-    source: 'https://github.com/luisjose1010/staff-management-app',
-    live: 'https://staffmanagementapplouisjose1010.netlify.app/',
-    url: '/gestion-de-personal',
-    tags: ['JavaScript', 'React', 'Node.js', 'Express'],
-  },
-  {
-    name: 'API RESTful para Gestión de Personal',
-    description: 'Una API que permite gestionar información sobre empleados y proyectos asignados.',
-    source: 'https://github.com/luisjose1010/staff-management-api',
-    live: 'https://staffmanagementapilouisjose1010.herokuapp.com/api/v1',
-    url: '/gestion-de-personal-api',
-    tags: ['JavaScript', 'Node.js', 'Express'],
-  },
-  {
-    name: 'Aplicación de Gestión de Estadísticas',
-    description: 'Una aplicación web para visualizar estadísticas sobre proyectos y empleados.',
-    source: 'https://github.com/luisjose1010/dashboard-app',
-    live: 'https://dashboardapplouisjose1010.netlify.app/',
-    url: '/gestion-de-estadisticas',
-    tags: ['JavaScript', 'React'],
+    name: 'Luis Medina App',
+    description: 'Portafolio web profesional actual de mi persona.',
+    imagesCount: 3,
+    source: 'https://github.com/luisjose1010/luis-medina-app',
+    live: 'https://luis-medina-app.vercel.app/',
+    slug: 'luis-medina-app',
+    tags: ['TypeScript', 'React', 'NextJS', 'TailwindCSS'],
   },
 ];
 
-export const navLinks = [
-  { name: 'Inicio', url: '/', icon: HomeIcon },
-  { name: 'Proyectos', url: '/#projects', icon: ProjectsIcon },
-  { name: 'Experiencia', url: '/#experience', icon: ExperienceIcon },
-  { name: 'Habilidades', url: '/#skills', icon: SkillsIcon },
-  { name: 'Contáctame', url: '/#', icon: ContactIcon },
-]
+export const links = {
+  home: { name: 'Inicio', url: '/', icon: HomeIcon },
+  projects: { name: 'Proyectos', url: '/#projects', icon: ProjectsIcon },
+  projectsPage: { name: 'Proyectos', url: '/proyectos', icon: ProjectsIcon },
+  experience: { name: 'Experiencia', url: '/#experience', icon: ExperienceIcon },
+  skills: { name: 'Habilidades', url: '/#skills', icon: SkillsIcon },
+  contact: { name: 'Contáctame', url: '/contacto', icon: ContactIcon },
+}
 
 export const skills = [
   { src: "js", alt: "JavaScript Logo" },

@@ -4,7 +4,6 @@ import SkillsSection from "./Skills";
 import CallToAction from "./CallToAction";
 import ExperienceSection from "./Experience";
 
-
 interface LandingPageProps { }
 
 const LandingPage: React.FC<LandingPageProps> = ({ }) => {
