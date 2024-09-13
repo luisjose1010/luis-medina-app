@@ -17,7 +17,7 @@ const Presentation = ({ title = 'Luis José Medina Sandoval', text, children }: 
         <>
             <h1 className="text-4xl font-bold mb-4 bg-white">{title}</h1>
             <span className="text-dark_purple/60">{text}</span>
-            <div className="flex flex-wrap gap-1 mt-3 ml-1 mb-1 lg:gap-3">
+            <div className="flex flex-wrap gap-1 mt-3 ml-1 mb-1 lg:gap-3 z-10">
                 {children}
             </div>
         </>
@@ -30,12 +30,12 @@ const presentations = [
             key={0}
             text="Soy ingeniero en informática y un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero muy determinado, analítico y asertivo, con un gran interés por aprender y resolver problemas."
         >
-            <Button.LinkSolid dark={true} size="small" href="/contacto" className="mb-1 text-seasalt">
+            <Button.Solid dark={true} size="small" onClick={() => window.open('/contacto', '_self')} className="mb-1 text-seasalt">
                 Contáctame
-            </Button.LinkSolid>
-            <Button.LinkOutline dark={true} size="small" href="/assets/luis-medina-cv.pdf" target="_blank" className="mb-1 hover:text-seasalt">
+            </Button.Solid>
+            <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="mb-1 hover:text-seasalt">
                 Descargar CV
-            </Button.LinkOutline>
+            </Button.Outline>
         </Presentation>
     ),
     (
@@ -44,9 +44,9 @@ const presentations = [
             title="GitHub"
             text="Aquí encontrarás un vistazo a mis proyectos personales y laborales. Desde pequeño, me encantaron las computadoras, entenderlas y disfrutar de crear programas que resolviesen problemas. Ahora, he convertido esa pasión en mi carrera profesional."
         >
-            <Button.LinkOutline dark={true} size="small" href="https://github.com/luisjose1010" target="_blank" className="hover:text-seasalt">
+            <Button.Outline dark={true} size="small" onClick={() => window.open('https://github.com/luisjose1010', '_blank')} className="hover:text-seasalt">
                 GitHub
-            </Button.LinkOutline>
+            </Button.Outline>
         </Presentation>
     ),
     (
@@ -55,9 +55,9 @@ const presentations = [
             title="LinkedIn"
             text="Si deseas más información sobre mis proyectos, experiencia laboral o cualquier otro tema, no dudes en visitar mi perfil en LinkedIn. Allí encontrarás toda la información necesaria para que te sientas en el lugar correcto."
         >
-            <Button.LinkOutline dark={true} size="small" href="https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/" target="_blank" className="hover:text-seasalt">
+            <Button.Outline dark={true} size="small" onClick={() => window.open('https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/', '_blank')} className="hover:text-seasalt">
                 LinkedIn
-            </Button.LinkOutline>
+            </Button.Outline>
         </Presentation>
     ),
     (
@@ -66,9 +66,9 @@ const presentations = [
             title="Currículum Vitae"
             text="Clickea aquí para descargar mi currículum vitae y obtener información detallada sobre mis experiencias laborales, habilidades y proyectos destacados."
         >
-            <Button.LinkOutline dark={true} size="small" href="/assets/luis-medina-cv.pdf" target="_blank" className="hover:text-seasalt">
+            <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="hover:text-seasalt">
                 Descargar CV
-            </Button.LinkOutline>
+            </Button.Outline>
         </Presentation>
     ),
     (
@@ -77,9 +77,9 @@ const presentations = [
             title="Proyectos"
             text="A lo largo de mi carrera profesional y académica he desarrollado varios proyectos que te presento a continuación."
         >
-            <Button.LinkOutline dark={true} size="small" href="/proyectos" className="hover:text-seasalt">
+            <Button.Outline dark={true} size="small" onClick={() => window.open('/proyectos', '_self')} className="hover:text-seasalt">
                 Proyectos
-            </Button.LinkOutline>
+            </Button.Outline>
         </Presentation>
     ),
 ]
