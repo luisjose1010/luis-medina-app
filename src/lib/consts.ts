@@ -30,7 +30,14 @@ export const projects: Project[] = [
     name: 'SabedeSeguros Quoters',
     description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
     imagesCount: 9,
-    live: 'https://sabedeseguros.com/cotizacion/',
+    live: {
+      app: 'https://sabedeseguros.com/cotizacion/',
+      api: 'https://sabedeseguros.com/wp-json/sq/v1',
+    },
+    source: {
+      app: 'https://github.com/luisjose1010/sabedeseguros-app',
+      api: 'https://github.com/luisjose1010/sabedese-quoters',
+    },
     slug: 'sabedeseguros-quoters',
     tags: ['JavaScript', 'VueJS', 'PHP', 'Wordpress', 'Vite', 'Vuetify'],
   },
