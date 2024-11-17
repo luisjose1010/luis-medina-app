@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation'
-import { projects } from "@/lib/consts"
-import Project from "@/components/Project"
+import { projects } from '@/lib/consts'
+import Project from '@/components/Project'
 
-const ProjectPage = ({ params }: { params: { slug: string } }) => {
+function ProjectPage ({ params }: { params: { slug: string } }): React.ReactNode {
   const projectIndex = projects.findIndex((project) => project.slug === params.slug)
 
   if (projectIndex > -1) {

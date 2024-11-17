@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 interface FooterProps {
   links: NavLink[]
@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ links }) => {
         </p>
       </section>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

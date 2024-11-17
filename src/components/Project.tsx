@@ -2,8 +2,8 @@ import Button from './Button'
 import Gallery from './Gallery'
 
 interface ProjectProps {
-  project: Project,
-  className?: string,
+  project: Project
+  className?: string
 }
 
 const Project: React.FC<ProjectProps> = ({ project, className = '' }) => {
@@ -13,7 +13,7 @@ const Project: React.FC<ProjectProps> = ({ project, className = '' }) => {
         Array.from({
           length: project.imagesCount
         },
-          (_, i) => `/assets/projects/${project.slug}/${i + 1}.png`,
+        (_, i) => `/assets/projects/${project.slug}/${i + 1}.png`
         )
       } />
       <section className="p-6">
@@ -26,8 +26,7 @@ const Project: React.FC<ProjectProps> = ({ project, className = '' }) => {
           {project.description}
         </p>
         {
-          project.notes
-          &&
+          (project.notes != null) &&
           <p className="mt-2 text-sm font-normal leading-normal text-gray-700 opacity-75">
             ({project.notes})
           </p>
@@ -39,15 +38,13 @@ const Project: React.FC<ProjectProps> = ({ project, className = '' }) => {
         </h3>
         <div className="flex flex-wrap justify-start gap-2 lg:gap-4">
           {
-            project.live
-            &&
+            (project.live != null) &&
             <Button.LinkSolid href={typeof project.live === 'string' ? project.live : project.live?.app} dark={true} target="_blank" className="text-seasalt">
               En vivo
             </Button.LinkSolid>
           }
           {
-            project.source
-            &&
+            (project.source != null) &&
             <Button.LinkOutline href={typeof project.source === 'string' ? project.source : project.source?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
               GitHub
             </Button.LinkOutline>
@@ -57,23 +54,20 @@ const Project: React.FC<ProjectProps> = ({ project, className = '' }) => {
 
       {
         (typeof project.live !== 'string' && typeof project.source !== 'string') &&
-        (typeof project.live !== undefined && typeof project.source !== undefined)
-        &&
+        (typeof project.live !== 'undefined' && typeof project.source !== 'undefined') &&
         <section className="mt-3 ml-5">
           <h3 className="text-base font-medium leading-relaxed text-caribbean_current-100">
             API:
           </h3>
           <div className="flex flex-wrap justify-start gap-2 lg:gap-4">
             {
-              project.live
-              &&
+              (project.live != null) &&
               <Button.LinkSolid href={project.live.api} dark={true} target="_blank" className="text-seasalt">
                 En vivo
               </Button.LinkSolid>
             }
             {
-              project.source
-              &&
+              (project.source != null) &&
               <Button.LinkOutline href={project.source.api} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
                 GitHub
               </Button.LinkOutline>

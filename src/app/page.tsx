@@ -1,8 +1,8 @@
-import LandingPage from "@/components/LandingPage";
-import Footer from "@/components/Footer";
-import { links } from "@/lib/consts";
+import LandingPage from '@/components/LandingPage'
+import Footer from '@/components/Footer'
+import { links } from '@/lib/consts'
 
-export default function Home() {
+export default function Home (): React.ReactNode {
   return (
     <>
       <LandingPage />
@@ -11,8 +11,8 @@ export default function Home() {
         links.projects,
         links.experience,
         links.skills,
-        links.contact,
+        links.contact
       ]} />
     </>
-  );
+  )
 }

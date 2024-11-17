@@ -1,17 +1,17 @@
-"use client"
+'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Button from './Button'
-import { LeftArrowIcon, RightArrowIcon } from "@/assets/Icons"
+import { LeftArrowIcon, RightArrowIcon } from '@/assets/Icons'
 
 interface GalleryProps {
   images: string[]
 }
 
-const Gallery = ({ images }: GalleryProps) => {
+const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [current, setCurrent] = useState(0)
 
-  const previousSlide = () => {
+  const previousSlide = (): void => {
     if (current === 0) {
       setCurrent(images.length - 1)
     } else {
@@ -19,7 +19,7 @@ const Gallery = ({ images }: GalleryProps) => {
     }
   }
 
-  const nextSlide = () => {
+  const nextSlide = (): void => {
     if (current === images.length - 1) {
       setCurrent(0)
     } else {
@@ -32,7 +32,7 @@ const Gallery = ({ images }: GalleryProps) => {
     const interval = setInterval(() => {
       nextSlide()
     }, 5000)
-    return () => clearInterval(interval)
+    return () => { clearInterval(interval) }
   })
 
   return (
@@ -40,7 +40,7 @@ const Gallery = ({ images }: GalleryProps) => {
       <section
         className="flex transition ease-out duration-200"
         style={{
-          transform: `translateX(-${current * 100}%)`,
+          transform: `translateX(-${current * 100}%)`
         }}
       >
         {
@@ -64,7 +64,7 @@ const Gallery = ({ images }: GalleryProps) => {
           images.map((_src, index) => (
             <div
               key={index}
-              onClick={() => setCurrent(index)}
+              onClick={() => { setCurrent(index) }}
               className={`w-2 h-2 rounded-full cursor-pointer md:w-3 md:h-3 ${current === index ? 'bg-caribbean_current' : 'bg-desert_sand'}`}
             ></div>
           ))

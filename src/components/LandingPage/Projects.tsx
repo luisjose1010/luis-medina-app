@@ -1,12 +1,12 @@
-import { projects } from '@/lib/consts';
-import Button from "../Button";
+import { projects } from '@/lib/consts'
+import Button from '../Button'
 
 interface ProjectProps {
   project: Project
   className?: string
 }
 
-const ProjectCard = ({ project, className = '' }: ProjectProps) => (
+const ProjectCard: React.FC<ProjectProps> = ({ project, className = '' }) => (
   <article className={`flex flex-col justify-between gap-4 bg-caribbean_current text-seasalt rounded-2xl shadow-md p-6 transition ${className}`}>
     <section>
       <h3 className="text-3xl font-bold mb-2">{project.name}</h3>
@@ -18,17 +18,16 @@ const ProjectCard = ({ project, className = '' }: ProjectProps) => (
         Explorar
       </Button.LinkSolid>
       {
-        project.source
-        &&
+        (project.source != null) &&
         <Button.LinkOutline size="small" href={typeof project.source === 'string' ? project.source : project.source?.app} target="_blank" className="hover:text-caribbean_current">
           GitHub
         </Button.LinkOutline>
       }
     </section>
   </article>
-);
+)
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <section id="projects" className="flex h-auto p-6 flex-col-reverse gap-2 text-seasalt justify-evenly items-center bg-forest bg-cover lg:p-12 xl:h-screen">
       <article className="p-6 sm:w-full lg:self-start lg:w-1/2">
@@ -57,8 +56,7 @@ const Projects = () => {
         }
       </article>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
-
+export default Projects

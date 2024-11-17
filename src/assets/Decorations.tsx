@@ -1,4 +1,4 @@
-export const Circle = ({ ...props }) => {
+export const Circle = ({ ...props }): JSX.Element => {
   return (
     <svg
       width="100"
@@ -18,7 +18,7 @@ export const Circle = ({ ...props }) => {
   )
 }
 
-export const CirclesGroupUp = ({ ...props }) => {
+export const CirclesGroupUp = ({ ...props }): JSX.Element => {
   return (
     <svg
       width="34"
@@ -242,7 +242,7 @@ export const CirclesGroupUp = ({ ...props }) => {
   )
 }
 
-export const CirclesGroupDown = ({ ...props }) => {
+export const CirclesGroupDown = ({ ...props }): JSX.Element => {
   return (
     <svg
       width="107"

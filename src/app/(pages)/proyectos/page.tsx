@@ -1,6 +1,6 @@
-import Projects from "@/components/Projects"
+import Projects from '@/components/Projects'
 
-const ProjectsPage = () => {
+function ProjectsPage (): React.ReactNode {
   return (
     <>
       <h1 className="my-3 text-caribbean_current mx-12 text-4xl font-bold">Proyectos</h1>

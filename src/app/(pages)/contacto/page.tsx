@@ -1,6 +1,6 @@
-import ContactUs from "@/components/ContactUs"
+import ContactUs from '@/components/ContactUs'
 
-const ContactPage = () => {
+function ContactPage (): React.ReactNode {
   return (
     <>
       <h1 className="my-3 text-caribbean_current mx-12 text-4xl font-bold">Contacto</h1>
@@ -9,7 +9,7 @@ const ContactPage = () => {
         <ContactUs />
       </article>
     </>
-  );
-};
+  )
+}
 
 export default ContactPage

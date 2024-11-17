@@ -1,4 +1,4 @@
-type Project = {
+interface Project {
   name: string
   description: string
   notes?: string
@@ -6,13 +6,11 @@ type Project = {
   live?: string | { app: string, api: string }
   imagesCount: number
   slug: string
-  tags: Array<string>
+  tags: string[]
 }
 
-type NavLink = {
-  name: string;
-  url: string;
-  icon: ({ ...props }: {
-    [x: string]: any;
-  }) => JSX.Element;
+interface NavLink {
+  name: string
+  url: string
+  icon: ({ ...props }: Record<string, any>) => JSX.Element
 }

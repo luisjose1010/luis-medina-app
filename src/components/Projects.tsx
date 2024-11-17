@@ -2,7 +2,7 @@ import { projects } from '@/lib/consts'
 import Image from 'next/image'
 import Button from './Button'
 
-const ProjectCard = ({ name, description, source, live, slug, notes }: Project) => (
+const ProjectCard: React.FC<Project> = ({ name, description, source, live, slug, notes }) => (
   <article className="relative flex flex-col justify-between p-4 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
     <section className="relative mx-4 mt-4 overflow-hidden text-gray-700  bg-white bg-clip-border rounded-xl">
       <Image
@@ -22,8 +22,7 @@ const ProjectCard = ({ name, description, source, live, slug, notes }: Project) 
         {description}
       </p>
       {
-        notes
-        &&
+        (notes != null) &&
         <p className="mt-1 text-xs leading-normal text-gray-700 opacity-75">
           ({notes})
         </p>
@@ -35,21 +34,18 @@ const ProjectCard = ({ name, description, source, live, slug, notes }: Project) 
       </Button.LinkSolid>
       {/* If not live and source not undefined, then source */}
       {
-        live
-          ?
-          <Button.LinkOutline href={typeof live === 'string' ? live : live?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
+        (live != null)
+          ? <Button.LinkOutline href={typeof live === 'string' ? live : live?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
             En vivo
           </Button.LinkOutline>
-          :
-          source
-          &&
+          : (source != null) &&
           <Button.LinkOutline href={typeof source === 'string' ? source : source?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
             GitHub
           </Button.LinkOutline>
       }
     </section>
   </article>
-);
+)
 
 const Projects: React.FC = () => {
   return (
@@ -58,7 +54,7 @@ const Projects: React.FC = () => {
         <ProjectCard key={index} {...project} />
       ))}
     </>
-  );
-};
+  )
+}
 
 export default Projects

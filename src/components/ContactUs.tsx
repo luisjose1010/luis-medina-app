@@ -1,16 +1,16 @@
-"use client"
-import { useState, FormEvent } from "react";
-import { Circle, CirclesGroupUp, CirclesGroupDown } from "@/assets/Decorations";
-import Button from "./Button";
+'use client'
+import { useState, type FormEvent } from 'react'
+import { Circle, CirclesGroupUp, CirclesGroupDown } from '@/assets/Decorations'
+import Button from './Button'
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://formspree.io/f/movazdga"
+const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'https://formspree.io/f/movazdga'
 
-const ContactUs = () => {
+const ContactUs: React.FC = () => {
   const [show, setShow] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [/* error */, setError] = useState<string | null>(null)
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit (event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault()
     setShow(true)
     setIsLoading(true)
@@ -20,7 +20,7 @@ const ContactUs = () => {
       const formData = new FormData(event.currentTarget)
       const response = await fetch(apiUrl, {
         method: 'POST',
-        body: formData,
+        body: formData
       })
 
       if (!response.ok) {
@@ -65,7 +65,12 @@ const ContactUs = () => {
         </div>
         <div className="w-full lg:w-1/2 2xl:w-5/12 px-4">
           <div className="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={(e) => {
+              // Convert promise to void function with IIFE
+              void (async () => {
+                await onSubmit(e)
+              })()
+            }}>
               <div className="mb-6">
                 <input
                   type="text"
@@ -168,7 +173,7 @@ const ContactUs = () => {
       <div
         className={`fixed w-full h-100 inset-0 bg-black/70 z-50 overflow-hidden flex justify-center items-center ${show ? 'fade-in' : ''}`}
         style={{
-          display: show ? '' : 'none',
+          display: show ? '' : 'none'
         }}>
         <div
           className="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded z-50 overflow-y-auto">
@@ -177,10 +182,8 @@ const ContactUs = () => {
             <div className="flex justify-between items-center pb-3">
               {
                 isLoading
-                  ?
-                  <p className="text-2xl font-bold">Enviando formulario</p>
-                  :
-                  <p className="text-2xl font-bold">Formulario enviado</p>
+                  ? <p className="text-2xl font-bold">Enviando formulario</p>
+                  : <p className="text-2xl font-bold">Formulario enviado</p>
               }
               <div className="modal-close cursor-pointer z-50">
                 <svg className="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
@@ -195,23 +198,24 @@ const ContactUs = () => {
             <div className="my-5">
               {
                 isLoading
-                  ?
-                  <p>Enviando...</p>
-                  :
-                  <p>¡Gracias por tu mensaje!</p>
+                  ? <p>Enviando...</p>
+                  : <p>¡Gracias por tu mensaje!</p>
               }
             </div>
             {/* Footer */}
             <div className="flex justify-end pt-2">
-              <Button.Solid dark={true} onClick={() => setShow(false)} className="text-seasalt">
-                Aceptar
-              </Button.Solid>
+            {
+                !isLoading &&
+                <Button.Solid dark={true} onClick={() => { setShow(false) }} className="text-seasalt">
+                  Aceptar
+                </Button.Solid>
+              }
             </div>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ContactUs;
+export default ContactUs
