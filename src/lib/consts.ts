@@ -1,4 +1,4 @@
-import { HomeIcon, ProjectsIcon, ExperienceIcon, SkillsIcon, ContactIcon } from '@/assets/Icons'
+import { ContactIcon, ExperienceIcon, HomeIcon, ProjectsIcon, SkillsIcon } from '@/assets/Icons'
 
 export const projects: Project[] = [
   {
@@ -53,12 +53,12 @@ export const projects: Project[] = [
 ]
 
 export const links = {
-  home: { name: 'Inicio', url: '/', icon: HomeIcon },
-  projects: { name: 'Proyectos', url: '/#projects', icon: ProjectsIcon },
-  projectsPage: { name: 'Proyectos', url: '/proyectos', icon: ProjectsIcon },
-  experience: { name: 'Experiencia', url: '/#experience', icon: ExperienceIcon },
-  skills: { name: 'Habilidades', url: '/#skills', icon: SkillsIcon },
-  contact: { name: 'Contáctame', url: '/contacto', icon: ContactIcon }
+  home: { name: 'Inicio', url: '/', Icon: HomeIcon },
+  projects: { name: 'Proyectos', url: '/#projects', Icon: ProjectsIcon },
+  projectsPage: { name: 'Proyectos', url: '/proyectos', Icon: ProjectsIcon },
+  experience: { name: 'Experiencia', url: '/#experience', Icon: ExperienceIcon },
+  skills: { name: 'Habilidades', url: '/#skills', Icon: SkillsIcon },
+  contact: { name: 'Contáctame', url: '/contacto', Icon: ContactIcon }
 }
 
 export const skills = [

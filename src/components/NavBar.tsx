@@ -1,14 +1,14 @@
 'use client'
-import { useState, useEffect, useRef, type FocusEvent } from 'react'
-import Link from 'next/link'
 import { CloseIcon } from '@/assets/Icons'
+import Link from 'next/link'
+import { useEffect, useRef, useState, type FocusEvent } from 'react'
 
 interface NavBarProps {
   links: NavLink[]
   className?: string
 }
 
-const NavBar: React.FC<NavBarProps> = ({ links, className = '' }) => {
+export function NavBar ({ links, className = '' }: NavBarProps) {
   const [open, setOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const linkRef = useRef<HTMLAnchorElement>(null)
@@ -64,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = ({ links, className = '' }) => {
               key={index} href={link.url}
               className="flex aspect-square min-h-[32px] w-20 flex-col items-center justify-center gap-1 rounded-md p-1.5 transition duration-300 ease-in-out text-caribbean_current hover:bg-caribbean_current hover:text-seasalt hover:scale-105"
             >
-              {<link.icon className="w-16 h-16" />}
+              <link.Icon className="w-16 h-16" />
               <small className="text-xs font-medium">
                 {link.name}
               </small>
@@ -85,5 +85,3 @@ const NavBar: React.FC<NavBarProps> = ({ links, className = '' }) => {
     </article>
   )
 }
-
-export default NavBar

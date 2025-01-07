@@ -5,22 +5,21 @@ interface ExperienceItemProps {
   children?: React.ReactNode // Optional prop for additional content
 }
 
-const ExperienceItem: React.FC<ExperienceItemProps> = ({ title, description, year, children }) => {
-  return (
+const ExperienceItem = ({ title, description, year, children }: ExperienceItemProps) => (
     <li data-before={`${year}`} className="p-6 text-left max-w-max sm:max-w-sm md:max-w-md lg:max-w-3xl before:absolute before:content-[attr(data-before)] before:bg-desert_sand before:w-16 before:h-16 before:rounded-full before:-left-7 before:text-dark_purple before:text-center before:font-medium before:flex before:items-center before:justify-center before:lg:-left-14">
       <h3 className="mb-4 text-xl font-semibold">{title}</h3>
       <p className="text-dark_purple/60 leading-relaxed">{description}</p>
       {
-        (children != null) &&
-        <div className="flex p-6 justify-center">
-          {children}
-        </div>
+        children != null && (
+          <div className="flex p-6 justify-center">
+            {children}
+          </div>
+        )
       }
     </li>
-  )
-}
+)
 
-const ExperienceSection: React.FC = () => {
+export function Experience () {
   return (
     <section id="experience" className="flex flex-col min-h-screen p-12 gap-5 justify-center items-center text-center text-caribbean_current xl:p-16">
       <h2 className="text-3xl font-bold">Experiencia laboral</h2>
@@ -64,5 +63,3 @@ const ExperienceSection: React.FC = () => {
     </section>
   )
 }
-
-export default ExperienceSection

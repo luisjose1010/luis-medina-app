@@ -1,19 +1,17 @@
-import Header from './Header'
-import ProjectsSection from './Projects'
-import SkillsSection from './Skills'
-import CallToAction from './CallToAction'
-import ExperienceSection from './Experience'
+import { CallToAction } from './CallToAction'
+import { Experience } from './Experience'
+import { Header } from './Header'
+import { Projects } from './Projects'
+import { Skills } from './Skills'
 
-const LandingPage: React.FC = () => {
+export function LandingPage () {
   return (
     <>
       <Header />
-      <ProjectsSection />
-      <ExperienceSection />
+      <Projects />
+      <Experience />
       <CallToAction />
-      <SkillsSection />
+      <Skills />
     </>
   )
 }
-
-export default LandingPage

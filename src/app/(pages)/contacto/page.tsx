@@ -1,6 +1,6 @@
-import ContactUs from '@/components/ContactUs'
+import { ContactUs } from '@/components/ContactUs'
 
-function ContactPage (): React.ReactNode {
+export default function ContactPage () {
   return (
     <>
       <h1 className="my-3 text-caribbean_current mx-12 text-4xl font-bold">Contacto</h1>
@@ -11,5 +11,3 @@ function ContactPage (): React.ReactNode {
     </>
   )
 }
-
-export default ContactPage

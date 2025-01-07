@@ -1,20 +1,20 @@
 'use client'
-import { useEffect, useState } from 'react'
-import Button from './Button'
 import { UpArrowIcon } from '@/assets/Icons'
+import { useEffect, useState } from 'react'
+import { Button } from './Button'
 
-const ScrollToTop: React.FC = () => {
+export function ScrollToTop () {
   const [scroll, setScroll] = useState(0)
   const [show, setShow] = useState(false)
-  const isBrowser = (): boolean => typeof window !== 'undefined' // The approach recommended by Next.js
+  const isBrowser = () => typeof window !== 'undefined' // The approach recommended by Next.js
 
-  function scrollToTop (): void {
+  function scrollToTop () {
     if (!isBrowser()) return
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   useEffect(() => {
-    const onScroll = (): void => {
+    const onScroll = () => {
       if (window.scrollY > 50) {
         setShow(true)
       } else {
@@ -42,5 +42,3 @@ const ScrollToTop: React.FC = () => {
     </Button.Solid>
   )
 }
-
-export default ScrollToTop

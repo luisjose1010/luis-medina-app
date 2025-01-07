@@ -1,42 +1,37 @@
 'use client'
+import { Circle, CirclesGroupDown, CirclesGroupUp } from '@/assets/Decorations'
 import { useState, type FormEvent } from 'react'
-import { Circle, CirclesGroupUp, CirclesGroupDown } from '@/assets/Decorations'
-import Button from './Button'
+import { Button } from './Button'
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'https://formspree.io/f/movazdga'
 
-const ContactUs: React.FC = () => {
+export function ContactUs () {
   const [show, setShow] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [/* error */, setError] = useState<string | null>(null)
 
-  async function onSubmit (event: FormEvent<HTMLFormElement>): Promise<void> {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setShow(true)
     setIsLoading(true)
     setError(null) // Clear previous errors when a new request starts
 
-    try {
-      const formData = new FormData(event.currentTarget)
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        body: formData
-      })
-
+    const formData = new FormData(event.currentTarget)
+    fetch(apiUrl, {
+      method: 'POST',
+      body: formData
+    }).then((response) => {
       if (!response.ok) {
         throw new Error('Failed to submit the data. Please try again.')
       }
-
-      // Handle response if necessary
-      // const data = await response.json()
-    } catch (error: unknown) {
+    }).catch((error: unknown) => {
       if (error instanceof Error) {
         // Capture the error message to display to the user
         setError(error.message)
       }
-    } finally {
+    }).finally(() => {
       setIsLoading(false)
-    }
+    })
   }
 
   return (
@@ -65,12 +60,7 @@ const ContactUs: React.FC = () => {
         </div>
         <div className="w-full lg:w-1/2 2xl:w-5/12 px-4">
           <div className="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
-            <form onSubmit={(e) => {
-              // Convert promise to void function with IIFE
-              void (async () => {
-                await onSubmit(e)
-              })()
-            }}>
+            <form onSubmit={(e) => { onSubmit(e) }}>
               <div className="mb-6">
                 <input
                   type="text"
@@ -205,10 +195,11 @@ const ContactUs: React.FC = () => {
             {/* Footer */}
             <div className="flex justify-end pt-2">
             {
-                !isLoading &&
-                <Button.Solid dark={true} onClick={() => { setShow(false) }} className="text-seasalt">
-                  Aceptar
-                </Button.Solid>
+                !isLoading && (
+                  <Button.Solid dark={true} onClick={() => { setShow(false) }} className="text-seasalt">
+                    Aceptar
+                  </Button.Solid>
+                )
               }
             </div>
           </div>
@@ -217,5 +208,3 @@ const ContactUs: React.FC = () => {
     </>
   )
 }
-
-export default ContactUs

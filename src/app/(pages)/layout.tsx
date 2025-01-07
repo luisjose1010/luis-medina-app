@@ -1,7 +1,7 @@
 'use client'
+import { Footer } from '@/components/Footer'
+import { NavBar } from '@/components/NavBar'
 import { links } from '@/lib/consts'
-import NavBar from '@/components/NavBar'
-import Footer from '@/components/Footer'
 
 const navLinks = [
   links.home,
@@ -11,11 +11,11 @@ const navLinks = [
   links.contact
 ]
 
-export default function RootLayout ({
+export default function ProjectsLayout ({
   children
 }: Readonly<{
   children: React.ReactNode
-}>): React.ReactNode {
+}>) {
   return (
     <>
       <NavBar links={navLinks} />

@@ -1,10 +1,10 @@
 'use client'
-import { useState, useEffect, type SyntheticEvent } from 'react'
-import Image from 'next/image'
-import { links } from '@/lib/consts'
 import PersonalImage from '@/assets/luis-medina.png'
-import NavBar from '../NavBar'
-import Button from '../Button'
+import { links } from '@/lib/consts'
+import Image from 'next/image'
+import { useEffect, useState, type SyntheticEvent } from 'react'
+import { Button } from '../Button'
+import { NavBar } from '../NavBar'
 
 interface PresentationProps {
   title?: string
@@ -12,8 +12,7 @@ interface PresentationProps {
   children?: React.ReactNode
 }
 
-const Presentation: React.FC<PresentationProps> = ({ title = 'Luis José Medina Sandoval', text, children }) => {
-  return (
+const Presentation = ({ title = 'Luis José Medina Sandoval', text, children }: PresentationProps) => (
     <>
       <h1 className="text-4xl font-bold mb-4 bg-white">{title}</h1>
       <span className="text-dark_purple/60">{text}</span>
@@ -21,8 +20,7 @@ const Presentation: React.FC<PresentationProps> = ({ title = 'Luis José Medina 
         {children}
       </div>
     </>
-  )
-}
+)
 
 const presentations = [
   (
@@ -84,7 +82,15 @@ const presentations = [
   )
 ]
 
-const Header: React.FC = () => {
+const navLinks = [
+  links.home,
+  links.projects,
+  links.experience,
+  links.skills,
+  links.contact
+]
+
+export function Header () {
   const [step, setStep] = useState(0)
   const [animation, setAnimation] = useState('')
 
@@ -124,20 +130,17 @@ const Header: React.FC = () => {
     <header id="header" className="flex h-auto lg:p-12 lg:pb-0 lg:max-2xl:h-screen">
       {/* Side decoration */}
       <div onClick={handleNextStep} className="flex relative flex-col justify-center cursor-pointer marker:text-xl text-desert_sand  before:block before:absolute before:-top-[50%] before:bottom-[65%] before:border-l-[3px] before:border-caribbean_current before:rounded-2xl after:block after:absolute after:top-[65%] after:-bottom-20 after:border-l-[3px] after:border-caribbean_current after:rounded-2xl after:overflow-hidden after:-z-10 max-lg:left-10">
-        {presentations.map((_presentation, index) => (
-          <a href="#" key={index} className={`-my-2 transition-colors delay-200 ${step === index ? 'text-caribbean_current' : ''}`}>
-            <li></li>
-          </a>
-        ))}
+        {
+          presentations.map((_presentation, index) => (
+            <a href="#" key={index} className={`-my-2 transition-colors delay-200 ${step === index ? 'text-caribbean_current' : ''}`}>
+              <li></li>
+            </a>
+          ))
+        }
       </div>
       <article className="w-full">
-        <NavBar links={[
-          links.home,
-          links.projects,
-          links.experience,
-          links.skills,
-          links.contact
-        ]} className="ml-4" />
+        <NavBar links={navLinks} className="ml-4" />
+
         <main id="main" className="flex px-12 ml-4 mt-4 overflow-hidden text-caribbean_current gap-5 cursor-pointer lg:gap-12 xl:gap-60 max-lg:flex-wrap" onClick={handleNextStep}>
           <div className="overflow-hidden lg:max-w-md xl:max-w-lg 2xl:max-w-3xl">
             <div onAnimationEnd={handleEndAnimation} className={`${animation} ${animation !== '' && 'relative -z-10' /* behind while animated */}`}>
@@ -160,5 +163,3 @@ const Header: React.FC = () => {
     </header>
   )
 }
-
-export default Header

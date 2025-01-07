@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import { skills, tools } from '@/lib/consts'
+import Image from 'next/image'
 
-const Skills: React.FC = () => {
+export function Skills () {
   return (
     <section id="skills" className="flex flex-col h-auto p-6 gap-4 justify-center items-center lg:h-screen lg:p-12">
       <h2 className="text-center mt-4 text-4xl font-bold text-caribbean_current">Habilidades y tecnologías</h2>
@@ -51,5 +51,3 @@ const Skills: React.FC = () => {
     </section>
   )
 }
-
-export default Skills

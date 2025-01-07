@@ -1,8 +1,8 @@
-import { notFound } from 'next/navigation'
+import { Project } from '@/components/Project'
 import { projects } from '@/lib/consts'
-import Project from '@/components/Project'
+import { notFound } from 'next/navigation'
 
-function ProjectPage ({ params }: { params: { slug: string } }): React.ReactNode {
+export default function ProjectPage ({ params }: { params: { slug: string } }) {
   const projectIndex = projects.findIndex((project) => project.slug === params.slug)
 
   if (projectIndex > -1) {
@@ -17,5 +17,3 @@ function ProjectPage ({ params }: { params: { slug: string } }): React.ReactNode
     return notFound()
   }
 }
-
-export default ProjectPage

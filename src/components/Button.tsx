@@ -21,7 +21,7 @@ interface LinkProps {
   className?: string
 }
 
-function getSizeClass (size: string): string {
+function getSizeClass (size: string) {
   switch (size) {
     case 'none':
       return ''
@@ -36,9 +36,9 @@ function getSizeClass (size: string): string {
   }
 }
 
-const Solid: React.FC<ButtonProps> = ({
+function Solid ({
   children, size = 'medium', customColors = false, dark = false, type = undefined, onClick, className = ''
-}) => {
+}: ButtonProps) {
   const buttonSizeClass = getSizeClass(size) // Default to medium size if no size prop is provided.
 
   return (
@@ -48,9 +48,9 @@ const Solid: React.FC<ButtonProps> = ({
   )
 }
 
-const Outline: React.FC<ButtonProps> = ({
+function Outline ({
   children, size = 'medium', customColors = false, dark = false, type = undefined, onClick, className = ''
-}) => {
+}: ButtonProps) {
   const buttonSizeClass = getSizeClass(size)
 
   return (
@@ -60,9 +60,9 @@ const Outline: React.FC<ButtonProps> = ({
   )
 }
 
-const LinkSolid: React.FC<LinkProps> = ({
+function LinkSolid ({
   children, customColors = false, size = 'medium', dark = false, href, target, rel, className = ''
-}) => {
+}: LinkProps) {
   const buttonSizeClass = getSizeClass(size)
 
   return (
@@ -72,9 +72,9 @@ const LinkSolid: React.FC<LinkProps> = ({
   )
 }
 
-const LinkOutline: React.FC<LinkProps> = ({
+function LinkOutline ({
   children, size = 'medium', customColors = false, dark = false, href, target, rel, className = ''
-}) => {
+}: LinkProps) {
   const buttonSizeClass = getSizeClass(size)
 
   return (
@@ -84,11 +84,9 @@ const LinkOutline: React.FC<LinkProps> = ({
   )
 }
 
-const Button = {
+export const Button = {
   Solid,
   Outline,
   LinkSolid,
   LinkOutline
 }
-
-export default Button

@@ -1,17 +1,17 @@
 'use client'
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import Button from './Button'
 import { LeftArrowIcon, RightArrowIcon } from '@/assets/Icons'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { Button } from './Button'
 
 interface GalleryProps {
   images: string[]
 }
 
-const Gallery: React.FC<GalleryProps> = ({ images }) => {
+export function Gallery ({ images }: GalleryProps) {
   const [current, setCurrent] = useState(0)
 
-  const previousSlide = (): void => {
+  const previousSlide = () => {
     if (current === 0) {
       setCurrent(images.length - 1)
     } else {
@@ -19,7 +19,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     }
   }
 
-  const nextSlide = (): void => {
+  const nextSlide = () => {
     if (current === images.length - 1) {
       setCurrent(0)
     } else {
@@ -65,7 +65,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
             <div
               key={index}
               onClick={() => { setCurrent(index) }}
-              className={`w-2 h-2 rounded-full cursor-pointer md:w-3 md:h-3 ${current === index ? 'bg-caribbean_current' : 'bg-desert_sand'}`}
+              className={`${current === index ? 'bg-caribbean_current' : 'bg-desert_sand'} w-2 h-2 rounded-full cursor-pointer md:w-3 md:h-3`}
             ></div>
           ))
         }
@@ -73,5 +73,3 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     </article>
   )
 }
-
-export default Gallery

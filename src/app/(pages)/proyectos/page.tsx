@@ -1,6 +1,6 @@
-import Projects from '@/components/Projects'
+import { Projects } from '@/components/Projects'
 
-function ProjectsPage (): React.ReactNode {
+export default function ProjectsPage () {
   return (
     <>
       <h1 className="my-3 text-caribbean_current mx-12 text-4xl font-bold">Proyectos</h1>
@@ -11,5 +11,3 @@ function ProjectsPage (): React.ReactNode {
     </>
   )
 }
-
-export default ProjectsPage

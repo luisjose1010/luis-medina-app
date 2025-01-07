@@ -1,6 +1,6 @@
-import Button from '../Button'
+import { Button } from '../Button'
 
-const CallToAction: React.FC = () => {
+export function CallToAction () {
   return (
     <section id="cta" className="flex flex-col h-min-96 p-6 gap-5 justify-center items-center text-center text-white bg-clouds bg-cover relative lg:h-96 lg:p-12">
       <h2 className="text-4xl font-bold mb-3">¿Tienes algo en mente?</h2>
@@ -15,5 +15,3 @@ const CallToAction: React.FC = () => {
     </section>
   )
 }
-
-export default CallToAction
