@@ -1,8 +1,8 @@
 'use client'
 import { LeftArrowIcon, RightArrowIcon } from '@/assets/Icons'
+import { Button } from '@/components/Button'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { Button } from './Button'
 
 interface GalleryProps {
   images: string[]

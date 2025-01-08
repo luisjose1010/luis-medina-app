@@ -1,6 +1,6 @@
+import { Button } from '@/components/Button'
 import { projects } from '@/lib/consts'
 import Image from 'next/image'
-import { Button } from './Button'
 
 export function ProjectCard ({ name, description, source, live, slug, notes }: Project) {
   return (

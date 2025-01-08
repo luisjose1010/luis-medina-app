@@ -1,10 +1,10 @@
 'use client'
 import PersonalImage from '@/assets/luis-medina.png'
+import { Button } from '@/components/Button'
+import { NavBar } from '@/components/NavBar'
 import { links } from '@/lib/consts'
 import Image from 'next/image'
 import { useEffect, useState, type SyntheticEvent } from 'react'
-import { Button } from '../Button'
-import { NavBar } from '../NavBar'
 
 interface PresentationProps {
   title?: string

@@ -1,7 +1,7 @@
 'use client'
 import { Circle, CirclesGroupDown, CirclesGroupUp } from '@/assets/Decorations'
+import { Button } from '@/components/Button'
 import { useState, type FormEvent } from 'react'
-import { Button } from './Button'
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'https://formspree.io/f/movazdga'
 

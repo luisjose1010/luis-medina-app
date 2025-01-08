@@ -1,7 +1,7 @@
 'use client'
 import { UpArrowIcon } from '@/assets/Icons'
+import { Button } from '@/components/Button'
 import { useEffect, useState } from 'react'
-import { Button } from './Button'
 
 export function ScrollToTop () {
   const [scroll, setScroll] = useState(0)

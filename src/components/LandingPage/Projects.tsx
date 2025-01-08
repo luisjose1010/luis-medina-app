@@ -1,5 +1,5 @@
+import { Button } from '@/components/Button'
 import { projects } from '@/lib/consts'
-import { Button } from '../Button'
 
 interface ProjectProps {
   project: Project
