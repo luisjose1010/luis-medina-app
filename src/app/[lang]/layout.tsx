@@ -1,6 +1,7 @@
 import { inter } from '@/assets/styles/fonts'
 import '@/assets/styles/globals.css'
 import { ScrollToTop } from '@/components/ScrollToTop'
+import { TranslateProvider } from '@/contexts/translate'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,14 +10,20 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout ({
-  children
+  children,
+  params
 }: Readonly<{
   children: React.ReactNode
+  params: { lang: string }
 }>) {
+  const { lang } = params
+
   return (
-    <html lang="es">
+    <html lang={lang}>
       <body className={`${inter.className} antialiased`}>
-        {children}
+        <TranslateProvider lang={lang}>
+          {children}
+        </TranslateProvider>
         <ScrollToTop />
       </body>
     </html>

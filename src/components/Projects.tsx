@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button'
-import { projects } from '@/lib/consts'
+import { useProjects } from '@/hooks/useProjects'
+import { links } from '@/lib/consts'
 import Image from 'next/image'
 
 export function ProjectCard ({ name, description, source, live, slug, notes }: Project) {
@@ -31,7 +32,7 @@ export function ProjectCard ({ name, description, source, live, slug, notes }: P
         }
       </section>
       <section className="flex flex-wrap justify-start gap-2 ml-5 lg:gap-4">
-        <Button.LinkSolid href={`proyectos/${slug}`} dark={true} className="text-seasalt">
+        <Button.LinkSolid href={`${links.projectsPage.url}/${slug}`} dark={true} className="text-seasalt">
           Explorar
         </Button.LinkSolid>
         {/* If not live and source not undefined, then source */}
@@ -54,6 +55,8 @@ export function ProjectCard ({ name, description, source, live, slug, notes }: P
 }
 
 export function Projects () {
+  const { projects } = useProjects()
+
   return (
     <>
       {

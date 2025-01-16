@@ -1,4 +1,5 @@
 import { Button } from '@/components/Button'
+import { links } from '@/lib/consts'
 
 export function CallToAction () {
   return (
@@ -8,7 +9,7 @@ export function CallToAction () {
         No te quedes con la duda, podemos hacerlo realidad, estoy aquí para ayudarte.
       </p>
       <section className="flex justify-center">
-        <Button.LinkSolid href="/contacto" size="largest" className="text-dark_purple">
+        <Button.LinkSolid href={links.contact.url} size="largest" className="text-dark_purple">
           Contáctame
         </Button.LinkSolid>
       </section>

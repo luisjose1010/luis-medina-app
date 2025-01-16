@@ -1,8 +1,9 @@
 import { Project } from '@/components/Project'
-import { projects } from '@/lib/consts'
+import { useProjects } from '@/hooks/useProjects'
 import { notFound } from 'next/navigation'
 
 export default function ProjectPage ({ params }: { params: { slug: string } }) {
+  const { projects } = useProjects()
   const projectIndex = projects.findIndex((project) => project.slug === params.slug)
 
   if (projectIndex > -1) {

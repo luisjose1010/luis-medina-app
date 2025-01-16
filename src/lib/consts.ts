@@ -55,10 +55,10 @@ export const projects: Project[] = [
 export const links = {
   home: { name: 'Inicio', url: '/', Icon: HomeIcon },
   projects: { name: 'Proyectos', url: '/#projects', Icon: ProjectsIcon },
-  projectsPage: { name: 'Proyectos', url: '/proyectos', Icon: ProjectsIcon },
+  projectsPage: { name: 'Proyectos', url: '/projects', Icon: ProjectsIcon },
   experience: { name: 'Experiencia', url: '/#experience', Icon: ExperienceIcon },
   skills: { name: 'Habilidades', url: '/#skills', Icon: SkillsIcon },
-  contact: { name: 'Contáctame', url: '/contacto', Icon: ContactIcon }
+  contact: { name: 'Contáctame', url: '/contact', Icon: ContactIcon }
 }
 
 export const skills = [

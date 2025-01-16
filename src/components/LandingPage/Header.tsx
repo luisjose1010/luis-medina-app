@@ -28,7 +28,7 @@ const presentations = [
       key={0}
       text="Soy ingeniero en informática y un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero muy determinado, analítico y asertivo, con un gran interés por aprender y resolver problemas."
     >
-      <Button.Solid dark={true} size="small" onClick={() => window.open('/contacto', '_self')} className="mb-1 text-seasalt">
+      <Button.Solid dark={true} size="small" onClick={() => window.open(links.contact.url, '_self')} className="mb-1 text-seasalt">
         Contáctame
       </Button.Solid>
       <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="mb-1 hover:text-seasalt">
@@ -75,7 +75,7 @@ const presentations = [
       title="Proyectos"
       text="A lo largo de mi carrera profesional y académica he desarrollado varios proyectos que te presento a continuación."
     >
-      <Button.Outline dark={true} size="small" onClick={() => window.open('/proyectos', '_self')} className="hover:text-seasalt">
+      <Button.Outline dark={true} size="small" onClick={() => window.open(links.projectsPage.url, '_self')} className="hover:text-seasalt">
         Proyectos
       </Button.Outline>
     </Presentation>
