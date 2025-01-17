@@ -1,7 +1,7 @@
 import { inter } from '@/assets/styles/fonts'
 import '@/assets/styles/globals.css'
 import { ScrollToTop } from '@/components/ScrollToTop'
-import { TranslateProvider } from '@/contexts/translate'
+import { TranslationProvider } from '@/contexts/translation'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -21,9 +21,9 @@ export default function RootLayout ({
   return (
     <html lang={lang}>
       <body className={`${inter.className} antialiased`}>
-        <TranslateProvider lang={lang}>
+        <TranslationProvider lang={lang}>
           {children}
-        </TranslateProvider>
+        </TranslationProvider>
         <ScrollToTop />
       </body>
     </html>
