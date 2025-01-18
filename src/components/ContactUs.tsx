@@ -1,11 +1,13 @@
 'use client'
 import { Circle, CirclesGroupDown, CirclesGroupUp } from '@/assets/Decorations'
 import { Button } from '@/components/Button'
+import { useTranslation } from '@/hooks/useTranslation'
 import { useState, type FormEvent } from 'react'
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'https://formspree.io/f/movazdga'
 
 export function ContactUs () {
+  const { APP, UI } = useTranslation()
   const [show, setShow] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [/* error */, setError] = useState<string | null>(null)
@@ -51,10 +53,10 @@ export function ContactUs () {
                   xl:text-[40px]
                   "
             >
-              CONECTEMOS IDEAS
+              {APP.CONTACT.SUBTITLE}
             </h2>
             <p className="text-base text-dark_purple/60 leading-relaxed mb-9">
-              ¿Tiene un proyecto en mente? ¿Desea conversar alguna idea o aportar una opinión? No dude en ponerse en contacto conmigo. Estoy aquí para escuchar, responder a sus inquietudes y que juntos podamos colaborar hacía el éxito. ¡Espero atentamente su mensaje!
+              {APP.CONTACT.DESCRIPTION}
             </p>
           </div>
         </div>
@@ -65,7 +67,7 @@ export function ContactUs () {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Nombre"
+                  placeholder={APP.CONTACT.FORM_NAME}
                   className="
                         w-full
                         rounded
@@ -83,7 +85,7 @@ export function ContactUs () {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Correo electrónico"
+                  placeholder={APP.CONTACT.FORM_EMAIL}
                   className="
                         w-full
                         rounded
@@ -101,7 +103,7 @@ export function ContactUs () {
                 <input
                   type="text"
                   name="phoneNumber"
-                  placeholder="Número telefónico"
+                  placeholder={APP.CONTACT.FORM_PHONE}
                   className="
                         w-full
                         rounded
@@ -119,7 +121,7 @@ export function ContactUs () {
                 <textarea
                   rows={6}
                   name="message"
-                  placeholder="Mensaje a enviar"
+                  placeholder={APP.CONTACT.FORM_MESSAGE}
                   className="
                         w-full
                         rounded
@@ -140,7 +142,7 @@ export function ContactUs () {
                   dark={true}
                   className="w-full text-white"
                 >
-                  Enviar
+                  {UI.BUTTON.SUBMIT}
                 </Button.Solid>
               </div>
             </form>
@@ -172,8 +174,8 @@ export function ContactUs () {
             <div className="flex justify-between items-center pb-3">
               {
                 isLoading
-                  ? <p className="text-2xl font-bold">Enviando formulario</p>
-                  : <p className="text-2xl font-bold">Formulario enviado</p>
+                  ? <p className="text-2xl font-bold">{APP.CONTACT.LOADING_TITLE}</p>
+                  : <p className="text-2xl font-bold">{APP.CONTACT.SUCCESS_TITLE}</p>
               }
               <div className="modal-close cursor-pointer z-50">
                 <svg className="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
@@ -188,8 +190,8 @@ export function ContactUs () {
             <div className="my-5">
               {
                 isLoading
-                  ? <p>Enviando...</p>
-                  : <p>¡Gracias por tu mensaje!</p>
+                  ? <p>{APP.CONTACT.LOADING_TEXT}</p>
+                  : <p>{APP.CONTACT.SUCCESS_TEXT}</p>
               }
             </div>
             {/* Footer */}
@@ -197,7 +199,7 @@ export function ContactUs () {
             {
                 !isLoading && (
                   <Button.Solid dark={true} onClick={() => { setShow(false) }} className="text-seasalt">
-                    Aceptar
+                    {UI.BUTTON.ACCEPT}
                   </Button.Solid>
                 )
               }

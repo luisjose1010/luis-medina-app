@@ -1,9 +1,14 @@
+'use client' // TODO: delete if possible
 import { Button } from '@/components/Button'
+import { useLinks } from '@/hooks/useLinks'
 import { useProjects } from '@/hooks/useProjects'
-import { links } from '@/lib/consts'
+import { useTranslation } from '@/hooks/useTranslation'
 import Image from 'next/image'
 
 export function ProjectCard ({ name, description, source, live, slug, notes }: Project) {
+  const { UI } = useTranslation()
+  const { links } = useLinks()
+
   return (
     <article className="relative flex flex-col justify-between p-4 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
       <section className="relative mx-4 mt-4 overflow-hidden text-gray-700  bg-white bg-clip-border rounded-xl">
@@ -33,19 +38,19 @@ export function ProjectCard ({ name, description, source, live, slug, notes }: P
       </section>
       <section className="flex flex-wrap justify-start gap-2 ml-5 lg:gap-4">
         <Button.LinkSolid href={`${links.projectsPage.url}/${slug}`} dark={true} className="text-seasalt">
-          Explorar
+          {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
         {/* If not live and source not undefined, then source */}
         {
           live != null
             ? (
               <Button.LinkOutline href={typeof live === 'string' ? live : live?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                En vivo
+                {UI.BUTTON.LIVE}
               </Button.LinkOutline>
               )
             : source != null && (
               <Button.LinkOutline href={typeof source === 'string' ? source : source?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                GitHub
+                {UI.BUTTON.GITHUB}
               </Button.LinkOutline>
             )
         }

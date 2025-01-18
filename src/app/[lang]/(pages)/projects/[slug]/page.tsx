@@ -1,3 +1,4 @@
+'use client' // TODO: delete if possible
 import { Project } from '@/components/Project'
 import { useProjects } from '@/hooks/useProjects'
 import { notFound } from 'next/navigation'

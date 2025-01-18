@@ -1,5 +1,6 @@
 'use client'
 import { CloseIcon } from '@/assets/Icons'
+import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useEffect, useRef, useState, type FocusEvent } from 'react'
 
@@ -9,6 +10,7 @@ interface NavBarProps {
 }
 
 export function NavBar ({ links, className = '' }: NavBarProps) {
+  const { UI } = useTranslation()
   const [open, setOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const linkRef = useRef<HTMLAnchorElement>(null)
@@ -79,7 +81,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
           className="flex aspect-square min-h-[32px] w-20 flex-col items-center justify-center gap-1 rounded-md p-1.5 transition duration-300 ease-in-out text-caribbean_current hover:bg-caribbean_current hover:text-seasalt hover:scale-105"
         >
           <CloseIcon className="w-16 h-16" />
-          <small className="text-xs font-medium">Cerrar</small>
+          <small className="text-xs font-medium">{UI.BUTTON.CLOSE}</small>
         </button>
       </nav>
     </article>

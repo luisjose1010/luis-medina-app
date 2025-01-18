@@ -1,8 +1,131 @@
 {
+  "APP": {
+    "TITLE": "Luis Medina App",
+    "DESCRIPTION": "Aplicación de tipo portafolio de Luis José Medina Sandoval",
+    "PRESENTATIONS": {
+      "TITLE": "Luis José Medina Sandoval",
+      "DESCRIPTION": "Soy ingeniero en informática y un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero muy determinado, analítico y asertivo, con un gran interés por aprender y resolver problemas.",
+      "GITHUB_TITLE": "GitHub",
+      "GITHUB_DESCRIPTION": "Aquí encontrarás un vistazo a mis proyectos personales y laborales. Desde pequeño, me encantaron las computadoras, entenderlas y disfrutar de crear programas que resolviesen problemas. Ahora, he convertido esa pasión en mi carrera profesional.",
+      "LINKEDIN_TITLE": "LinkedIn",
+      "LINKEDIN_DESCRIPTION": "Si deseas más información sobre mis proyectos, experiencia laboral o cualquier otro tema, no dudes en visitar mi perfil en LinkedIn. Allí encontrarás toda la información necesaria para que te sientas en el lugar correcto.",
+      "CV_TITLE": "Currículum Vitae",
+      "CV_DESCRIPTION": "Clickea aquí para descargar mi currículum vitae y obtener información detallada sobre mis experiencias laborales, habilidades y proyectos destacados.",
+      "PROJECTS_TITLE": "Proyectos",
+      "PROJECTS_DESCRIPTION": "A lo largo de mi carrera profesional y académica he desarrollado varios proyectos que te presento a continuación."
+    },
+    "PROJECTS": {
+      "TITLE": "Proyectos",
+      "DESCRIPTION": "Explora mi experiencia en el desarrollo de proyectos de software y soluciones web a lo largo de mi trayectoria. En la sección a continuación, encontrarás detalles sobre los trabajos más destacados que he realizado."
+    },
+    "EXPERIENCE": {
+      "TITLE": "Experiencia laboral"
+    },
+    "CALL_TO_ACTION": {
+      "TITLE": "¿Tienes algo en mente?",
+      "DESCRIPTION": "No te quedes con la duda, podemos hacerlo realidad, estoy aquí para ayudarte."
+    },
+    "SKILLS": {
+      "TITLE": "Habilidades y tecnologías",
+      "DESCRIPTION": "Como profesional, he adquirido una amplia variedad de habilidades y experiencia con diversas tecnologías.",
+      "SKILLS_TITLE": "Habilidades",
+      "TOOLS_TITLE": "Herramientas"
+    },
+    "CONTACT": {
+      "TITLE": "Contacto",
+      "SUBTITLE": "CONECTEMOS IDEAS",
+      "DESCRIPTION": "¿Tiene un proyecto en mente? ¿Desea conversar alguna idea o aportar una opinión? No dude en ponerse en contacto conmigo. Estoy aquí para escuchar, responder a sus inquietudes y que juntos podamos colaborar hacía el éxito. ¡Espero atentamente su mensaje!",
+      "FORM_NAME": "Nombre",
+      "FORM_EMAIL": "Correo electrónico",
+      "FORM_PHONE": "Número telefónico",
+      "FORM_MESSAGE": "Mensaje a enviar",
+      "SUCCESS_TITLE": "Formulario enviado",
+      "SUCCESS_TEXT": "¡Gracias por tu mensaje! Estoy encantado de escucharlo. ¡Espero que podamos trabajar juntos para lograr el éxito!",
+      "LOADING_TITLE": "Enviando formulario",
+      "LOADING_TEXT": "Enviando..."
+    },
+    "FOOTER": {
+      "DESCRIPTION": "Soy un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial."
+    }
+  },
+  "DATA": {
+    "LINKS": {
+      "/": {
+        "TITLE": "Inicio"
+      },
+      "/#projects": {
+        "TITLE": "Proyectos"
+      },
+      "/projects": {
+        "TITLE": "Proyectos"
+      },
+      "/#experience": {
+        "TITLE": "Experiencia"
+      },
+      "/#skills": {
+        "TITLE": "Habilidades"
+      },
+      "/contact": {
+        "TITLE": "Contáctame"
+      }
+    },
+    "PROJECTS": {
+      "Plataforma Crowdfunding": {
+        "TITLE": "Plataforma Crowdfunding",
+        "DESCRIPTION": "Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general."
+      },
+      "Romano's Pizza System": {
+        "TITLE": "Romano's Pizza System",
+        "DESCRIPTION": "Un sistema de venta web responsivo para una pizzería, con todo catálogo de productos y combos disponibles de la franquicia, otorgando una interfaz accesible para el procesamiento de pedidos, la gestión de clientes y la impresión de facturas."
+      },
+      "SabedeSeguros Quoters": {
+        "TITLE": "SabedeSeguros Quoters",
+        "DESCRIPTION": "Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales."
+      },
+      "Luis Medina App": {
+        "TITLE": "Luis Medina App",
+        "DESCRIPTION": "Portafolio web profesional actual de mi persona."
+      }
+    },
+    "EXPERIENCE": {
+      "Sabe de Seguros | Desarrollo Web Full-Stack": {
+        "TITLE": "Sabe de Seguros | Desarrollo Web Full-Stack",
+        "DESCRIPTION": "En la empresa Sabe de Seguros, entre enero y mayo de 2024, desarrollé diversos cotizadores web responsivos para la página empresarial mediante un plugin personalizado de WordPress, utilizando PHP, MySQL, Vue y Vuetify para integrar de manera eficiente los cotizadores en la plataforma aprovechando las capacidades de gestión de contenido de WordPress para mantener actualizada la información del sitio web."
+      },
+      "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack": {
+        "TITLE": "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack",
+        "DESCRIPTION": "En la Universidad Rafael Belloso Chacín, entre enero y abril de 2024, desarrollé mi trabajo especial de grado: una aplicación web responsive de Crowdfunding. Utilicé los frameworks FastAPI (Python), React y Bootstrap para construir esta solución web, enfocándome en la creación de una interfaz de usuario receptiva y adaptable a diferentes dispositivos."
+      },
+      "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes": {
+        "TITLE": "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes",
+        "DESCRIPTION": "En Regalado Group: Bienes Raíces, me desempeñé como Encargado del Departamento de Redes desde marzo de 2022, hasta septiembre de 2023. En este cargo, administré la página web comercial de la empresa, utilizando Joomla CMS como plataforma y los lenguajes PHP, HTML y CSS. Mis responsabilidades incluyeron la gestión y actualización del sitio web en general, así como la administración de los inmuebles en sistema y los datos de la empresa."
+      },
+      "SysModelers | Desarrollo Web Front-end": {
+        "TITLE": "SysModelers | Desarrollo Web Front-end",
+        "DESCRIPTION": "Durante mi tiempo como Desarrollador Web Front-end en SysModelers, entre agosto de 2021 y febrero de 2022, desarrollé interfaces gráficas amigables y accesibles utilizando la librería de componentes React y el framework de diseño CoreUI. Esto me permitió crear aplicaciones web de forma modular y eficiente, enfocándome en la experiencia del usuario y la accesibilidad."
+      },
+      "Romano's Pizza | Desarrollo Web Full-Stack": {
+        "TITLE": "Romano's Pizza | Desarrollo Web Full-Stack",
+        "DESCRIPTION": "En Romano's Pizza, entre julio de 2021 y noviembre de 2022, desarrollé un proyecto de aplicación web tipo punto de venta. Para ello, utilicé un pequeño framework personal basado en PHP, MySQL, Vue.js y Vuetify. Esta solución me permitió crear una aplicación web adaptada a las necesidades específicas del negocio de restaurantes."
+      },
+      "Corretaje de Seguros ASECA | Gestor de cotizadores Excel": {
+        "TITLE": "Corretaje de Seguros ASECA | Gestor de cotizadores Excel",
+        "DESCRIPTION": "En Corretaje de Seguros ASECA, trabajé como Gestor de Cotizadores Excel desde julio de 2021 hasta mayo de 2024. En este rol, me encargué de la creación y mantenimiento de archivos Excel para la cotización de seguros internacionales, nacionales y regionales. Mis responsabilidades incluían asegurar la precisión y actualización constante de estos cotizadores, lo que permitía a la empresa ofrecer a sus clientes una herramienta eficiente para la evaluación de diferentes planes de cobertura."
+      }
+    }
+  },
   "UI": {
     "BUTTON": {
       "EXPLORE": "Explorar",
-      "GITHUB": "GitHub"
+      "GITHUB": "GitHub",
+      "LIVE": "En vivo",
+      "LINKEDIN": "LinkedIn",
+      "DOWNLOAD_CV": "Descargar CV",
+      "PROJECTS": "Proyectos",
+      "CONTACT_ME": "Contáctame",
+      "ACCEPT": "Aceptar",
+      "SUBMIT": "Enviar",
+      "CLOSE": "Cerrar"
     }
   }
 }

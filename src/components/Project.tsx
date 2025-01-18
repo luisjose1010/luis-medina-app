@@ -1,5 +1,7 @@
+'use client' // TODO: delete if possible
 import { Button } from '@/components/Button'
 import { Gallery } from '@/components/Gallery'
+import { useTranslation } from '@/hooks/useTranslation'
 
 interface ProjectProps {
   project: Project
@@ -7,6 +9,8 @@ interface ProjectProps {
 }
 
 export function Project ({ project, className = '' }: ProjectProps) {
+  const { UI } = useTranslation()
+
   return (
     <article className={`${className}`}>
       <Gallery images={
@@ -41,14 +45,14 @@ export function Project ({ project, className = '' }: ProjectProps) {
           {
             project.live != null && (
               <Button.LinkSolid href={typeof project.live === 'string' ? project.live : project.live?.app} dark={true} target="_blank" className="text-seasalt">
-                En vivo
+                {UI.BUTTON.LIVE}
               </Button.LinkSolid>
             )
           }
           {
             project.source != null && (
               <Button.LinkOutline href={typeof project.source === 'string' ? project.source : project.source?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                GitHub
+                {UI.BUTTON.GITHUB}
               </Button.LinkOutline>
             )
           }
@@ -66,14 +70,14 @@ export function Project ({ project, className = '' }: ProjectProps) {
               {
                 project.live != null && (
                   <Button.LinkSolid href={project.live.api} dark={true} target="_blank" className="text-seasalt">
-                    En vivo
+                    {UI.BUTTON.LIVE}
                   </Button.LinkSolid>
                 )
               }
               {
                 project.source != null && (
                   <Button.LinkOutline href={project.source.api} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                    GitHub
+                    {UI.BUTTON.GITHUB}
                   </Button.LinkOutline>
                 )
               }

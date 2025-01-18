@@ -1,21 +1,23 @@
 'use client'
 import { Footer } from '@/components/Footer'
 import { NavBar } from '@/components/NavBar'
-import { links } from '@/lib/consts'
-
-const navLinks = [
-  links.home,
-  links.projectsPage,
-  links.experience,
-  links.skills,
-  links.contact
-]
+import { useLinks } from '@/hooks/useLinks'
 
 export default function ProjectsLayout ({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const { links } = useLinks()
+
+  const navLinks = [
+    links.home,
+    links.projectsPage,
+    links.experience,
+    links.skills,
+    links.contact
+  ]
+
   return (
     <>
       <NavBar links={navLinks} />

@@ -2,7 +2,8 @@
 import PersonalImage from '@/assets/luis-medina.png'
 import { Button } from '@/components/Button'
 import { NavBar } from '@/components/NavBar'
-import { links } from '@/lib/consts'
+import { useLinks } from '@/hooks/useLinks'
+import { useTranslation } from '@/hooks/useTranslation'
 import Image from 'next/image'
 import { useEffect, useState, type SyntheticEvent } from 'react'
 
@@ -22,77 +23,80 @@ const Presentation = ({ title = 'Luis José Medina Sandoval', text, children }: 
     </>
 )
 
-const presentations = [
-  (
-    <Presentation
-      key={0}
-      text="Soy ingeniero en informática y un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero muy determinado, analítico y asertivo, con un gran interés por aprender y resolver problemas."
-    >
-      <Button.Solid dark={true} size="small" onClick={() => window.open(links.contact.url, '_self')} className="mb-1 text-seasalt">
-        Contáctame
-      </Button.Solid>
-      <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="mb-1 hover:text-seasalt">
-        Descargar CV
-      </Button.Outline>
-    </Presentation>
-  ),
-  (
-    <Presentation
-      key={1}
-      title="GitHub"
-      text="Aquí encontrarás un vistazo a mis proyectos personales y laborales. Desde pequeño, me encantaron las computadoras, entenderlas y disfrutar de crear programas que resolviesen problemas. Ahora, he convertido esa pasión en mi carrera profesional."
-    >
-      <Button.Outline dark={true} size="small" onClick={() => window.open('https://github.com/luisjose1010', '_blank')} className="hover:text-seasalt">
-        GitHub
-      </Button.Outline>
-    </Presentation>
-  ),
-  (
-    <Presentation
-      key={2}
-      title="LinkedIn"
-      text="Si deseas más información sobre mis proyectos, experiencia laboral o cualquier otro tema, no dudes en visitar mi perfil en LinkedIn. Allí encontrarás toda la información necesaria para que te sientas en el lugar correcto."
-    >
-      <Button.Outline dark={true} size="small" onClick={() => window.open('https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/', '_blank')} className="hover:text-seasalt">
-        LinkedIn
-      </Button.Outline>
-    </Presentation>
-  ),
-  (
-    <Presentation
-      key={3}
-      title="Currículum Vitae"
-      text="Clickea aquí para descargar mi currículum vitae y obtener información detallada sobre mis experiencias laborales, habilidades y proyectos destacados."
-    >
-      <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="hover:text-seasalt">
-        Descargar CV
-      </Button.Outline>
-    </Presentation>
-  ),
-  (
-    <Presentation
-      key={4}
-      title="Proyectos"
-      text="A lo largo de mi carrera profesional y académica he desarrollado varios proyectos que te presento a continuación."
-    >
-      <Button.Outline dark={true} size="small" onClick={() => window.open(links.projectsPage.url, '_self')} className="hover:text-seasalt">
-        Proyectos
-      </Button.Outline>
-    </Presentation>
-  )
-]
-
-const navLinks = [
-  links.home,
-  links.projects,
-  links.experience,
-  links.skills,
-  links.contact
-]
-
 export function Header () {
+  const { APP, UI } = useTranslation()
+  const { links } = useLinks()
   const [step, setStep] = useState(0)
   const [animation, setAnimation] = useState('')
+
+  const navLinks = [
+    links.home,
+    links.projects,
+    links.experience,
+    links.skills,
+    links.contact
+  ]
+
+  const presentations = [
+    (
+      <Presentation
+        key={0}
+        title={APP.PRESENTATIONS.TITLE}
+        text={APP.PRESENTATIONS.DESCRIPTION}
+      >
+        <Button.Solid dark={true} size="small" onClick={() => window.open(links.contact.url, '_self')} className="mb-1 text-seasalt">
+          {UI.BUTTON.CONTACT_ME}
+        </Button.Solid>
+        <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="mb-1 hover:text-seasalt">
+          {UI.BUTTON.DOWNLOAD_CV}
+        </Button.Outline>
+      </Presentation>
+    ),
+    (
+      <Presentation
+        key={1}
+        title={APP.PRESENTATIONS.GITHUB_TITLE}
+        text={APP.PRESENTATIONS.GITHUB_DESCRIPTION}
+      >
+        <Button.Outline dark={true} size="small" onClick={() => window.open('https://github.com/luisjose1010', '_blank')} className="hover:text-seasalt">
+          {UI.BUTTON.GITHUB}
+        </Button.Outline>
+      </Presentation>
+    ),
+    (
+      <Presentation
+        key={2}
+        title={APP.PRESENTATIONS.LINKEDIN_TITLE}
+        text={APP.PRESENTATIONS.LINKEDIN_DESCRIPTION}
+      >
+        <Button.Outline dark={true} size="small" onClick={() => window.open('https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/', '_blank')} className="hover:text-seasalt">
+          {UI.BUTTON.LINKEDIN}
+        </Button.Outline>
+      </Presentation>
+    ),
+    (
+      <Presentation
+        key={3}
+        title={APP.PRESENTATIONS.CV_TITLE}
+        text={APP.PRESENTATIONS.CV_DESCRIPTION}
+      >
+        <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="hover:text-seasalt">
+          {UI.BUTTON.DOWNLOAD_CV}
+        </Button.Outline>
+      </Presentation>
+    ),
+    (
+      <Presentation
+        key={4}
+        title={APP.PRESENTATIONS.PROJECTS_TITLE}
+        text={APP.PRESENTATIONS.PROJECTS_DESCRIPTION}
+      >
+        <Button.Outline dark={true} size="small" onClick={() => window.open(links.projectsPage.url, '_self')} className="hover:text-seasalt">
+          {UI.BUTTON.PROJECTS}
+        </Button.Outline>
+      </Presentation>
+    )
+  ]
 
   const handleNextStep = (event?: SyntheticEvent<HTMLElement>): void => {
     event?.preventDefault()
