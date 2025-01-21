@@ -1,131 +1,131 @@
 {
   "APP": {
     "TITLE": "Luis Medina App",
-    "DESCRIPTION": "Aplicación de tipo portafolio de Luis José Medina Sandoval",
+    "DESCRIPTION": "Portfolio Application of Luis José Medina Sandoval.",
     "PRESENTATIONS": {
       "TITLE": "Luis José Medina Sandoval",
-      "DESCRIPTION": "Soy ingeniero en informática y un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial. Me considero muy determinado, analítico y asertivo, con un gran interés por aprender y resolver problemas.",
+      "DESCRIPTION": "I am a computer engineer and software developer with three years of work experience, including managing corporate software. I am very determined, analytical, and assertive, and I am passionate about learning and solving complex problems.",
       "GITHUB_TITLE": "GitHub",
-      "GITHUB_DESCRIPTION": "Aquí encontrarás un vistazo a mis proyectos personales y laborales. Desde pequeño, me encantaron las computadoras, entenderlas y disfrutar de crear programas que resolviesen problemas. Ahora, he convertido esa pasión en mi carrera profesional.",
+      "GITHUB_DESCRIPTION": "Here you will find a glimpse of my personal and professional projects. From a young age, I was fascinated by computers, understanding them, and enjoying creating programs that solved problems. Now, I have turned that passion into my professional career.",
       "LINKEDIN_TITLE": "LinkedIn",
-      "LINKEDIN_DESCRIPTION": "Si deseas más información sobre mis proyectos, experiencia laboral o cualquier otro tema, no dudes en visitar mi perfil en LinkedIn. Allí encontrarás toda la información necesaria para que te sientas en el lugar correcto.",
-      "CV_TITLE": "Currículum Vitae",
-      "CV_DESCRIPTION": "Clickea aquí para descargar mi currículum vitae y obtener información detallada sobre mis experiencias laborales, habilidades y proyectos destacados.",
-      "PROJECTS_TITLE": "Proyectos",
-      "PROJECTS_DESCRIPTION": "A lo largo de mi carrera profesional y académica he desarrollado varios proyectos que te presento a continuación."
+      "LINKEDIN_DESCRIPTION": "If you would like more information about my projects, work experience, or any other topic, please don't hesitate to visit my profile on LinkedIn. There you will find all the necessary information to help you feel informed and comfortable.",
+      "CV_TITLE": "Curriculum Vitae",
+      "CV_DESCRIPTION": "Click here to download my resume and get detailed information about my work experiences, skills, and notable projects.",
+      "PROJECTS_TITLE": "Projects",
+      "PROJECTS_DESCRIPTION": "Throughout my professional and academic career, I have developed several projects that I will be presenting to you below."
     },
     "PROJECTS": {
-      "TITLE": "Proyectos",
-      "DESCRIPTION": "Explora mi experiencia en el desarrollo de proyectos de software y soluciones web a lo largo de mi trayectoria. En la sección a continuación, encontrarás detalles sobre los trabajos más destacados que he realizado."
+      "TITLE": "Projects",
+      "DESCRIPTION": "Explore my experience in software development and web solutions throughout my career path. In the section below, you will find details about the most notable projects I have worked on."
     },
     "EXPERIENCE": {
-      "TITLE": "Experiencia laboral"
+      "TITLE": "Work Experience"
     },
     "CALL_TO_ACTION": {
-      "TITLE": "¿Tienes algo en mente?",
-      "DESCRIPTION": "No te quedes con la duda, podemos hacerlo realidad, estoy aquí para ayudarte."
+      "TITLE": "Have You Got Something In Mind?",
+      "DESCRIPTION": "Worry Less, Achieve More: Let me help you turn your ideas into reality."
     },
     "SKILLS": {
-      "TITLE": "Habilidades y tecnologías",
-      "DESCRIPTION": "Como profesional, he adquirido una amplia variedad de habilidades y experiencia con diversas tecnologías.",
-      "SKILLS_TITLE": "Habilidades",
-      "TOOLS_TITLE": "Herramientas"
+      "TITLE": "Skills and Technologies",
+      "DESCRIPTION": "As a professional, I have acquired a wide range of skills and experience with various technologies.",
+      "SKILLS_TITLE": "Skills",
+      "TOOLS_TITLE": "Tools"
     },
     "CONTACT": {
-      "TITLE": "Contacto",
-      "SUBTITLE": "CONECTEMOS IDEAS",
-      "DESCRIPTION": "¿Tiene un proyecto en mente? ¿Desea conversar alguna idea o aportar una opinión? No dude en ponerse en contacto conmigo. Estoy aquí para escuchar, responder a sus inquietudes y que juntos podamos colaborar hacía el éxito. ¡Espero atentamente su mensaje!",
-      "FORM_NAME": "Nombre",
-      "FORM_EMAIL": "Correo electrónico",
-      "FORM_PHONE": "Número telefónico",
-      "FORM_MESSAGE": "Mensaje a enviar",
-      "SUCCESS_TITLE": "Formulario enviado",
-      "SUCCESS_TEXT": "¡Gracias por tu mensaje! Estoy encantado de escucharlo. ¡Espero que podamos trabajar juntos para lograr el éxito!",
-      "LOADING_TITLE": "Enviando formulario",
-      "LOADING_TEXT": "Enviando..."
+      "TITLE": "Contact",
+      "SUBTITLE": "CONNECT WITH ME",
+      "DESCRIPTION": "Do you have a project in mind? Do you want to discuss an idea or share your opinion? Don't hesitate to contact me. I'm here to listen, address your concerns, and work together toward success. I look forward to hearing from you!",
+      "FORM_NAME": "Name",
+      "FORM_EMAIL": "Email address",
+      "FORM_PHONE": "Phone number",
+      "FORM_MESSAGE": "Message",
+      "SUCCESS_TITLE": "Form Sent",
+      "SUCCESS_TEXT": "“Thank you for your message! I'm delighted to hear from you. I look forward to working together towards success!",
+      "LOADING_TITLE": "Sending Form",
+      "LOADING_TEXT": "Sending..."
     },
     "FOOTER": {
-      "DESCRIPTION": "Soy un desarrollador de software con 3 años de experiencia laboral, incluida la gestión de software empresarial."
+      "DESCRIPTION": "I am a computer engineer and software developer with three years of work experience, including managing corporate software."
     }
   },
   "DATA": {
     "LINKS": {
       "/": {
-        "TITLE": "Inicio"
+        "TITLE": "Home"
       },
       "/#projects": {
-        "TITLE": "Proyectos"
+        "TITLE": "Projects"
       },
       "/projects": {
-        "TITLE": "Proyectos"
+        "TITLE": "Projects"
       },
       "/#experience": {
-        "TITLE": "Experiencia"
+        "TITLE": "Experience"
       },
       "/#skills": {
-        "TITLE": "Habilidades"
+        "TITLE": "Skills"
       },
       "/contact": {
-        "TITLE": "Contáctame"
+        "TITLE": "Contact me"
       }
     },
     "PROJECTS": {
       "Plataforma Crowdfunding": {
-        "TITLE": "Plataforma Crowdfunding",
-        "DESCRIPTION": "Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general."
+        "TITLE": "Crowdfunding Platform",
+        "DESCRIPTION": "A crowdfunding website based on donations to easily manage payments across various platforms and promote social impact projects in Venezuela, aiming to support and bring visibility to people from low-income backgrounds facing need, vulnerability, and other social causes."
       },
       "Romano's Pizza System": {
         "TITLE": "Romano's Pizza System",
-        "DESCRIPTION": "Un sistema de venta web responsivo para una pizzería, con todo catálogo de productos y combos disponibles de la franquicia, otorgando una interfaz accesible para el procesamiento de pedidos, la gestión de clientes y la impresión de facturas."
+        "DESCRIPTION": "A responsive web sales system for a pizzeria, featuring the entire product catalog and combos available from the franchise, providing an accessible interface for order processing, client management, and invoice printing."
       },
       "SabedeSeguros Quoters": {
         "TITLE": "SabedeSeguros Quoters",
-        "DESCRIPTION": "Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales."
+        "DESCRIPTION": "A web application that provides responsive quote generators for different types of insurance was developed as a WordPress plugin, which can be easily added to the company website. It replaces the need for local Excel files."
       },
       "Luis Medina App": {
         "TITLE": "Luis Medina App",
-        "DESCRIPTION": "Portafolio web profesional actual de mi persona."
+        "DESCRIPTION": "The current professional web portfolio with my work and capabilities."
       }
     },
     "EXPERIENCE": {
       "Sabe de Seguros | Desarrollo Web Full-Stack": {
-        "TITLE": "Sabe de Seguros | Desarrollo Web Full-Stack",
-        "DESCRIPTION": "En la empresa Sabe de Seguros, entre enero y mayo de 2024, desarrollé diversos cotizadores web responsivos para la página empresarial mediante un plugin personalizado de WordPress, utilizando PHP, MySQL, Vue y Vuetify para integrar de manera eficiente los cotizadores en la plataforma aprovechando las capacidades de gestión de contenido de WordPress para mantener actualizada la información del sitio web."
+        "TITLE": "Sabe de Seguros | Full-Stack Web Development",
+        "DESCRIPTION": "At Sabe de Seguros from January to May 2024, I developed various responsive web quote generators for the company website through a custom WordPress plugin. Leveraging PHP, MySQL, Vue, and Vuetify, I efficiently integrated these quotes into the platform, utilizing WordPress’ content management capabilities to keep the website’s information up-to-date."
       },
       "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack": {
-        "TITLE": "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack",
-        "DESCRIPTION": "En la Universidad Rafael Belloso Chacín, entre enero y abril de 2024, desarrollé mi trabajo especial de grado: una aplicación web responsive de Crowdfunding. Utilicé los frameworks FastAPI (Python), React y Bootstrap para construir esta solución web, enfocándome en la creación de una interfaz de usuario receptiva y adaptable a diferentes dispositivos."
+        "TITLE": "Rafael Belloso Chacin University | Full-Stack Web Development",
+        "DESCRIPTION": "At Rafael Belloso Chacin University from January to April 2024, I developed my undergraduate thesis project: a responsive web crowdfunding application. Using the frameworks FastAPI (Python), React, and Bootstrap, I built this web solution, focusing on creating an adaptable and user-friendly interface that is receptive to different devices."
       },
       "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes": {
-        "TITLE": "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes",
-        "DESCRIPTION": "En Regalado Group: Bienes Raíces, me desempeñé como Encargado del Departamento de Redes desde marzo de 2022, hasta septiembre de 2023. En este cargo, administré la página web comercial de la empresa, utilizando Joomla CMS como plataforma y los lenguajes PHP, HTML y CSS. Mis responsabilidades incluyeron la gestión y actualización del sitio web en general, así como la administración de los inmuebles en sistema y los datos de la empresa."
+        "TITLE": "Regalado Group: Real Estate | Network Department Manager",
+        "DESCRIPTION": "At Regalado Group: Real Estate, I served as the Network Department Manager from March 2022 to September 2023. In this role, I managed the company’s commercial website using Joomla CMS as the platform and PHP, HTML, and CSS programming languages. My responsibilities included general website management and updates, as well as administration of properties in the system and corporate data."
       },
       "SysModelers | Desarrollo Web Front-end": {
-        "TITLE": "SysModelers | Desarrollo Web Front-end",
-        "DESCRIPTION": "Durante mi tiempo como Desarrollador Web Front-end en SysModelers, entre agosto de 2021 y febrero de 2022, desarrollé interfaces gráficas amigables y accesibles utilizando la librería de componentes React y el framework de diseño CoreUI. Esto me permitió crear aplicaciones web de forma modular y eficiente, enfocándome en la experiencia del usuario y la accesibilidad."
+        "TITLE": "SysModelers | Front-End Web Development",
+        "DESCRIPTION": "As a Front-end Web Developer at SysModelers from August 2021 to February 2022, I crafted engaging and accessible UI components using React and CoreUI. This enabled me to build modular, efficient, accessible, and user-centric web applications."
       },
       "Romano's Pizza | Desarrollo Web Full-Stack": {
-        "TITLE": "Romano's Pizza | Desarrollo Web Full-Stack",
-        "DESCRIPTION": "En Romano's Pizza, entre julio de 2021 y noviembre de 2022, desarrollé un proyecto de aplicación web tipo punto de venta. Para ello, utilicé un pequeño framework personal basado en PHP, MySQL, Vue.js y Vuetify. Esta solución me permitió crear una aplicación web adaptada a las necesidades específicas del negocio de restaurantes."
+        "TITLE": "Romano's Pizza | Full-Stack Web Development",
+        "DESCRIPTION": "At Romano’s Pizza from July 2021 to November 2022, I spearheaded the development of a customized point-of-sale web application. Leveraging my custom PHP-based framework, along with MySQL, Vue.js, and Vuetify, I designed and implemented a tailored solution that met the specific needs of the restaurant"
       },
       "Corretaje de Seguros ASECA | Gestor de cotizadores Excel": {
-        "TITLE": "Corretaje de Seguros ASECA | Gestor de cotizadores Excel",
-        "DESCRIPTION": "En Corretaje de Seguros ASECA, trabajé como Gestor de Cotizadores Excel desde julio de 2021 hasta mayo de 2024. En este rol, me encargué de la creación y mantenimiento de archivos Excel para la cotización de seguros internacionales, nacionales y regionales. Mis responsabilidades incluían asegurar la precisión y actualización constante de estos cotizadores, lo que permitía a la empresa ofrecer a sus clientes una herramienta eficiente para la evaluación de diferentes planes de cobertura."
+        "TITLE": "ASECA Insurance Broker | Excel Quote Manager",
+        "DESCRIPTION": "At ASECA Insurance Broker, I worked as an Excel Quote Manager from July 2021 to May 2024. In this role, I was responsible for creating and maintaining Excel files for quotations of international, national, and regional insurance policies. My responsibilities included ensuring the accuracy and constant updating of these quotes, which allowed the company to offer its clients an efficient tool for evaluating different coverage plans."
       }
     }
   },
   "UI": {
     "BUTTON": {
-      "EXPLORE": "Explorar",
+      "EXPLORE": "Explore",
       "GITHUB": "GitHub",
-      "LIVE": "En vivo",
+      "LIVE": "Live",
       "LINKEDIN": "LinkedIn",
-      "DOWNLOAD_CV": "Descargar CV",
-      "PROJECTS": "Proyectos",
-      "CONTACT_ME": "Contáctame",
-      "ACCEPT": "Aceptar",
-      "SUBMIT": "Enviar",
-      "CLOSE": "Cerrar"
+      "DOWNLOAD_CV": "Download CV",
+      "PROJECTS": "Projects",
+      "CONTACT_ME": "Contact me",
+      "ACCEPT": "Accept",
+      "SUBMIT": "Submit",
+      "CLOSE": "Close"
     }
   }
 }
