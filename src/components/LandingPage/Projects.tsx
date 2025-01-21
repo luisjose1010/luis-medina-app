@@ -1,4 +1,4 @@
-'use client'
+'use client' // TODO: delete if possible
 import { Button } from '@/components/Button'
 import { useLinks } from '@/hooks/useLinks'
 import { useProjects } from '@/hooks/useProjects'
@@ -44,7 +44,7 @@ export function Projects () {
   return (
     <section id="projects" className="flex h-auto p-6 flex-col-reverse gap-2 text-seasalt justify-evenly items-center bg-forest bg-cover lg:p-12 xl:h-screen">
       <article className="p-6 sm:w-full lg:self-start lg:w-1/2">
-        <h2 className="text-5xl font-bold mb-3">Proyectos</h2>
+        <h2 className="text-5xl font-bold mb-3">{APP.PROJECTS.TITLE}</h2>
         <p className="mb-5">
           {APP.PROJECTS.DESCRIPTION}
         </p>
