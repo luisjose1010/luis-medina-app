@@ -27,7 +27,8 @@ export function useLanguage (): [string, (lang: string) => void] {
       newPathname
     )
 
-    setLanguageCookie(lang)
+    // Sync setting between server cookie and client context with new language
+    setLanguageCookie(newLang)
       .then(() => { setLang(newLang) })
       .catch((error) => { console.error('Error setting language: ', error) })
   }

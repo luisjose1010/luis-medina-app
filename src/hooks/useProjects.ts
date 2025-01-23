@@ -12,8 +12,6 @@ export function useProjects () {
     description: DATA.PROJECTS[project.name as ProjectKey].DESCRIPTION
   }))
 
-  console.log(mappedProjects)
-
   return {
     projects: mappedProjects
   }

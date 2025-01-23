@@ -42,7 +42,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
             <span aria-hidden="true" className={`${open ? '-rotate-45' : 'translate-y-1.5'} block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out`}></span>
           </div>
         </button>
-        <LanguageSelector className={`${!open && '-top-80'} fixed z-20 top-6 md:hidden`} />
+        <LanguageSelector className={`${!open ? '-top-10' : 'top-6'} fixed z-20 md:hidden`} />
       </article>
 
       <nav className="flex flex-grow text-sm font-bold lg:w-auto lg:justify-between max-lg:hidden items-center">
