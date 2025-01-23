@@ -1,4 +1,17 @@
-import { ContactIcon, ExperienceIcon, HomeIcon, ProjectsIcon, SkillsIcon } from '@/assets/Icons'
+import { ContactIcon, EnglishIcon, ExperienceIcon, HomeIcon, ProjectsIcon, SkillsIcon, SpanishIcon } from '@/assets/Icons'
+
+export const languages = {
+  English: {
+    name: 'English',
+    code: 'en-US',
+    Flag: EnglishIcon
+  },
+  Spanish: {
+    name: 'Español',
+    code: 'es',
+    Flag: SpanishIcon
+  }
+}
 
 export const projects: Project[] = [
   {

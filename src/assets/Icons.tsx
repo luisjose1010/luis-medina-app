@@ -134,3 +134,34 @@ export const CloseIcon = ({ ...props }): JSX.Element => {
         </svg>
   )
 }
+
+export const EnglishIcon = ({ ...props }): JSX.Element => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 7410 3900"
+    {...props}
+  >
+    <path fill="#b22234" d="M0 0h7410v3900H0z"></path><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" strokeWidth="300"></path><path fill="#3c3b6e" d="M0 0h2964v2100H0z"></path><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"></path><use y="420"></use><use y="840"></use><use y="1260"></use></g><use y="1680"></use></g><use x="247" y="210"></use></g><use x="494"></use></g><use x="988"></use><use x="1976"></use><use x="2470"></use></g>
+  </svg>
+)
+
+export const SpanishIcon = ({ ...props }): JSX.Element => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 750 500"
+    {...props}
+  >
+    <rect width="750" height="500" fill="#c60b1e"></rect><rect width="750" height="250" fill="#ffc400" y="125"></rect>
+  </svg>
+)
+
+export const ChevronIcon = ({ ...props }): JSX.Element => (
+  <svg
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    aria-hidden="true"
+    {...props}
+  >
+    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"></path>
+  </svg>
+)
