@@ -6,7 +6,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import Image from 'next/image'
 
 export function ProjectCard ({ name, description, source, live, slug, notes }: Project) {
-  const { UI } = useTranslation()
+  const { APP, UI } = useTranslation()
   const { links } = useLinks()
 
   return (
@@ -30,8 +30,8 @@ export function ProjectCard ({ name, description, source, live, slug, notes }: P
         </p>
         {
           notes != null && (
-            <p className="mt-1 text-xs leading-normal text-gray-700 opacity-75">
-              ({notes})
+            <p className="mt-2 text-xs text-gray-600">
+              <strong className="font-semibold opacity-90">({notes})</strong>
             </p>
           )
         }

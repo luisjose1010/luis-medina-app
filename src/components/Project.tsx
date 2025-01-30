@@ -31,8 +31,8 @@ export function Project ({ project, className = '' }: ProjectProps) {
         </p>
         {
           project.notes != null && (
-            <p className="mt-2 text-sm font-normal leading-normal text-gray-700 opacity-75">
-              ({project.notes})
+            <p className="mt-2 text-sm font-normal leading-normal text-gray-600">
+              <strong className="font-semibold opacity-90">({project.notes})</strong>
             </p>
           )
         }

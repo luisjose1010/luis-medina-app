@@ -18,6 +18,7 @@ export const projects: Project[] = [
     name: 'Plataforma Crowdfunding',
     description: 'Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general.',
     imagesCount: 9,
+    notes: 'Nota: Es posible que los datos tarden en cargarse la primera vez, debido a limitaciones en el host de la API',
     source: {
       app: 'https://github.com/luisjose1010/plataforma-crowdfunding',
       api: 'https://github.com/luisjose1010/plataforma-crowdfunding-api'
