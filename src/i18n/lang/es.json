@@ -73,12 +73,12 @@
       "Plataforma Crowdfunding": {
         "TITLE": "Plataforma Crowdfunding",
         "DESCRIPTION": "Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general.",
-        "NOTES": "Nota: es posible que los datos tarden en cargarse la primera vez, debido a limitaciones en el host de la API"
+        "NOTE": "Nota: es posible que los datos tarden en cargarse la primera vez, debido a limitaciones en el host de la API"
       },
       "Romano's Pizza System": {
         "TITLE": "Romano's Pizza System",
         "DESCRIPTION": "Un sistema de venta web responsivo para una pizzería, con todo catálogo de productos y combos disponibles de la franquicia, otorgando una interfaz accesible para el procesamiento de pedidos, la gestión de clientes y la impresión de facturas.",
-        "NOTES": "Credenciales de prueba: usuario 'admin' y contraseña '1234'"
+        "NOTE": "Credenciales de prueba: usuario 'admin' y contraseña '1234'"
       },
       "SabedeSeguros Quoters": {
         "TITLE": "SabedeSeguros Quoters",

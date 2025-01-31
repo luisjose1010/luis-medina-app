@@ -30,9 +30,9 @@ export function Project ({ project, className = '' }: ProjectProps) {
           {project.description}
         </p>
         {
-          project.notes != null && (
+          project.note != null && (
             <p className="mt-2 text-sm font-normal leading-normal text-gray-600">
-              <strong className="font-semibold opacity-90">({project.notes})</strong>
+              <strong className="font-bold opacity-90">{project.note}</strong>
             </p>
           )
         }

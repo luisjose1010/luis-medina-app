@@ -73,12 +73,12 @@
       "Plataforma Crowdfunding": {
         "TITLE": "Crowdfunding Platform",
         "DESCRIPTION": "A crowdfunding website based on donations to easily manage payments across various platforms and promote social impact projects in Venezuela, aiming to support and bring visibility to people from low-income backgrounds facing need, vulnerability, and other social causes.",
-        "NOTES": "Note: Data may be slow to load for the first time, due to limitations on the API host"
+        "NOTE": "Note: Data may be slow to load for the first time, due to limitations on the API host"
       },
       "Romano's Pizza System": {
         "TITLE": "Romano's Pizza System",
         "DESCRIPTION": "A responsive web sales system for a pizzeria, featuring the entire product catalog and combos available from the franchise, providing an accessible interface for order processing, client management, and invoice printing.",
-        "NOTES": "Test credentials: user 'admin' and password '1234'"
+        "NOTE": "Test credentials: user 'admin' and password '1234'"
       },
       "SabedeSeguros Quoters": {
         "TITLE": "SabedeSeguros Quoters",

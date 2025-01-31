@@ -1,29 +1,28 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { projects } from '@/lib/consts'
 
+interface ProjectTranslation {
+  TITLE: string
+  DESCRIPTION: string
+  NOTE?: string
+}
+
+type ProjectsTranslation = Record<string, ProjectTranslation>
+
 export function useProjects () {
   const { DATA } = useTranslation()
+  const projectsTranslation = DATA.PROJECTS as ProjectsTranslation
 
-  type ProjectKey = keyof typeof DATA.PROJECTS
-
-  const mappedProjects = projects.map(project => {
-    if (!DATA.PROJECTS[project.name as ProjectKey]?.NOTES != null) {
-      return {
-        ...project,
-        name: DATA.PROJECTS[project.name as ProjectKey].TITLE,
-        description: DATA.PROJECTS[project.name as ProjectKey].DESCRIPTION,
-        notes: DATA.PROJECTS[project.name as ProjectKey].NOTES
-      }
-    }
+  const mappedProjects = projects.map((project) => {
+    const translation = projectsTranslation[project.name]
 
     return {
       ...project,
-      name: DATA.PROJECTS[project.name as ProjectKey].TITLE,
-      description: DATA.PROJECTS[project.name as ProjectKey].DESCRIPTION
+      name: translation.TITLE,
+      description: translation.DESCRIPTION,
+      ...(translation?.NOTE != null && { note: translation.NOTE })
     }
   })
-
-  console.log(mappedProjects)
 
   return {
     projects: mappedProjects
