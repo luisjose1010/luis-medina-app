@@ -1,7 +1,7 @@
 'use client' // TODO: delete if possible
-import { Button } from '@/components/Button'
 import { Gallery } from '@/components/Gallery'
 import { useTranslation } from '@/hooks/useTranslation'
+import { LinkSection } from '@/components/LinkSection'
 
 interface ProjectProps {
   project: Project
@@ -9,7 +9,13 @@ interface ProjectProps {
 }
 
 export function Project ({ project, className = '' }: ProjectProps) {
-  const { UI } = useTranslation()
+  const { APP } = useTranslation()
+
+  const appLinks = project.links.filter(link => link.type === 'app')
+  const apiLinks = project.links.filter(link => link.type === 'api')
+  const fullstackLinks = project.links.filter(link => link.type === 'fullstack')
+  const presentationLinks = project.links.filter(link => link.type === 'presentation')
+  const otherLinks = project.links.filter(link => link.type === 'other')
 
   return (
     <article className={`${className}`}>
@@ -37,54 +43,22 @@ export function Project ({ project, className = '' }: ProjectProps) {
           )
         }
       </section>
-      <section className="ml-5">
-        <h3 className="text-base font-medium leading-relaxed text-caribbean_current-100">
-          App:
-        </h3>
-        <div className="flex flex-wrap justify-start gap-2 lg:gap-4">
-          {
-            project.live != null && (
-              <Button.LinkSolid href={typeof project.live === 'string' ? project.live : project.live?.app} dark={true} target="_blank" className="text-seasalt">
-                {UI.BUTTON.LIVE}
-              </Button.LinkSolid>
-            )
-          }
-          {
-            project.source != null && (
-              <Button.LinkOutline href={typeof project.source === 'string' ? project.source : project.source?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                {UI.BUTTON.GITHUB}
-              </Button.LinkOutline>
-            )
-          }
-        </div>
-      </section>
 
-      {
-        (typeof project.live !== 'string' && typeof project.source !== 'string') &&
-        (typeof project.live !== 'undefined' && typeof project.source !== 'undefined') && (
-          <section className="mt-3 ml-5">
-            <h3 className="text-base font-medium leading-relaxed text-caribbean_current-100">
-              API:
-            </h3>
-            <div className="flex flex-wrap justify-start gap-2 lg:gap-4">
-              {
-                project.live != null && (
-                  <Button.LinkSolid href={project.live.api} dark={true} target="_blank" className="text-seasalt">
-                    {UI.BUTTON.LIVE}
-                  </Button.LinkSolid>
-                )
-              }
-              {
-                project.source != null && (
-                  <Button.LinkOutline href={project.source.api} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                    {UI.BUTTON.GITHUB}
-                  </Button.LinkOutline>
-                )
-              }
-            </div>
-          </section>
-        )
-      }
+      {/* App Links Section */}
+      <LinkSection title={APP.PROJECT.APP_LINKS} links={appLinks} className="ml-5" />
+
+      {/* API Links Section */}
+      <LinkSection title={APP.PROJECT.API_LINKS} links={apiLinks} className="ml-5" />
+
+      {/* Monorepo Links Section */}
+      <LinkSection title={APP.PROJECT.FULLSTACK_LINKS} links={fullstackLinks} className="ml-5" />
+
+      {/* Presentation Links Section */}
+      <LinkSection title={APP.PROJECT.PRESENTATION_LINKS} links={presentationLinks} className="ml-5" />
+
+      {/* Other Links Section */}
+      <LinkSection title={APP.PROJECT.OTHERS_LINKS} links={otherLinks} className="ml-5" />
+
       <section className='p-6'>
         Tags: {
           project.tags.map((tag, index) => (

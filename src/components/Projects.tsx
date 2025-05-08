@@ -5,9 +5,10 @@ import { useProjects } from '@/hooks/useProjects'
 import { useTranslation } from '@/hooks/useTranslation'
 import Image from 'next/image'
 
-export function ProjectCard ({ name, description, source, live, slug, note }: Project) {
+export function ProjectCard ({ name, description, links: projectLinks, slug, note }: Project) {
   const { UI } = useTranslation()
   const { links } = useLinks()
+  const projectLink = projectLinks[0]
 
   return (
     <article className="relative flex flex-col justify-between p-4 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
@@ -40,20 +41,14 @@ export function ProjectCard ({ name, description, source, live, slug, note }: Pr
         <Button.LinkSolid href={`${links.projectsPage.url}/${slug}`} dark={true} className="text-seasalt">
           {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
-        {/* If not live and source not undefined, then source */}
-        {
-          live != null
-            ? (
-              <Button.LinkOutline href={typeof live === 'string' ? live : live?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                {UI.BUTTON.LIVE}
-              </Button.LinkOutline>
-              )
-            : source != null && (
-              <Button.LinkOutline href={typeof source === 'string' ? source : source?.app} dark={true} target="_blank" className="text-caribbean_current hover:text-seasalt">
-                {UI.BUTTON.GITHUB}
-              </Button.LinkOutline>
-            )
-        }
+        <Button.LinkOutline
+          href={projectLink.url}
+          dark={true}
+          target="_blank"
+          className="text-caribbean_current hover:text-seasalt"
+        >
+          {projectLink.label}
+        </Button.LinkOutline>
       </section>
     </article>
   )

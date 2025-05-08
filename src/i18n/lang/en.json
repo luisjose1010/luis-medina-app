@@ -18,6 +18,13 @@
       "TITLE": "Projects",
       "DESCRIPTION": "Explore my experience in software development and web solutions throughout my career path. In the section below, you will find details about the most notable projects I have worked on."
     },
+    "PROJECT": {
+      "APP_LINKS": "App",
+      "API_LINKS": "API",
+      "FULLSTACK_LINKS": "Full-Stack App",
+      "PRESENTATION_LINKS": "Presentation",
+      "OTHERS_LINKS": "Others"
+    },
     "EXPERIENCE": {
       "TITLE": "Work Experience"
     },
@@ -127,7 +134,8 @@
       "CONTACT_ME": "Contact me",
       "ACCEPT": "Accept",
       "SUBMIT": "Submit",
-      "CLOSE": "Close"
+      "CLOSE": "Close",
+      "API_DOCS": "API Docs"
     }
   }
 }

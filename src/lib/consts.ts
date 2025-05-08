@@ -19,14 +19,13 @@ export const projects: Project[] = [
     description: 'Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general.',
     imagesCount: 9,
     note: 'Nota: es posible que los datos tarden en cargarse la primera vez, debido a limitaciones en el host de la API',
-    source: {
-      app: 'https://github.com/luisjose1010/plataforma-crowdfunding',
-      api: 'https://github.com/luisjose1010/plataforma-crowdfunding-api'
-    },
-    live: {
-      app: 'https://plataforma-crowdfunding.vercel.app/',
-      api: 'https://plataforma-crowdfunding-api.onrender.com/docs'
-    },
+    links: [
+      { type: 'app', label: 'LIVE', url: 'https://plataforma-crowdfunding.vercel.app/', isSolidButton: true },
+      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/plataforma-crowdfunding' },
+      { type: 'api', label: 'LIVE', url: 'https://plataforma-crowdfunding-api.onrender.com/', isSolidButton: true },
+      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/plataforma-crowdfunding-api' },
+      { type: 'api', label: 'API_DOCS', url: 'https://plataforma-crowdfunding-api.onrender.com/docs' }
+    ],
     slug: 'plataforma-crowdfunding',
     tags: ['JavaScript', 'React', 'Python', 'FastAPI', 'SQLAlchemy', 'Bootstrap', 'Styled Components']
   },
@@ -35,8 +34,10 @@ export const projects: Project[] = [
     description: 'Un sistema de venta web responsivo para una pizzería, con todo catálogo de productos y combos disponibles de la franquicia, otorgando una interfaz accesible para el procesamiento de pedidos, la gestión de clientes y la impresión de facturas.',
     imagesCount: 6,
     note: "Credenciales de prueba: usuario 'admin' y contraseña '1234'",
-    source: 'https://github.com/luisjose1010/romanos-system',
-    live: 'http://romanos-system.atwebpages.com/',
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'http://romanos-system.atwebpages.com/', isSolidButton: true },
+      { type: 'fullstack', label: 'GITHUB', url: 'https://github.com/luisjose1010/romanos-system' }
+    ],
     slug: 'romanos-system',
     tags: ['JavaScript', 'VueJS', 'PHP', 'Vite', 'Vuetify', 'Composer', 'Eloquent/Laravel']
   },
@@ -44,14 +45,12 @@ export const projects: Project[] = [
     name: 'SabedeSeguros Quoters',
     description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
     imagesCount: 9,
-    live: {
-      app: 'https://sabedeseguros.com/cotizacion/',
-      api: 'https://sabedeseguros.com/wp-json/sq/v1'
-    },
-    source: {
-      app: 'https://github.com/luisjose1010/sabedeseguros-app',
-      api: 'https://github.com/luisjose1010/sabedese-quoters'
-    },
+    links: [
+      { type: 'app', label: 'LIVE', url: 'https://sabedeseguros.com/cotizacion/', isSolidButton: true },
+      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedeseguros-app' },
+      { type: 'api', label: 'LIVE', url: 'https://sabedeseguros.com/wp-json/sq/v1', isSolidButton: true },
+      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedese-quoters' }
+    ],
     slug: 'sabedeseguros-quoters',
     tags: ['JavaScript', 'VueJS', 'PHP', 'Wordpress', 'Vite', 'Vuetify']
   },
@@ -59,8 +58,10 @@ export const projects: Project[] = [
     name: 'Luis Medina App',
     description: 'Portafolio web profesional actual de mi persona.',
     imagesCount: 3,
-    source: 'https://github.com/luisjose1010/luis-medina-app',
-    live: 'https://luis-medina-app.vercel.app/',
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'https://luis-medina-app.vercel.app/', isSolidButton: true },
+      { type: 'fullstack', label: 'GITHUB', url: 'https://github.com/luisjose1010/luis-medina-app' }
+    ],
     slug: 'luis-medina-app',
     tags: ['TypeScript', 'React', 'NextJS', 'TailwindCSS']
   }

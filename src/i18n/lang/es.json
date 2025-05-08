@@ -18,6 +18,13 @@
       "TITLE": "Proyectos",
       "DESCRIPTION": "Explora mi experiencia en el desarrollo de proyectos de software y soluciones web a lo largo de mi trayectoria. En la sección a continuación, encontrarás detalles sobre los trabajos más destacados que he realizado."
     },
+    "PROJECT": {
+      "APP_LINKS": "Aplicación",
+      "API_LINKS": "API",
+      "FULLSTACK_LINKS": "Aplicación Full-Stack",
+      "PRESENTATION_LINKS": "Presentación",
+      "OTHERS_LINKS": "Otros"
+    },
     "EXPERIENCE": {
       "TITLE": "Experiencia laboral"
     },
@@ -127,7 +134,8 @@
       "CONTACT_ME": "Contáctame",
       "ACCEPT": "Aceptar",
       "SUBMIT": "Enviar",
-      "CLOSE": "Cerrar"
+      "CLOSE": "Cerrar",
+      "API_DOCS": "API Docs"
     }
   }
 }

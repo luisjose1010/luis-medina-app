@@ -1,9 +1,15 @@
+interface ProjectLink {
+  type: 'app' | 'api' | 'fullstack' | 'presentation' | 'other'
+  label: string
+  url: string
+  isSolidButton?: boolean
+}
+
 interface Project {
   name: string
   description: string
   note?: string
-  source?: string | { app: string, api: string }
-  live?: string | { app: string, api: string }
+  links: ProjectLink[]
   imagesCount: number
   slug: string
   tags: string[]
