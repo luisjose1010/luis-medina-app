@@ -24,9 +24,9 @@ export function useProjects () {
 
     return {
       ...project,
-      name: translation.TITLE,
-      description: translation.DESCRIPTION,
-      ...(translation?.NOTE != null && { note: translation.NOTE }),
+      name: translation?.TITLE, // Optional chaining operator to handle missing translations
+      description: translation?.DESCRIPTION, // Optional chaining operator to handle missing translations
+      ...(translation?.NOTE != null && { note: translation.NOTE }), // Avoid send undefined key if not provided
       links: translatedLinks
     }
   })
