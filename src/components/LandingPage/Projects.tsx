@@ -12,6 +12,7 @@ interface ProjectProps {
 function ProjectCard ({ project, className = '' }: ProjectProps) {
   const { UI } = useTranslation()
   const { links } = useLinks()
+  const projectLink = project.links[0]
 
   return (
     <article className={`flex flex-col justify-between gap-4 bg-caribbean_current text-seasalt rounded-2xl shadow-md p-6 transition ${className}`}>
@@ -24,13 +25,14 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
         <Button.LinkSolid href={`${links.projectsPage.url}/${project.slug}`} size="small" className="text-caribbean_current">
           {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
-        {
-          project.source != null && (
-            <Button.LinkOutline size="small" href={typeof project.source === 'string' ? project.source : project.source?.app} target="_blank" className="hover:text-caribbean_current">
-              {UI.BUTTON.GITHUB}
-            </Button.LinkOutline>
-          )
-        }
+        <Button.LinkOutline
+          size="small"
+          href={projectLink.url}
+          target="_blank"
+          className="hover:text-caribbean_current"
+        >
+          {projectLink.label}
+        </Button.LinkOutline>
       </section>
     </article>
   )
