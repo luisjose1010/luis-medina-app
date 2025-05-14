@@ -40,11 +40,11 @@ body {
 
 /* Background images */
 .bg-forest {
-  background-image: url('./../forest.jpg');
+  background-image: url('./../forest.webp');
 }
 
 .bg-clouds {
-  background-image: url('./../clouds.png');
+  background-image: url('./../clouds.webp');
 }
 
 

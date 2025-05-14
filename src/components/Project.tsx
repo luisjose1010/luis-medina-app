@@ -23,7 +23,7 @@ export function Project ({ project, className = '' }: ProjectProps) {
         Array.from({
           length: project.imagesCount
         },
-        (_, i) => `/assets/projects/${project.slug}/${i + 1}.png`
+        (_, i) => `/assets/projects/${project.slug}/${i + 1}.webp`
         )
       } />
       <section className="p-6">

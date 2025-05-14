@@ -1,5 +1,5 @@
 'use client'
-import PersonalImage from '@/assets/luis-medina.png'
+import PersonalImage from '@/assets/luis-medina.webp'
 import { Button } from '@/components/Button'
 import { NavBar } from '@/components/NavBar'
 import { useLinks } from '@/hooks/useLinks'
