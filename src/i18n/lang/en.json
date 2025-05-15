@@ -94,6 +94,10 @@
       "Luis Medina App": {
         "TITLE": "Luis Medina App",
         "DESCRIPTION": "The current professional web portfolio with my work and capabilities."
+      },
+      "Tomodachi App": {
+        "TITLE": "Tomodachi App",
+        "DESCRIPTION": "A comprehensive web platform for event management, facilitating ticket, stand, and sponsorship sales. It enables detailed event creation with itineraries, management of ticket types with promotions, and a billing and transaction system. It includes user and role management, along with a dashboard for administering attendees, exhibitors, and sponsors."
       }
     },
     "EXPERIENCE": {

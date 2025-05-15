@@ -64,6 +64,19 @@ export const projects: Project[] = [
     ],
     slug: 'luis-medina-app',
     tags: ['TypeScript', 'React', 'NextJS', 'TailwindCSS']
+  },
+  {
+    name: 'Tomodachi App',
+    description: 'Una plataforma web para la gestión integral de eventos, facilitando la venta de entradas, stands y patrocinios. Permite la creación detallada de eventos con itinerarios, la gestión de tipos de tickets con promociones, y un sistema de facturación y transacciones. Incluye gestión de usuarios y roles, y un panel para administrar asistentes, expositores y patrocinadores.',
+    imagesCount: 8,
+    links: [
+      { type: 'app', label: 'LIVE', url: 'https://tomodachi-app.vercel.app/', isSolidButton: true },
+      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-app' },
+      { type: 'api', label: 'LIVE', url: 'https://tomodachi-app.vercel.app/', isSolidButton: true },
+      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-api' }
+    ],
+    slug: 'tomodachi-app',
+    tags: ['TypeScript', 'React', 'Vite', 'TailwindCSS', 'Node.js', 'Express']
   }
 ]
 
