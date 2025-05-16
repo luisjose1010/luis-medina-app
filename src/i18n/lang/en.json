@@ -98,6 +98,10 @@
       "Tomodachi App": {
         "TITLE": "Tomodachi App",
         "DESCRIPTION": "A comprehensive web platform for event management, facilitating ticket, stand, and sponsorship sales. It enables detailed event creation with itineraries, management of ticket types with promotions, and a billing and transaction system. It includes user and role management, along with a dashboard for administering attendees, exhibitors, and sponsors."
+      },
+      "Cognitive Monitoring App": {
+        "TITLE": "Cognitive Monitoring App",
+        "DESCRIPTION": "Mobile application developed as a technical test, focusing on the design and implementation of a cognitive monitoring dashboard using React Native. It includes modules for viewing progress, performance, and a user profile, offering an intuitive experience for tracking cognitive metrics."
       }
     },
     "EXPERIENCE": {
@@ -139,7 +143,9 @@
       "ACCEPT": "Accept",
       "SUBMIT": "Submit",
       "CLOSE": "Close",
-      "API_DOCS": "API Docs"
+      "API_DOCS": "API Docs",
+      "FIGMA": "Figma",
+      "PROTOTYPE": "Prototype"
     }
   }
 }

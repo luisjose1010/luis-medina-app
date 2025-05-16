@@ -77,6 +77,19 @@ export const projects: Project[] = [
     ],
     slug: 'tomodachi-app',
     tags: ['TypeScript', 'React', 'Vite', 'TailwindCSS', 'Node.js', 'Express']
+  },
+  {
+    name: 'Cognitive Monitoring App',
+    description: 'Aplicación móvil desarrollada como una prueba técnica, enfocada en el diseño y la implementación de un dashboard de monitoreo cognitivo utilizando React Native. Incluye módulos para visualizar el progreso, el rendimiento y un perfil de usuario, ofreciendo una experiencia intuitiva para el seguimiento de métricas cognitivas.',
+    imagesCount: 10,
+    links: [
+      { type: 'presentation', label: 'PROTOTYPE', url: 'https://www.figma.com/proto/v6iKAEnCPmwtclhkpuabqS/Cognitive-Monitoring-App?node-id=0-1&t=fqnkUUtceUgOBknI-1', isSolidButton: true },
+      { type: 'presentation', label: 'GITHUB', url: 'https://github.com/luisjose1010/prueba-tecnica-pulpoline' },
+      { type: 'app', label: 'FIGMA', url: 'https://www.figma.com/design/v6iKAEnCPmwtclhkpuabqS/Cognitive-Monitoring-App?node-id=0-1&t=fqnkUUtceUgOBknI-1', isSolidButton: true },
+      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/cogni-app' }
+    ],
+    slug: 'cognitive-monitoring-app',
+    tags: ['TypeScript', 'React Native', 'Figma', 'Expo', 'Android SDK']
   }
 ]
 

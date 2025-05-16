@@ -124,6 +124,10 @@
       "Corretaje de Seguros ASECA | Gestor de cotizadores Excel": {
         "TITLE": "Corretaje de Seguros ASECA | Gestor de cotizadores Excel",
         "DESCRIPTION": "En Corretaje de Seguros ASECA, trabajé como Gestor de Cotizadores Excel desde julio de 2021 hasta mayo de 2024. En este rol, me encargué de la creación y mantenimiento de archivos Excel para la cotización de seguros internacionales, nacionales y regionales. Mis responsabilidades incluían asegurar la precisión y actualización constante de estos cotizadores, lo que permitía a la empresa ofrecer a sus clientes una herramienta eficiente para la evaluación de diferentes planes de cobertura."
+      },
+      "Cognitive Monitoring App": {
+        "TITLE": "Cognitive Monitoring App",
+        "DESCRIPTION": "Aplicación móvil desarrollada como una prueba técnica, enfocada en el diseño y la implementación de un dashboard de monitoreo cognitivo utilizando React Native. Incluye módulos para visualizar el progreso, el rendimiento y un perfil de usuario, ofreciendo una experiencia intuitiva para el seguimiento de métricas cognitivas."
       }
     }
   },
@@ -139,7 +143,9 @@
       "ACCEPT": "Aceptar",
       "SUBMIT": "Enviar",
       "CLOSE": "Cerrar",
-      "API_DOCS": "API Docs"
+      "API_DOCS": "API Docs",
+      "FIGMA": "Figma",
+      "PROTOTYPE": "Prototipo"
     }
   }
 }
