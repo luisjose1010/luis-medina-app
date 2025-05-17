@@ -63,7 +63,7 @@ export const projects: Project[] = [
       { type: 'fullstack', label: 'GITHUB', url: 'https://github.com/luisjose1010/luis-medina-app' }
     ],
     slug: 'luis-medina-app',
-    tags: ['TypeScript', 'React', 'NextJS', 'TailwindCSS']
+    tags: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS']
   },
   {
     name: 'Tomodachi App',
@@ -72,11 +72,11 @@ export const projects: Project[] = [
     links: [
       { type: 'app', label: 'LIVE', url: 'https://tomodachi-app.vercel.app/', isSolidButton: true },
       { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-app' },
-      { type: 'api', label: 'LIVE', url: 'https://tomodachi-app.vercel.app/', isSolidButton: true },
+      { type: 'api', label: 'LIVE', url: 'https://tomodachi-api.vercel.app/', isSolidButton: true },
       { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-api' }
     ],
     slug: 'tomodachi-app',
-    tags: ['TypeScript', 'React', 'Vite', 'TailwindCSS', 'Node.js', 'Express']
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express']
   },
   {
     name: 'Cognitive Monitoring App',
