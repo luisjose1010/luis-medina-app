@@ -44,6 +44,9 @@ export function Project ({ project, className = '' }: ProjectProps) {
         }
       </section>
 
+      {/* Presentation Links Section */}
+      <LinkSection title={APP.PROJECT.PRESENTATION_LINKS} links={presentationLinks} className="ml-5" />
+
       {/* App Links Section */}
       <LinkSection title={APP.PROJECT.APP_LINKS} links={appLinks} className="ml-5" />
 
@@ -52,9 +55,6 @@ export function Project ({ project, className = '' }: ProjectProps) {
 
       {/* Monorepo Links Section */}
       <LinkSection title={APP.PROJECT.FULLSTACK_LINKS} links={fullstackLinks} className="ml-5" />
-
-      {/* Presentation Links Section */}
-      <LinkSection title={APP.PROJECT.PRESENTATION_LINKS} links={presentationLinks} className="ml-5" />
 
       {/* Other Links Section */}
       <LinkSection title={APP.PROJECT.OTHERS_LINKS} links={otherLinks} className="ml-5" />
