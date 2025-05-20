@@ -36,16 +36,24 @@ export function Gallery ({ images }: GalleryProps) {
   })
 
   return (
-    <article className='mx-auto overflow-hidden relative rounded-xl w-full lg:w-1/2'>
+    <article className='mx-auto bg-gray-200 overflow-hidden relative rounded-xl w-full lg:w-1/2 aspect-[16/10]'>
       <section
-        className="flex transition ease-out duration-200"
+        className="flex h-full transition ease-out duration-200"
         style={{
           transform: `translateX(-${current * 100}%)`
         }}
       >
         {
-          images.map((src) => (
-            <Image priority={true} key={src} src={src} width={1680} height={1050} alt="" className='w-full' />
+          images.map((src, index) => (
+            <div key={src} className="w-full h-full flex-shrink-0 relative">
+              <Image
+                fill
+                priority={index === current}
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="object-contain"
+              />
+            </div>
           ))
         }
       </section>

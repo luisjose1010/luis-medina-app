@@ -12,12 +12,13 @@ export function ProjectCard ({ name, description, links: projectLinks, slug, not
 
   return (
     <article className="relative flex flex-col justify-between p-4 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
-      <section className="relative mx-4 mt-4 overflow-hidden text-gray-700  bg-white bg-clip-border rounded-xl">
+      <section className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-gray-200 bg-clip-border rounded-xl">
         <Image
           src={`/assets/projects/${slug}/1.webp`}
           width={1680}
           height={1050}
           alt={name}
+          className="object-contain aspect-[16/10]"
         />
       </section>
       <section className="p-6">
