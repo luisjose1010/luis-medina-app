@@ -55,17 +55,6 @@ export const projects: Project[] = [
     tags: ['JavaScript', 'VueJS', 'PHP', 'Wordpress', 'Vite', 'Vuetify']
   },
   {
-    name: 'Luis Medina App',
-    description: 'Portafolio web profesional actual de mi persona.',
-    imagesCount: 3,
-    links: [
-      { type: 'fullstack', label: 'LIVE', url: 'https://luis-medina-app.vercel.app/', isSolidButton: true },
-      { type: 'fullstack', label: 'GITHUB', url: 'https://github.com/luisjose1010/luis-medina-app' }
-    ],
-    slug: 'luis-medina-app',
-    tags: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS']
-  },
-  {
     name: 'Tomodachi App',
     description: 'Una plataforma web para la gestión integral de eventos, facilitando la venta de entradas, stands y patrocinios. Permite la creación detallada de eventos con itinerarios, la gestión de tipos de tickets con promociones, y un sistema de facturación y transacciones. Incluye gestión de usuarios y roles, y un panel para administrar asistentes, expositores y patrocinadores.',
     imagesCount: 8,
@@ -90,6 +79,16 @@ export const projects: Project[] = [
     ],
     slug: 'cognitive-monitoring-app',
     tags: ['TypeScript', 'React Native', 'Figma', 'Expo', 'Android SDK']
+  }, {
+    name: 'Luis Medina App',
+    description: 'Portafolio web profesional actual de mi persona.',
+    imagesCount: 3,
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'https://luis-medina-app.vercel.app/', isSolidButton: true },
+      { type: 'fullstack', label: 'GITHUB', url: 'https://github.com/luisjose1010/luis-medina-app' }
+    ],
+    slug: 'luis-medina-app',
+    tags: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS']
   }
 ]
 
