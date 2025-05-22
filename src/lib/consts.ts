@@ -46,9 +46,9 @@ export const projects: Project[] = [
     description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
     imagesCount: 9,
     links: [
-      { type: 'app', label: 'LIVE', url: 'https://sabedeseguros.com/cotizacion/', isSolidButton: true },
+      { type: 'app', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/', isSolidButton: true },
       { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedeseguros-app' },
-      { type: 'api', label: 'LIVE', url: 'https://sabedeseguros.com/wp-json/sq/v1', isSolidButton: true },
+      { type: 'api', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/wp-json/sq/v1', isSolidButton: true },
       { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedese-quoters' }
     ],
     slug: 'sabedeseguros-quoters',
