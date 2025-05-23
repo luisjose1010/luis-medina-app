@@ -18,5 +18,6 @@ interface Project {
 interface NavLink {
   name: string
   url: string
+  target?: string
   Icon: ({ ...props }: Record<string, any>) => JSX.Element
 }

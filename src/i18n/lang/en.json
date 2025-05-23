@@ -72,6 +72,9 @@
       "/#skills": {
         "TITLE": "Skills"
       },
+      "/assets/luis-medina-cv.pdf": {
+        "TITLE": "Download CV"
+      },
       "/contact": {
         "TITLE": "Contact me"
       }

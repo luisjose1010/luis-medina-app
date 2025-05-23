@@ -48,7 +48,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
       <nav className="flex flex-grow text-sm font-bold lg:w-auto lg:justify-between max-lg:hidden items-center">
         {
           links?.map((link, index) => (
-            <Link key={index} href={link.url}>
+            <Link key={index} href={link.url} target={link.target ?? '_self'}>
               <span className="transition duration-300 ease-in-out hover:text-caribbean_current-800">{link.name}</span>
             </Link>
           ))
@@ -66,7 +66,9 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
           links?.map((link, index) => (
             <Link
               ref={index === 0 ? linkRef : null}
-              key={index} href={link.url}
+              key={index}
+              href={link.url}
+              target={link.target ?? '_self'}
               className="flex aspect-square min-h-[32px] w-20 flex-col items-center justify-center gap-1 rounded-md p-1.5 transition duration-300 ease-in-out text-caribbean_current hover:bg-caribbean_current hover:text-seasalt hover:scale-105"
             >
               <link.Icon className="w-16 h-16" />

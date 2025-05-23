@@ -11,6 +11,7 @@ export default function Home () {
     links.projects,
     links.experience,
     links.skills,
+    links.cv,
     links.contact
   ]
 

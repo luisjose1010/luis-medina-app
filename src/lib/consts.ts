@@ -1,4 +1,4 @@
-import { ContactIcon, EnglishIcon, ExperienceIcon, HomeIcon, ProjectsIcon, SkillsIcon, SpanishIcon } from '@/assets/Icons'
+import { ContactIcon, CVIcon, EnglishIcon, ExperienceIcon, HomeIcon, ProjectsIcon, SkillsIcon, SpanishIcon } from '@/assets/Icons'
 
 export const languages = {
   English: {
@@ -125,12 +125,13 @@ export const experience = [
   }
 ]
 
-export const links = {
+export const links: Record<string, NavLink> = {
   home: { name: 'Inicio', url: '/', Icon: HomeIcon },
   projects: { name: 'Proyectos', url: '/#projects', Icon: ProjectsIcon },
   projectsPage: { name: 'Proyectos', url: '/projects', Icon: ProjectsIcon },
   experience: { name: 'Experiencia', url: '/#experience', Icon: ExperienceIcon },
   skills: { name: 'Habilidades', url: '/#skills', Icon: SkillsIcon },
+  cv: { name: 'Descargar CV', url: '/assets/luis-medina-cv.pdf', target: '_blank', Icon: CVIcon },
   contact: { name: 'Contáctame', url: '/contact', Icon: ContactIcon }
 }
 

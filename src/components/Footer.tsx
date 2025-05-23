@@ -13,7 +13,7 @@ export function Footer ({ links }: FooterProps) {
       <section className="flex gap-3 md:gap-8 max-md:flex-wrap max-lg:py-3">
         {
           links.map((link, index) => (
-            <Link key={index} href={link.url}>
+            <Link key={index} href={link.url} target={link.target ?? '_self'}>
               <span className="text-xs tracking-widest transition duration-300 ease-in-out hover:text-caribbean_current-800">
                 {link.name.toLocaleUpperCase()}
               </span>

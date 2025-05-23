@@ -15,6 +15,7 @@ export default function ProjectsLayout ({
     links.projectsPage,
     links.experience,
     links.skills,
+    links.cv,
     links.contact
   ]
 

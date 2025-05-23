@@ -34,6 +34,7 @@ export function Header () {
     links.projects,
     links.experience,
     links.skills,
+    links.cv,
     links.contact
   ]
 
@@ -47,7 +48,7 @@ export function Header () {
         <Button.Solid dark={true} size="small" onClick={() => window.open(links.contact.url, '_self')} className="mb-1 text-seasalt">
           {UI.BUTTON.CONTACT_ME}
         </Button.Solid>
-        <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="mb-1 hover:text-seasalt">
+        <Button.Outline dark={true} size="small" onClick={() => window.open(links.cv.url, '_blank')} className="mb-1 hover:text-seasalt">
           {UI.BUTTON.DOWNLOAD_CV}
         </Button.Outline>
       </Presentation>
@@ -80,7 +81,7 @@ export function Header () {
         title={APP.PRESENTATIONS.CV_TITLE}
         text={APP.PRESENTATIONS.CV_DESCRIPTION}
       >
-        <Button.Outline dark={true} size="small" onClick={() => window.open('/assets/luis-medina-cv.pdf', '_blank')} className="hover:text-seasalt">
+        <Button.Outline dark={true} size="small" onClick={() => window.open(links.cv.url, '_blank')} className="hover:text-seasalt">
           {UI.BUTTON.DOWNLOAD_CV}
         </Button.Outline>
       </Presentation>
