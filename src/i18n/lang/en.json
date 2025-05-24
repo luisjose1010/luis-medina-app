@@ -92,7 +92,8 @@
       },
       "SabedeSeguros Quoters": {
         "TITLE": "SabedeSeguros Quoters",
-        "DESCRIPTION": "A web application that provides responsive quote generators for different types of insurance was developed as a WordPress plugin, which can be easily added to the company website. It replaces the need for local Excel files."
+        "DESCRIPTION": "A web application that provides responsive quote generators for different types of insurance was developed as a WordPress plugin, which can be easily added to the company website. It replaces the need for local Excel files.",
+        "NOTE": "Note: The live application runs on a demo page. Images reflect the project's original appearance and functionality on the company's now inactive website"
       },
       "Luis Medina App": {
         "TITLE": "Luis Medina App",

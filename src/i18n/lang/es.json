@@ -92,7 +92,8 @@
       },
       "SabedeSeguros Quoters": {
         "TITLE": "SabedeSeguros Quoters",
-        "DESCRIPTION": "Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales."
+        "DESCRIPTION": "Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.",
+        "NOTE": "Nota: La aplicación en vivo opera desde una página de demostración. Las imágenes reflejan la apariencia y funcionalidad original del proyecto en el sitio web de la empresa, el cual se encuentra inactivo"
       },
       "Luis Medina App": {
         "TITLE": "Luis Medina App",
