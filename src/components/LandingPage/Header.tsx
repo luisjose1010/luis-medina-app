@@ -70,7 +70,7 @@ export function Header () {
         title={APP.PRESENTATIONS.LINKEDIN_TITLE}
         text={APP.PRESENTATIONS.LINKEDIN_DESCRIPTION}
       >
-        <Button.Outline dark={true} size="small" onClick={() => window.open('https://www.linkedin.com/in/luis-jose-medina-sandoval-444262195/', '_blank')} className="hover:text-seasalt">
+        <Button.Outline dark={true} size="small" onClick={() => window.open('https://www.linkedin.com/in/luisjose1010/', '_blank')} className="hover:text-seasalt">
           {UI.BUTTON.LINKEDIN}
         </Button.Outline>
       </Presentation>
