@@ -60,7 +60,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
       <nav
         ref={navRef}
         onBlur={(event) => { handleBlur(event) }}
-        className={`${!open && '-translate-x-[200%]'} z-20 flex flex-col shrink-0 grow-0 justify-around gap-4 p-2.5 shadow-lg backdrop-blur-md rounded-lg border border-slate-600/60 bg-slate-500/40 text-caribbean_current fixed top-2/4 -translate-y-2/4 transition-transform duration-200 left-6 min-h-[auto] min-w-[64px] lg:hidden`}
+        className={`${!open && '-translate-x-[200%]'} z-20 flex flex-col shrink-0 grow-0 justify-around gap-4 p-2.5 shadow-lg backdrop-blur-md rounded-lg border border-slate-600/60 bg-slate-500/40 text-caribbean_current fixed top-2/4 -translate-y-2/4 transition-transform duration-200 left-6 max-h-[90dvh] min-w-[64px] lg:hidden`}
       >
         {
           links?.map((link, index) => (
