@@ -83,17 +83,17 @@
       "Plataforma Crowdfunding": {
         "TITLE": "Crowdfunding Platform",
         "DESCRIPTION": "A crowdfunding website based on donations to easily manage payments across various platforms and promote social impact projects in Venezuela, aiming to support and bring visibility to people from low-income backgrounds facing need, vulnerability, and other social causes.",
-        "NOTE": "Note: Data may be slow to load for the first time, due to limitations on the API host"
+        "NOTE": "Note: Data may be slow to load for the first time, due to limitations on the API host."
       },
       "Romano's Pizza System": {
         "TITLE": "Romano's Pizza System",
         "DESCRIPTION": "A responsive web sales system for a pizzeria, featuring the entire product catalog and combos available from the franchise, providing an accessible interface for order processing, client management, and invoice printing.",
-        "NOTE": "Test credentials: user 'admin' and password '1234'"
+        "NOTE": "Test credentials: user 'admin' and password '1234'."
       },
       "SabedeSeguros Quoters": {
         "TITLE": "SabedeSeguros Quoters",
         "DESCRIPTION": "A web application that provides responsive quote generators for different types of insurance was developed as a WordPress plugin, which can be easily added to the company website. It replaces the need for local Excel files.",
-        "NOTE": "Note: The live application runs on a demo page. Images reflect the project's original appearance and functionality on the company's now inactive website"
+        "NOTE": "Note: The live application runs on a demo page. Images reflect the project's original appearance and functionality on the company's now inactive website."
       },
       "Luis Medina App": {
         "TITLE": "Luis Medina App",

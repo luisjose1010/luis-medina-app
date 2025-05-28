@@ -18,7 +18,7 @@ export const projects: Project[] = [
     name: 'Plataforma Crowdfunding',
     description: 'Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general.',
     imagesCount: 9,
-    note: 'Nota: es posible que los datos tarden en cargarse la primera vez, debido a limitaciones en el host de la API',
+    note: 'Nota: es posible que los datos tarden en cargarse la primera vez, debido a limitaciones en el host de la API.',
     links: [
       { type: 'app', label: 'LIVE', url: 'https://plataforma-crowdfunding.vercel.app/', isSolidButton: true },
       { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/plataforma-crowdfunding' },
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     name: "Romano's Pizza System",
     description: 'Un sistema de venta web responsivo para una pizzería, con todo catálogo de productos y combos disponibles de la franquicia, otorgando una interfaz accesible para el procesamiento de pedidos, la gestión de clientes y la impresión de facturas.',
     imagesCount: 6,
-    note: "Credenciales de prueba: usuario 'admin' y contraseña '1234'",
+    note: "Credenciales de prueba: usuario 'admin' y contraseña '1234'.",
     links: [
       { type: 'fullstack', label: 'LIVE', url: 'http://romanos-system.atwebpages.com/', isSolidButton: true },
       { type: 'fullstack', label: 'GITHUB', url: 'https://github.com/luisjose1010/romanos-system' }
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     name: 'SabedeSeguros Quoters',
     description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
     imagesCount: 9,
-    note: 'Nota: La aplicación en vivo opera desde una página de demostración. Las imágenes reflejan la apariencia y funcionalidad original del proyecto en el sitio web de la empresa, el cual se encuentra inactivo',
+    note: 'Nota: La aplicación en vivo opera desde una página de demostración. Las imágenes reflejan la apariencia y funcionalidad original del proyecto en el sitio web de la empresa, el cual se encuentra inactivo.',
     links: [
       { type: 'app', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/', isSolidButton: true },
       { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedeseguros-app' },
