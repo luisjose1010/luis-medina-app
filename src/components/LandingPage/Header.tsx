@@ -31,7 +31,7 @@ export function Header () {
 
   const navLinks = [
     links.home,
-    links.projects,
+    links.projectsPage,
     links.experience,
     links.skills,
     links.cv,
