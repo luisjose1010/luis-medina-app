@@ -10,8 +10,8 @@ interface ExperienceItemProps {
 }
 
 const ExperienceItem = ({ title, description, year, children }: ExperienceItemProps) => (
-    <li data-before={`${year}`} className="p-6 text-left max-w-max sm:max-w-sm md:max-w-md lg:max-w-3xl before:absolute before:content-[attr(data-before)] before:bg-desert_sand before:w-16 before:h-16 before:rounded-full before:-left-7 before:text-dark_purple before:text-center before:font-medium before:flex before:items-center before:justify-center before:lg:-left-14">
-      <h3 className="mb-4 text-xl font-semibold">{title}</h3>
+    <li data-before={`${year}`} className="p-4 text-left max-w-max sm:max-w-sm md:max-w-md md:p-6 lg:max-w-3xl before:absolute before:content-[attr(data-before)] before:bg-desert_sand before:w-16 before:h-16 before:rounded-full before:-left-7 before:text-dark_purple before:text-center before:font-medium before:flex before:items-center before:justify-center before:lg:-left-14">
+      <h3 className="mb-2 text-xl font-semibold lg:mb-4">{title}</h3>
       <p className="text-dark_purple/60 leading-relaxed">{description}</p>
       {
         children != null && (
@@ -28,7 +28,7 @@ export function Experience () {
   const { experience } = useExperience()
 
   return (
-    <section id="experience" className="flex flex-col min-h-screen p-12 gap-5 justify-center items-center text-center text-caribbean_current xl:p-16">
+    <section id="experience" className="flex flex-col min-h-screen py-12 px-10 gap-5 justify-center items-center text-center text-caribbean_current lg:px-12 xl:p-16">
       <h2 className="text-3xl font-bold">{APP.EXPERIENCE.TITLE}</h2>
       <ul className="relative pl-8 lg:pl-5 before:content-[''] before:absolute before:left-1 before:top-9 before:bottom-40 before:bg-caribbean_current before:w-0.5 before:rounded-full before:lg:-left-6">
         {

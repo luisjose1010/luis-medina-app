@@ -31,7 +31,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
 
   return (
     <article className={`${className} flex flex-wrap mt-4 py-4 lg:py-2 text-caribbean_current px-12 lg:min-h-40`}>
-      <article className="flex justify-center items-end w-full max-h-9 lg:mt-6">
+      <article className="flex sm:justify-center items-end w-full max-h-9 lg:mt-6">
         <svg className="fill-current h-6 w-6 mr-2 sm:mr-4 lg:mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" /></svg>
         <span className="font-semibold tracking-tight">Luis Medina App</span>
         <button data-nav-prevent-blur onClick={() => { setOpen(!open) }} className="fill-current h-8 w-8 right-6 md:right-8 top-6 fixed z-30 focus:outline-none lg:hidden">
@@ -42,7 +42,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
             <span aria-hidden="true" className={`${open ? '-rotate-45' : 'translate-y-1.5'} block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out`}></span>
           </div>
         </button>
-        <LanguageSelector className={`${!open ? '-top-10' : 'top-6'} fixed z-20 md:hidden`} />
+        <LanguageSelector className={`${!open ? '-top-10' : 'top-6'} w-32 fixed z-20 md:hidden max-sm:right-0 max-sm:left-0 max-sm:mx-auto`} />
       </article>
 
       <nav className="flex flex-grow text-sm font-bold lg:w-auto lg:justify-between max-lg:hidden items-center">

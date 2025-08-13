@@ -7,7 +7,7 @@ export function Skills () {
   const { APP } = useTranslation()
 
   return (
-    <section id="skills" className="flex flex-col h-auto p-6 gap-4 justify-center items-center lg:h-screen lg:p-12">
+    <section id="skills" className="flex flex-col h-auto p-4 gap-4 justify-center items-center lg:h-screen sm:p-6 lg:p-12">
       <h2 className="text-center mt-4 text-4xl font-bold text-caribbean_current">{APP.SKILLS.TITLE}</h2>
       <p className="text-dark_purple/60 text-lg text-center mt-2">
         {APP.SKILLS.DESCRIPTION}

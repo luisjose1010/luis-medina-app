@@ -13,7 +13,7 @@ export function LanguageSelector ({ className = '' }) {
 
   return (
     <div className={`${className} group text-white rounded-md text-xs font-semibold bg-black/30 hover:bg-black/70 transition-all`}>
-      <button type="button" data-nav-prevent-blur className="inline-flex justify-start items-center w-full gap-x-2 px-3 py-2" aria-expanded="true" aria-haspopup="true">
+      <button type="button" data-nav-prevent-blur className="inline-flex justify-center items-center w-full gap-x-2 px-3 py-2" aria-expanded="true" aria-haspopup="true">
         {
           currentLanguage != null && (
             <>
@@ -29,9 +29,11 @@ export function LanguageSelector ({ className = '' }) {
           Object.values(languages).map((lang) => (
             lang.code !== language && (
               <li key={lang.name} className="py-[2px]">
-                <button type="button" data-nav-prevent-blur onClick={() => { handleLanguageChange(lang.code) }} className="rounded-md bg-black/30 hover:bg-black/70 whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2">
+                <button type="button" data-nav-prevent-blur onClick={() => { handleLanguageChange(lang.code) }} className="inline-flex justify-center rounded-md bg-black/30 hover:bg-black/70 whitespace-no-wrap items-center w-full gap-x-2 px-3 py-2">
                   {<lang.Flag className="w-4 h-auto" />}
                   {lang.name}
+                  {/* Fill space to align flags */}
+                  <span className="-mr-1 h-5 w-5" />
                 </button>
               </li>
             )

@@ -9,8 +9,8 @@ export function Footer ({ links }: FooterProps) {
   const { APP } = useTranslation()
 
   return (
-    <footer className="flex flex-col justify-between bg-caribbean_current text-seasalt p-6 px-12 min-h-44">
-      <section className="flex gap-3 md:gap-8 max-md:flex-wrap max-lg:py-3">
+    <footer className="flex flex-col justify-between bg-caribbean_current text-seasalt p-6 min-h-44 md:px-12">
+      <section className="flex justify-between gap-3 md:gap-8 max-md:flex-wrap max-lg:py-3">
         {
           links.map((link, index) => (
             <Link key={index} href={link.url} target={link.target ?? '_self'}>
@@ -23,13 +23,13 @@ export function Footer ({ links }: FooterProps) {
       </section>
       <hr className="h-px bg-seasalt rounded-full" />
       <section className="flex flex-wrap justify-between">
-        <section className="flex gap-10">
+        <section className="flex gap-10 max-lg:justify-between">
           <p className="max-lg:pt-4">Luis Medina App</p>
           <p className="w-1/2 text-xs lg:w-1/3 max-lg:p-4">
             {APP.FOOTER.DESCRIPTION}
           </p>
         </section>
-        <p className="text-xs max-lg:pt-4">
+        <p className="text-xs max-lg:mt-2">
           Copyright &copy; {new Date().getFullYear()} Luis Medina App
         </p>
       </section>

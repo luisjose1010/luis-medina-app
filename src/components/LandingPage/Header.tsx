@@ -132,7 +132,7 @@ export function Header () {
   })
 
   return (
-    <header id="header" className="flex h-auto lg:p-12 lg:pb-0 lg:max-2xl:h-screen">
+    <header id="header" className="flex h-auto lg:p-10 lg:pb-0 lg:max-2xl:h-screen">
       {/* Side decoration */}
       <div onClick={handleNextStep} className="flex relative flex-col justify-center cursor-pointer marker:text-xl text-desert_sand  before:block before:absolute before:-top-[50%] before:bottom-[65%] before:border-l-[3px] before:border-caribbean_current before:rounded-2xl after:block after:absolute after:top-[65%] after:-bottom-20 after:border-l-[3px] after:border-caribbean_current after:rounded-2xl after:overflow-hidden after:-z-10 max-lg:left-10">
         {
@@ -144,9 +144,9 @@ export function Header () {
         }
       </div>
       <article className="w-full">
-        <NavBar links={navLinks} className="ml-4" />
+        <NavBar links={navLinks} className="lg:ml-3" />
 
-        <main id="main" className="flex px-12 ml-4 mt-4 overflow-hidden text-caribbean_current gap-5 cursor-pointer lg:gap-12 xl:gap-60 max-lg:flex-wrap" onClick={handleNextStep}>
+        <main id="main" className="flex px-10 ml-4 mt-4 overflow-hidden text-caribbean_current gap-5 cursor-pointer lg:gap-12 xl:gap-60 max-lg:flex-wrap" onClick={handleNextStep}>
           <div className="overflow-hidden lg:max-w-md xl:max-w-lg 2xl:max-w-3xl">
             <div onAnimationEnd={handleEndAnimation} className={`${animation} ${animation !== '' && 'relative -z-10' /* behind while animated */}`}>
               {presentations[step]}
