@@ -80,7 +80,18 @@ export const projects: Project[] = [
     ],
     slug: 'cognitive-monitoring-app',
     tags: ['TypeScript', 'React Native', 'Figma', 'Expo', 'Android SDK']
-  }, {
+  },
+  {
+    name: 'Melissa Barba Real Estate',
+    description: 'Landing page moderna y responsiva para la asesora inmobiliaria Melissa Barba. Contenido bilingüe (EN/ES) con i18next, navegación por secciones, formulario de búsqueda de propiedades con validación y notificaciones, envío a función serverless (Vercel) y SEO dinámico (metadatos OG/Twitter) mediante un componente reutilizable.',
+    imagesCount: 10,
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'https://melissabarbarealestate.com/', isSolidButton: true }
+    ],
+    slug: 'melissabarba-realestate',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
+  },
+  {
     name: 'Luis Medina App',
     description: 'Portafolio web profesional actual de mi persona.',
     imagesCount: 3,

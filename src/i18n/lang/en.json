@@ -106,6 +106,10 @@
       "Cognitive Monitoring App": {
         "TITLE": "Cognitive Monitoring App",
         "DESCRIPTION": "Mobile application developed as a technical test, focusing on the design and implementation of a cognitive monitoring dashboard using React Native. It includes modules for viewing progress, performance, and a user profile, offering an intuitive experience for tracking cognitive metrics."
+      },
+      "Melissa Barba Real Estate": {
+        "TITLE": "Melissa Barba Real Estate",
+        "DESCRIPTION": "Modern, responsive landing page for real estate advisor Melissa Barba. Bilingual content (EN/ES) using i18next, section-based navigation, a property search form with validation and notifications, serverless function submission (Vercel), and dynamic SEO (OG/Twitter metadata) via a reusable component."
       }
     },
     "EXPERIENCE": {

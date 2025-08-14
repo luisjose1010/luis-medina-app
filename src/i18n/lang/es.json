@@ -102,6 +102,10 @@
       "Tomodachi App": {
         "TITLE": "Tomodachi App",
         "DESCRIPTION": "Una plataforma web para la gestión integral de eventos, facilitando la venta de entradas, stands y patrocinios. Permite la creación detallada de eventos con itinerarios, la gestión de tipos de tickets con promociones, y un sistema de facturación y transacciones. Incluye gestión de usuarios y roles, y un panel para administrar asistentes, expositores y patrocinadores."
+      },
+      "Melissa Barba Real Estate": {
+        "TITLE": "Melissa Barba Real Estate",
+        "DESCRIPTION": "Landing page moderna y responsiva para la asesora inmobiliaria Melissa Barba. Contenido bilingüe (EN/ES) con i18next, navegación por secciones, formulario de búsqueda de propiedades con validación y notificaciones, envío a función serverless (Vercel) y SEO dinámico (metadatos OG/Twitter) mediante un componente reutilizable."
       }
     },
     "EXPERIENCE": {
