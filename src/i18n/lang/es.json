@@ -106,6 +106,10 @@
       "Melissa Barba Real Estate": {
         "TITLE": "Melissa Barba Real Estate",
         "DESCRIPTION": "Landing page moderna y responsiva para la asesora inmobiliaria Melissa Barba. Contenido bilingüe (EN/ES) con i18next, navegación por secciones, formulario de búsqueda de propiedades con validación y notificaciones, envío a función serverless (Vercel) y SEO dinámico (metadatos OG/Twitter) mediante un componente reutilizable."
+      },
+      "CP Global Insurance": {
+        "TITLE": "CP Global Insurance",
+        "DESCRIPTION": "Sitio web oficial de CP Global Insurance (EE. UU.) con contenido bilingüe (EN/ES). SPA en React + TypeScript con enrutamiento para páginas de servicios y líneas de negocio; diseño responsivo con Tailwind y componentes accesibles de Radix. Incluye selector de idioma con detección automática, formulario de contacto validado con React Hook Form y toasts, enlaces directos a llamada/WhatsApp, SEO técnico (metadatos OG/Twitter y JSON‑LD) y despliegue en Vercel con dominio personalizado."
       }
     },
     "EXPERIENCE": {

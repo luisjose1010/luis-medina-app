@@ -92,6 +92,16 @@ export const projects: Project[] = [
     tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
   },
   {
+    name: 'CP Global Insurance',
+    description: 'Sitio web oficial de CP Global Insurance (EE. UU.) con contenido bilingüe (EN/ES). SPA en React + TypeScript con enrutamiento para páginas de servicios y líneas de negocio; diseño responsivo con Tailwind y componentes accesibles de Radix. Incluye selector de idioma con detección automática, formulario de contacto validado con React Hook Form y toasts, enlaces directos a llamada/WhatsApp, SEO técnico (metadatos OG/Twitter y JSON‑LD) y despliegue en Vercel con dominio personalizado.',
+    imagesCount: 13,
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'https://www.cpglobalinsurance.com/', isSolidButton: true }
+    ],
+    slug: 'cp-global-insurance',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
+  },
+  {
     name: 'Luis Medina App',
     description: 'Portafolio web profesional actual de mi persona.',
     imagesCount: 3,
