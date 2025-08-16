@@ -110,6 +110,10 @@
       "CP Global Insurance": {
         "TITLE": "CP Global Insurance",
         "DESCRIPTION": "Sitio web oficial de CP Global Insurance (EE. UU.) con contenido bilingüe (EN/ES). SPA en React + TypeScript con enrutamiento para páginas de servicios y líneas de negocio; diseño responsivo con Tailwind y componentes accesibles de Radix. Incluye selector de idioma con detección automática, formulario de contacto validado con React Hook Form y toasts, enlaces directos a llamada/WhatsApp, SEO técnico (metadatos OG/Twitter y JSON‑LD) y despliegue en Vercel con dominio personalizado."
+      },
+      "All City Gold Website": {
+        "TITLE": "All City Gold Website",
+        "DESCRIPTION": "Sitio web oficial de la joyería All City Gold. Landing page responsive con navegación por secciones, animaciones sutiles y colecciones destacadas. Incluye formulario de contacto con envío de correos vía función serverless (Maileroo), SEO básico (metadatos OG/Twitter) y despliegue en Vercel."
       }
     },
     "EXPERIENCE": {

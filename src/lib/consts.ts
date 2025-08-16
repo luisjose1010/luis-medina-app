@@ -102,6 +102,16 @@ export const projects: Project[] = [
     tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
   },
   {
+    name: 'All City Gold Website',
+    description: 'Sitio web oficial de la joyería All City Gold. Landing page responsive con navegación por secciones, animaciones sutiles y colecciones destacadas. Incluye formulario de contacto con envío de correos vía función serverless (Maileroo), SEO básico (metadatos OG/Twitter) y despliegue en Vercel.',
+    imagesCount: 6,
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'https://allcitygold.vercel.app/', isSolidButton: true }
+    ],
+    slug: 'all-city-gold-website',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'Framer Motion', 'Radix UI', 'Vercel']
+  },
+  {
     name: 'Luis Medina App',
     description: 'Portafolio web profesional actual de mi persona.',
     imagesCount: 3,
