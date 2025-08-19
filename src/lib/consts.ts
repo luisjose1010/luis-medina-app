@@ -126,34 +126,39 @@ export const projects: Project[] = [
 
 export const experience = [
   {
+    name: 'Desarrollador Full-Stack | Proyectos Freelance',
+    description: 'Diseñé, desarrollé y desplegué tres sitios web a medida (seguros, bienes raíces y e‑commerce de joyería). Utilicé TypeScript, Tailwind CSS, Node.js, funciones serverless y SQL para entregar soluciones robustas, escalables y responsivas. Proyectos oficiales: CP Global Insurance, All City Gold Jewelry y Melissa Barba Real Estate.',
+    year: '2025'
+  },
+  {
+    name: 'Tomodachi Events | Desarrollo Web Full-Stack',
+    description: 'Mantenimiento y desarrollo de aplicaciones cliente‑servidor internas (gestión de eventos, administración). Stack: TypeScript, React y Express.js/Node.js con PostgreSQL, logrando ~20% de mejora de desempeño mediante optimización de API y consultas/BD.',
+    year: '2025'
+  },
+  {
     name: 'Sabe de Seguros | Desarrollo Web Full-Stack',
-    description: 'En la empresa Sabe de Seguros, entre enero y mayo de 2024, desarrollé diversos cotizadores web responsivos para la página empresarial mediante un plugin personalizado de WordPress, utilizando PHP, MySQL, Vue y Vuetify para integrar de manera eficiente los cotizadores en la plataforma aprovechando las capacidades de gestión de contenido de WordPress para mantener actualizada la información del sitio web.',
+    description: 'Desarrollé y administré sistemas de cotización web responsivos con un plugin personalizado de WordPress (PHP, MySQL, Vue, Vuetify), reduciendo el tiempo de cotización en ~40%. Gestioné el CMS de WordPress e integré sistemas de cotizadores basados en Excel, mejorando la eficiencia de datos.',
     year: '2024'
   },
   {
     name: 'Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack',
-    description: 'En la Universidad Rafael Belloso Chacín, entre enero y abril de 2024, desarrollé mi trabajo especial de grado: una aplicación web responsive de Crowdfunding. Utilicé los frameworks FastAPI (Python), React y Bootstrap para construir esta solución web, enfocándome en la creación de una interfaz de usuario receptiva y adaptable a diferentes dispositivos.',
+    description: 'Trabajo de grado: desarrollé una aplicación web de crowdfunding responsive con FastAPI (Python), React y Bootstrap, mejorando significativamente la accesibilidad para contribuciones a iniciativas sociales.',
     year: '2024'
   },
   {
     name: 'Regalado Group: Bienes Raíces | Encargado de Departamento de Redes',
-    description: 'En Regalado Group: Bienes Raíces, me desempeñé como Encargado del Departamento de Redes desde marzo de 2022, hasta septiembre de 2023. En este cargo, administré la página web comercial de la empresa, utilizando Joomla CMS como plataforma y los lenguajes PHP, HTML y CSS. Mis responsabilidades incluyeron la gestión y actualización del sitio web en general, así como la administración de los inmuebles en sistema y los datos de la empresa.',
+    description: 'Administración del sitio web comercial y contenido con Joomla CMS; supervisión de listados de inmuebles; soporte directo a usuarios internos/asesores y al equipo de publicidad.',
+    year: '2023'
+  },
+  {
+    name: "Romano's Pizza | Desarrollo Web Full-Stack",
+    description: 'Proyecto freelance: desarrollo de una aplicación web POS utilizando un framework personal en PHP, MySQL, Vue.js y Vuetify para agilizar ventas y gestión de inventario.',
     year: '2022'
   },
   {
     name: 'SysModelers | Desarrollo Web Front-end',
-    description: 'Durante mi tiempo como Desarrollador Web Front-end en SysModelers, entre agosto de 2021 y febrero de 2022, desarrollé interfaces gráficas amigables y accesibles utilizando la librería de componentes React y el framework de diseño CoreUI. Esto me permitió crear aplicaciones web de forma modular y eficiente, enfocándome en la experiencia del usuario y la accesibilidad.',
-    year: '2021'
-  },
-  {
-    name: "Romano's Pizza | Desarrollo Web Full-Stack",
-    description: "En Romano's Pizza, entre julio de 2021 y noviembre de 2022, desarrollé un proyecto de aplicación web tipo punto de venta. Para ello, utilicé un pequeño framework personal basado en PHP, MySQL, Vue.js y Vuetify. Esta solución me permitió crear una aplicación web adaptada a las necesidades específicas del negocio de restaurantes.",
-    year: '2021'
-  },
-  {
-    name: 'Corretaje de Seguros ASECA | Gestor de cotizadores Excel',
-    description: 'En Corretaje de Seguros ASECA, trabajé como Gestor de Cotizadores Excel desde julio de 2021 hasta mayo de 2024. En este rol, me encargué de la creación y mantenimiento de archivos Excel para la cotización de seguros internacionales, nacionales y regionales. Mis responsabilidades incluían asegurar la precisión y actualización constante de estos cotizadores, lo que permitía a la empresa ofrecer a sus clientes una herramienta eficiente para la evaluación de diferentes planes de cobertura.',
-    year: '2021'
+    description: 'Experiencias UI/UX centradas en el usuario y accesibles con componentes React y CoreUI. Optimización proactiva de funcionalidades CRUD y responsividad mediante mejoras de rendimiento y consultas.',
+    year: '2022'
   }
 ]
 

@@ -121,29 +121,33 @@
       }
     },
     "EXPERIENCE": {
+      "Desarrollador Full-Stack | Proyectos Freelance": {
+        "TITLE": "Full-Stack Developer | Freelance Projects",
+        "DESCRIPTION": "Designed, developed, and deployed three custom websites (insurance, real estate, e‑commerce for jewelry). Utilized TypeScript, Tailwind CSS, Node.js, Serverless Functions, and SQL to deliver robust, scalable, and responsive solutions. Official projects: CP Global Insurance, All City Gold Jewelry, and Melissa Barba Real Estate."
+      },
+      "Tomodachi Events | Desarrollo Web Full-Stack": {
+        "TITLE": "Tomodachi Events | Full-Stack Developer",
+        "DESCRIPTION": "Maintained and developed internal client‑server applications (event management, administration). Utilized TypeScript, React, and Express.js/Node.js with PostgreSQL, achieving ~20% overall performance improvement via API/database optimization."
+      },
       "Sabe de Seguros | Desarrollo Web Full-Stack": {
         "TITLE": "Sabe de Seguros | Full-Stack Web Development",
-        "DESCRIPTION": "At Sabe de Seguros from January to May 2024, I developed various responsive web quote generators for the company website through a custom WordPress plugin. Leveraging PHP, MySQL, Vue, and Vuetify, I efficiently integrated these quotes into the platform, utilizing WordPress’ content management capabilities to keep the website’s information up-to-date."
+        "DESCRIPTION": "Developed and managed responsive web quote systems for the company using a custom WordPress plugin (PHP, MySQL, Vue, Vuetify), reducing quote generation time by ~40%. Managed the WordPress CMS and integrated Excel‑based quote systems, improving data efficiency."
       },
       "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack": {
         "TITLE": "Rafael Belloso Chacin University | Full-Stack Web Development",
-        "DESCRIPTION": "At Rafael Belloso Chacin University from January to April 2024, I developed my undergraduate thesis project: a responsive web crowdfunding application. Using the frameworks FastAPI (Python), React, and Bootstrap, I built this web solution, focusing on creating an adaptable and user-friendly interface that is receptive to different devices."
+        "DESCRIPTION": "Senior Thesis Project: Developed a responsive crowdfunding web application using FastAPI (Python), React, and Bootstrap, significantly enhancing accessibility for contributions to social initiatives."
       },
       "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes": {
-        "TITLE": "Regalado Group: Real Estate | Network Department Manager",
-        "DESCRIPTION": "At Regalado Group: Real Estate, I served as the Network Department Manager from March 2022 to September 2023. In this role, I managed the company’s commercial website using Joomla CMS as the platform and PHP, HTML, and CSS programming languages. My responsibilities included general website management and updates, as well as administration of properties in the system and corporate data."
+        "TITLE": "Regalado Group: Real Estate | Manager of Network Department",
+        "DESCRIPTION": "Managed commercial website administration and Joomla CMS content, oversaw real estate property listings. Provided direct support to internal users/advisors and the advertising agency."
       },
       "SysModelers | Desarrollo Web Front-end": {
-        "TITLE": "SysModelers | Front-End Web Development",
-        "DESCRIPTION": "As a Front-end Web Developer at SysModelers from August 2021 to February 2022, I crafted engaging and accessible UI components using React and CoreUI. This enabled me to build modular, efficient, accessible, and user-centric web applications."
+        "TITLE": "SysModelers | Front-End Web Developer",
+        "DESCRIPTION": "Developed user‑centered and accessible UI/UX experiences leveraging React components and CoreUI. Proactively optimized CRUD functionalities and UI responsiveness by implementing performance updates for perceived performance, even addressing backend query optimizations."
       },
       "Romano's Pizza | Desarrollo Web Full-Stack": {
         "TITLE": "Romano's Pizza | Full-Stack Web Development",
-        "DESCRIPTION": "At Romano’s Pizza from July 2021 to November 2022, I spearheaded the development of a customized point-of-sale web application. Leveraging my custom PHP-based framework, along with MySQL, Vue.js, and Vuetify, I designed and implemented a tailored solution that met the specific needs of the restaurant"
-      },
-      "Corretaje de Seguros ASECA | Gestor de cotizadores Excel": {
-        "TITLE": "ASECA Insurance Broker | Excel Quote Manager",
-        "DESCRIPTION": "At ASECA Insurance Broker, I worked as an Excel Quote Manager from July 2021 to May 2024. In this role, I was responsible for creating and maintaining Excel files for quotations of international, national, and regional insurance policies. My responsibilities included ensuring the accuracy and constant updating of these quotes, which allowed the company to offer its clients an efficient tool for evaluating different coverage plans."
+        "DESCRIPTION": "Developed a web point‑of‑sale (POS) application project, leveraging a personal PHP framework, MySQL, Vue.js, and Vuetify, to streamline sales and inventory management."
       }
     }
   },
