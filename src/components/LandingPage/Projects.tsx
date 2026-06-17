@@ -25,7 +25,7 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
         <Button.LinkSolid href={`${links.projectsPage.url}/${project.slug}`} size="small" className="text-caribbean_current">
           {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
-        {projectLink && (
+        {projectLink !== undefined && (
           <Button.LinkOutline
             size="small"
             href={projectLink.url}

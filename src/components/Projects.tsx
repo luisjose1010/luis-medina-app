@@ -42,7 +42,7 @@ export function ProjectCard ({ name, description, links: projectLinks, slug, not
         <Button.LinkSolid href={`${links.projectsPage.url}/${slug}`} dark={true} className="text-seasalt shadow-md hover:shadow-lg transition-all duration-300">
           {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
-        {projectLink && (
+        {projectLink !== undefined && (
           <Button.LinkOutline
             href={projectLink.url}
             dark={true}
