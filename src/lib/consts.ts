@@ -23,6 +23,14 @@ export const projects: Project[] = [
     tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Express', 'Drizzle ORM', 'Turso', 'Vercel']
   },
   {
+    name: 'Canvassing App (CCTV FB Lead)',
+    description: 'Aplicación web progresiva (PWA) construida para la gestión de leads en campo. Cuenta con integración de datos a través de GoHighLevel (GHL) y servicios en la nube para sincronizar información en tiempo real de los clientes y ventas.',
+    imagesCount: 5,
+    links: [],
+    slug: 'canvassing-app',
+    tags: ['TypeScript', 'React', 'PWA', 'Tailwind CSS']
+  },
+  {
     name: 'EcoHome WebApp (NPS App)',
     description: 'Colaborador en esta aplicación multiplataforma (iOS, Android, Web) orientada a la eficiencia y el control en el hogar, desarrollada utilizando el ecosistema de React Native y Firebase. Incluye autenticación, base de datos en tiempo real y sincronización en la nube mediante Cloud Functions.',
     note: 'Proyecto colaborativo.',
@@ -32,12 +40,27 @@ export const projects: Project[] = [
     tags: ['TypeScript', 'React Native', 'Firebase', 'Node.js', 'Cross-Platform']
   },
   {
-    name: 'Canvassing App (CCTV FB Lead)',
-    description: 'Aplicación web progresiva (PWA) construida para la gestión de leads en campo. Cuenta con integración de datos a través de GoHighLevel (GHL) y servicios en la nube para sincronizar información en tiempo real de los clientes y ventas.',
-    imagesCount: 5,
-    links: [],
-    slug: 'canvassing-app',
-    tags: ['TypeScript', 'React', 'PWA', 'Tailwind CSS']
+    name: 'CP Global Insurance',
+    description: 'Sitio web oficial de CP Global Insurance (EE. UU.) con contenido bilingüe (EN/ES). SPA en React + TypeScript con enrutamiento para páginas de servicios y líneas de negocio; diseño responsivo con Tailwind y componentes accesibles de Radix. Incluye selector de idioma con detección automática, formulario de contacto validado con React Hook Form y toasts, enlaces directos a llamada/WhatsApp, SEO técnico (metadatos OG/Twitter y JSON‑LD) y despliegue en Vercel con dominio personalizado.',
+    imagesCount: 13,
+    links: [
+      { type: 'fullstack', label: 'LIVE', url: 'https://www.cpglobalinsurance.com/', isSolidButton: true }
+    ],
+    slug: 'cp-global-insurance',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
+  },
+  {
+    name: 'Tomodachi App',
+    description: 'Una plataforma web para la gestión integral de eventos, facilitando la venta de entradas, stands y patrocinios. Permite la creación detallada de eventos con itinerarios, la gestión de tipos de tickets con promociones, y un sistema de facturación y transacciones. Incluye gestión de usuarios y roles, y un panel para administrar asistentes, expositores y patrocinadores.',
+    imagesCount: 8,
+    links: [
+      { type: 'app', label: 'LIVE', url: 'https://tomodachi-app.vercel.app/', isSolidButton: true },
+      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-app' },
+      { type: 'api', label: 'LIVE', url: 'https://tomodachi-api.vercel.app/', isSolidButton: true },
+      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-api' }
+    ],
+    slug: 'tomodachi-app',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express']
   },
   {
     name: 'Plataforma Crowdfunding',
@@ -67,31 +90,24 @@ export const projects: Project[] = [
     tags: ['JavaScript', 'VueJS', 'PHP', 'Vite', 'Vuetify', 'Composer', 'Eloquent/Laravel']
   },
   {
-    name: 'SabedeSeguros Quoters',
-    description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
-    imagesCount: 9,
-    note: 'Nota: La aplicación en vivo opera desde una página de demostración. Las imágenes reflejan la apariencia y funcionalidad original del proyecto en el sitio web de la empresa, el cual se encuentra inactivo.',
+    name: 'Melissa Barba Real Estate',
+    description: 'Landing page moderna y responsiva para la asesora inmobiliaria Melissa Barba. Contenido bilingüe (EN/ES) con i18next, navegación por secciones, formulario de búsqueda de propiedades con validación y notificaciones, envío a función serverless (Vercel) y SEO dinámico (metadatos OG/Twitter) mediante un componente reutilizable.',
+    imagesCount: 10,
     links: [
-      { type: 'app', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/', isSolidButton: true },
-      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedeseguros-app' },
-      { type: 'api', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/wp-json/sq/v1', isSolidButton: true },
-      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedese-quoters' }
+      { type: 'fullstack', label: 'LIVE', url: 'https://melissabarbarealestate.com/', isSolidButton: true }
     ],
-    slug: 'sabedeseguros-quoters',
-    tags: ['JavaScript', 'VueJS', 'PHP', 'Wordpress', 'Vite', 'Vuetify']
+    slug: 'melissabarba-realestate',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
   },
   {
-    name: 'Tomodachi App',
-    description: 'Una plataforma web para la gestión integral de eventos, facilitando la venta de entradas, stands y patrocinios. Permite la creación detallada de eventos con itinerarios, la gestión de tipos de tickets con promociones, y un sistema de facturación y transacciones. Incluye gestión de usuarios y roles, y un panel para administrar asistentes, expositores y patrocinadores.',
-    imagesCount: 8,
+    name: 'All City Gold Website',
+    description: 'Sitio web oficial de la joyería All City Gold. Landing page responsive con navegación por secciones, animaciones sutiles y colecciones destacadas. Incluye formulario de contacto con envío de correos vía función serverless (Maileroo), SEO básico (metadatos OG/Twitter) y despliegue en Vercel.',
+    imagesCount: 6,
     links: [
-      { type: 'app', label: 'LIVE', url: 'https://tomodachi-app.vercel.app/', isSolidButton: true },
-      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-app' },
-      { type: 'api', label: 'LIVE', url: 'https://tomodachi-api.vercel.app/', isSolidButton: true },
-      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/tomodachi-api' }
+      { type: 'fullstack', label: 'LIVE', url: 'https://allcitygold.vercel.app/', isSolidButton: true }
     ],
-    slug: 'tomodachi-app',
-    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express']
+    slug: 'all-city-gold-website',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'Framer Motion', 'Radix UI', 'Vercel']
   },
   {
     name: 'Cognitive Monitoring App',
@@ -107,34 +123,18 @@ export const projects: Project[] = [
     tags: ['TypeScript', 'React Native', 'Figma', 'Expo', 'Android SDK']
   },
   {
-    name: 'Melissa Barba Real Estate',
-    description: 'Landing page moderna y responsiva para la asesora inmobiliaria Melissa Barba. Contenido bilingüe (EN/ES) con i18next, navegación por secciones, formulario de búsqueda de propiedades con validación y notificaciones, envío a función serverless (Vercel) y SEO dinámico (metadatos OG/Twitter) mediante un componente reutilizable.',
-    imagesCount: 10,
+    name: 'SabedeSeguros Quoters',
+    description: 'Una Aplicación que proporciona diversos cotizadores web responsivos para varios tipos de seguros, desarrollados en forma de un plugin de Wordpress para ser agregados fácilmente al sitio web de la empresa, reemplazando el uso de archivos Excel locales.',
+    imagesCount: 9,
+    note: 'Nota: La aplicación en vivo opera desde una página de demostración. Las imágenes reflejan la apariencia y funcionalidad original del proyecto en el sitio web de la empresa, el cual se encuentra inactivo.',
     links: [
-      { type: 'fullstack', label: 'LIVE', url: 'https://melissabarbarealestate.com/', isSolidButton: true }
+      { type: 'app', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/', isSolidButton: true },
+      { type: 'app', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedeseguros-app' },
+      { type: 'api', label: 'LIVE', url: 'http://sabedeseguros.atwebpages.com/wp-json/sq/v1', isSolidButton: true },
+      { type: 'api', label: 'GITHUB', url: 'https://github.com/luisjose1010/sabedese-quoters' }
     ],
-    slug: 'melissabarba-realestate',
-    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
-  },
-  {
-    name: 'CP Global Insurance',
-    description: 'Sitio web oficial de CP Global Insurance (EE. UU.) con contenido bilingüe (EN/ES). SPA en React + TypeScript con enrutamiento para páginas de servicios y líneas de negocio; diseño responsivo con Tailwind y componentes accesibles de Radix. Incluye selector de idioma con detección automática, formulario de contacto validado con React Hook Form y toasts, enlaces directos a llamada/WhatsApp, SEO técnico (metadatos OG/Twitter y JSON‑LD) y despliegue en Vercel con dominio personalizado.',
-    imagesCount: 13,
-    links: [
-      { type: 'fullstack', label: 'LIVE', url: 'https://www.cpglobalinsurance.com/', isSolidButton: true }
-    ],
-    slug: 'cp-global-insurance',
-    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'i18next', 'Radix UI', 'Vercel']
-  },
-  {
-    name: 'All City Gold Website',
-    description: 'Sitio web oficial de la joyería All City Gold. Landing page responsive con navegación por secciones, animaciones sutiles y colecciones destacadas. Incluye formulario de contacto con envío de correos vía función serverless (Maileroo), SEO básico (metadatos OG/Twitter) y despliegue en Vercel.',
-    imagesCount: 6,
-    links: [
-      { type: 'fullstack', label: 'LIVE', url: 'https://allcitygold.vercel.app/', isSolidButton: true }
-    ],
-    slug: 'all-city-gold-website',
-    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'React Router', 'Framer Motion', 'Radix UI', 'Vercel']
+    slug: 'sabedeseguros-quoters',
+    tags: ['JavaScript', 'VueJS', 'PHP', 'Wordpress', 'Vite', 'Vuetify']
   },
   {
     name: 'Luis Medina App',
