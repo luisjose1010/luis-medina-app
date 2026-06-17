@@ -9,7 +9,8 @@ export function useExperience () {
   const mappedExperience = experience.map(experience => ({
     ...experience,
     name: DATA.EXPERIENCE[experience.name as ExperienceKey].TITLE,
-    description: DATA.EXPERIENCE[experience.name as ExperienceKey].DESCRIPTION
+    description: DATA.EXPERIENCE[experience.name as ExperienceKey].DESCRIPTION,
+    period: (DATA.EXPERIENCE[experience.name as ExperienceKey]).PERIOD
   }))
 
   return {

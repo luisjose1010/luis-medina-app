@@ -19,7 +19,7 @@ export function Project ({ project, className = '' }: ProjectProps) {
 
   return (
     <article className={`${className}`}>
-      <Gallery images={
+      <Gallery altBase={project.name} images={
         Array.from({
           length: project.imagesCount
         },
@@ -60,11 +60,12 @@ export function Project ({ project, className = '' }: ProjectProps) {
       <LinkSection title={APP.PROJECT.OTHERS_LINKS} links={otherLinks} className="ml-5" />
 
       <section className='p-6'>
-        Tags: {
-          project.tags.map((tag, index) => (
-            <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{tag}</span>
-          ))
-        }
+        <p className="mb-2 text-sm text-dark_purple/80">{APP.SKILLS.SKILLS_TITLE}</p>
+        <div aria-label={APP.SKILLS.SKILLS_TITLE}>
+          {project.tags.map((tag, index) => (
+            <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tag}</span>
+          ))}
+        </div>
       </section>
     </article>
   )

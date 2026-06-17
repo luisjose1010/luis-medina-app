@@ -2,14 +2,17 @@
 import { LeftArrowIcon, RightArrowIcon } from '@/assets/Icons'
 import { Button } from '@/components/Button'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 interface GalleryProps {
   images: string[]
+  altBase?: string
+  sizes?: string
 }
 
-export function Gallery ({ images }: GalleryProps) {
+export function Gallery ({ images, altBase, sizes }: GalleryProps) {
   const [current, setCurrent] = useState(0)
+  const [paused, setPaused] = useState(false)
 
   const previousSlide = () => {
     if (current === 0) {
@@ -19,24 +22,31 @@ export function Gallery ({ images }: GalleryProps) {
     }
   }
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (current === images.length - 1) {
       setCurrent(0)
     } else {
       setCurrent(current + 1)
     }
-  }
+  }, [current, images.length])
 
-  // Activate the slide every 5 seconds
+  // Activate the slide every 5 seconds (respect prefers-reduced-motion and pause on hover)
   useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (media.matches || paused) return
     const interval = setInterval(() => {
       nextSlide()
     }, 5000)
     return () => { clearInterval(interval) }
-  })
+  }, [current, paused, nextSlide])
 
   return (
-    <article className='mx-auto bg-gray-200 overflow-hidden relative rounded-xl w-full lg:w-1/2 aspect-[16/10]'>
+    <article className='mx-auto bg-gray-200 overflow-hidden relative rounded-xl w-full lg:w-1/2 aspect-[16/10]'
+      onMouseEnter={() => { setPaused(true) }}
+      onMouseLeave={() => { setPaused(false) }}
+      aria-roledescription="carousel"
+      aria-label="Project gallery"
+    >
       <section
         className="flex h-full transition ease-out duration-200"
         style={{
@@ -50,7 +60,8 @@ export function Gallery ({ images }: GalleryProps) {
                 fill
                 priority={index === current}
                 src={src}
-                alt={`Gallery image ${index + 1}`}
+                alt={`${altBase ?? 'Project image'} ${index + 1}`}
+                sizes={sizes ?? '(min-width: 1024px) 50vw, 100vw'}
                 className="object-contain"
               />
             </div>

@@ -6,12 +6,14 @@ interface ExperienceItemProps {
   title: string
   description: string
   year: number | string
+  period?: string
   children?: React.ReactNode // Optional prop for additional content
 }
 
-const ExperienceItem = ({ title, description, year, children }: ExperienceItemProps) => (
+const ExperienceItem = ({ title, description, year, period, children }: ExperienceItemProps) => (
     <li data-before={`${year}`} className="p-4 text-left max-w-max sm:max-w-sm md:max-w-md md:p-6 lg:max-w-3xl before:absolute before:content-[attr(data-before)] before:bg-desert_sand before:w-16 before:h-16 before:rounded-full before:-left-7 before:text-dark_purple before:text-center before:font-medium before:flex before:items-center before:justify-center before:lg:-left-14">
-      <h3 className="mb-2 text-xl font-semibold lg:mb-4">{title}</h3>
+      <h3 className="mb-1 text-xl font-semibold">{title}</h3>
+      { period != null && <p className="mb-2 text-sm text-dark_purple/60">{period}</p> }
       <p className="text-dark_purple/60 leading-relaxed">{description}</p>
       {
         children != null && (
@@ -38,6 +40,7 @@ export function Experience () {
               title={item.name}
               description={item.description}
               year={item.year}
+              period={item.period}
             />
           ))
         }

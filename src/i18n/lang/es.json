@@ -120,30 +120,44 @@
       "Desarrollador Full-Stack | Proyectos Freelance": {
         "TITLE": "Desarrollador Full-Stack | Proyectos Freelance",
         "DESCRIPTION": "Diseñé, desarrollé y desplegué tres sitios web a medida (seguros, bienes raíces y e‑commerce de joyería). Utilicé TypeScript, Tailwind CSS, Node.js, funciones serverless y SQL para entregar soluciones robustas, escalables y responsivas. Proyectos oficiales: CP Global Insurance, All City Gold Jewelry y Melissa Barba Real Estate."
+      ,
+      "PERIOD": "Abr 2025 – Sep 2025"
       },
       "Tomodachi Events | Desarrollo Web Full-Stack": {
         "TITLE": "Tomodachi Events | Desarrollo Web Full-Stack",
         "DESCRIPTION": "Mantenimiento y desarrollo de aplicaciones cliente‑servidor internas (gestión de eventos, administración). Stack: TypeScript, React y Express.js/Node.js con PostgreSQL, logrando ~20% de mejora de desempeño mediante optimización de API y consultas/BD."
+      ,
+      "PERIOD": "Sep 2024 – Presente"
       },
       "Sabe de Seguros | Desarrollo Web Full-Stack": {
         "TITLE": "Sabe de Seguros | Desarrollo Web Full-Stack",
         "DESCRIPTION": "Desarrollé y administré sistemas de cotización web responsivos con un plugin personalizado de WordPress (PHP, MySQL, Vue, Vuetify), reduciendo el tiempo de cotización en ~40%. Gestioné el CMS de WordPress e integré sistemas de cotizadores basados en Excel, mejorando la eficiencia de datos."
+      ,
+      "PERIOD": "Jul 2021 – Oct 2024"
       },
       "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack": {
         "TITLE": "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack",
         "DESCRIPTION": "Trabajo de grado: desarrollé una aplicación web de crowdfunding responsive con FastAPI (Python), React y Bootstrap, mejorando significativamente la accesibilidad para contribuciones a iniciativas sociales."
+      ,
+      "PERIOD": "Ene 2024 – Abr 2024"
       },
       "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes": {
         "TITLE": "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes",
         "DESCRIPTION": "Administración del sitio web comercial y contenido con Joomla CMS; supervisión de listados de inmuebles; soporte directo a usuarios internos/asesores y al equipo de publicidad."
+      ,
+      "PERIOD": "Mar 2022 – Oct 2023"
       },
       "SysModelers | Desarrollo Web Front-end": {
         "TITLE": "SysModelers | Desarrollo Web Front-end",
         "DESCRIPTION": "Experiencias UI/UX centradas en el usuario y accesibles con componentes React y CoreUI. Optimización proactiva de funcionalidades CRUD y responsividad mediante mejoras de rendimiento y consultas."
+      ,
+      "PERIOD": "Ago 2021 – Feb 2022"
       },
       "Romano's Pizza | Desarrollo Web Full-Stack": {
         "TITLE": "Romano's Pizza | Desarrollo Web Full-Stack",
         "DESCRIPTION": "Proyecto freelance: desarrollo de una aplicación web POS utilizando un framework personal en PHP, MySQL, Vue.js y Vuetify para agilizar ventas y gestión de inventario."
+      ,
+      "PERIOD": "Jul 2021 – Nov 2022"
       },
       "Cognitive Monitoring App": {
         "TITLE": "Cognitive Monitoring App",

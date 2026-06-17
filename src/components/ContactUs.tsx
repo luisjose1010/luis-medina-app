@@ -62,9 +62,11 @@ export function ContactUs () {
         </div>
         <div className="w-full lg:w-1/2 2xl:w-5/12 px-4">
           <div className="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
-            <form onSubmit={(e) => { onSubmit(e) }}>
+            <form onSubmit={(e) => { onSubmit(e) }} aria-label="Contact form">
               <div className="mb-6">
+                <label htmlFor="contact-name" className="sr-only">{APP.CONTACT.FORM_NAME}</label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   placeholder={APP.CONTACT.FORM_NAME}
@@ -79,10 +81,14 @@ export function ContactUs () {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                  autoComplete="name"
+                  required
                 />
               </div>
               <div className="mb-6">
+                <label htmlFor="contact-email" className="sr-only">{APP.CONTACT.FORM_EMAIL}</label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
                   placeholder={APP.CONTACT.FORM_EMAIL}
@@ -97,10 +103,14 @@ export function ContactUs () {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                  autoComplete="email"
+                  required
                 />
               </div>
               <div className="mb-6">
+                <label htmlFor="contact-phone" className="sr-only">{APP.CONTACT.FORM_PHONE}</label>
                 <input
+                  id="contact-phone"
                   type="text"
                   name="phoneNumber"
                   placeholder={APP.CONTACT.FORM_PHONE}
@@ -115,10 +125,13 @@ export function ContactUs () {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                  autoComplete="tel"
                 />
               </div>
               <div className="mb-6">
+                <label htmlFor="contact-message" className="sr-only">{APP.CONTACT.FORM_MESSAGE}</label>
                 <textarea
+                  id="contact-message"
                   rows={6}
                   name="message"
                   placeholder={APP.CONTACT.FORM_MESSAGE}
@@ -134,6 +147,7 @@ export function ContactUs () {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                  required
                 ></textarea>
               </div>
               <div>

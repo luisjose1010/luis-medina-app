@@ -124,30 +124,44 @@
       "Desarrollador Full-Stack | Proyectos Freelance": {
         "TITLE": "Full-Stack Developer | Freelance Projects",
         "DESCRIPTION": "Designed, developed, and deployed three custom websites (insurance, real estate, e‑commerce for jewelry). Utilized TypeScript, Tailwind CSS, Node.js, Serverless Functions, and SQL to deliver robust, scalable, and responsive solutions. Official projects: CP Global Insurance, All City Gold Jewelry, and Melissa Barba Real Estate."
+      ,
+      "PERIOD": "Apr 2025 – Sep 2025"
       },
       "Tomodachi Events | Desarrollo Web Full-Stack": {
         "TITLE": "Tomodachi Events | Full-Stack Developer",
         "DESCRIPTION": "Maintained and developed internal client‑server applications (event management, administration). Utilized TypeScript, React, and Express.js/Node.js with PostgreSQL, achieving ~20% overall performance improvement via API/database optimization."
+      ,
+      "PERIOD": "Sep 2024 – Present"
       },
       "Sabe de Seguros | Desarrollo Web Full-Stack": {
         "TITLE": "Sabe de Seguros | Full-Stack Web Development",
         "DESCRIPTION": "Developed and managed responsive web quote systems for the company using a custom WordPress plugin (PHP, MySQL, Vue, Vuetify), reducing quote generation time by ~40%. Managed the WordPress CMS and integrated Excel‑based quote systems, improving data efficiency."
+      ,
+      "PERIOD": "Jul 2021 – Oct 2024"
       },
       "Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack": {
         "TITLE": "Rafael Belloso Chacin University | Full-Stack Web Development",
         "DESCRIPTION": "Senior Thesis Project: Developed a responsive crowdfunding web application using FastAPI (Python), React, and Bootstrap, significantly enhancing accessibility for contributions to social initiatives."
+      ,
+      "PERIOD": "Jan 2024 – Apr 2024"
       },
       "Regalado Group: Bienes Raíces | Encargado de Departamento de Redes": {
         "TITLE": "Regalado Group: Real Estate | Manager of Network Department",
         "DESCRIPTION": "Managed commercial website administration and Joomla CMS content, oversaw real estate property listings. Provided direct support to internal users/advisors and the advertising agency."
+      ,
+      "PERIOD": "Mar 2022 – Oct 2023"
       },
       "SysModelers | Desarrollo Web Front-end": {
         "TITLE": "SysModelers | Front-End Web Developer",
         "DESCRIPTION": "Developed user‑centered and accessible UI/UX experiences leveraging React components and CoreUI. Proactively optimized CRUD functionalities and UI responsiveness by implementing performance updates for perceived performance, even addressing backend query optimizations."
+      ,
+      "PERIOD": "Aug 2021 – Feb 2022"
       },
       "Romano's Pizza | Desarrollo Web Full-Stack": {
         "TITLE": "Romano's Pizza | Full-Stack Web Development",
         "DESCRIPTION": "Developed a web point‑of‑sale (POS) application project, leveraging a personal PHP framework, MySQL, Vue.js, and Vuetify, to streamline sales and inventory management."
+      ,
+      "PERIOD": "Jul 2021 – Nov 2022"
       }
     }
   },
