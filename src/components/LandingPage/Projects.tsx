@@ -25,14 +25,16 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
         <Button.LinkSolid href={`${links.projectsPage.url}/${project.slug}`} size="small" className="text-caribbean_current">
           {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
-        <Button.LinkOutline
-          size="small"
-          href={projectLink.url}
-          target="_blank"
-          className="hover:text-caribbean_current"
-        >
-          {projectLink.label}
-        </Button.LinkOutline>
+        {projectLink && (
+          <Button.LinkOutline
+            size="small"
+            href={projectLink.url}
+            target="_blank"
+            className="hover:text-caribbean_current"
+          >
+            {projectLink.label}
+          </Button.LinkOutline>
+        )}
       </section>
     </article>
   )
