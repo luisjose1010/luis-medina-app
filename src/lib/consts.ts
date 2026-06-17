@@ -15,6 +15,31 @@ export const languages = {
 
 export const projects: Project[] = [
   {
+    name: 'Traders Institute Academy',
+    description: 'Una plataforma educativa completa para trading, que incluye una landing page, un portal de estudiantes y un panel administrativo. Desarrollada como monorepo con backend serverless y una base de datos distribuida, cuenta con un sistema de autenticación por roles.',
+    imagesCount: 5,
+    links: [],
+    slug: 'traders-institute-academy',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Express', 'Drizzle ORM', 'Turso', 'Vercel']
+  },
+  {
+    name: 'EcoHome WebApp (NPS App)',
+    description: 'Colaborador en esta aplicación multiplataforma (iOS, Android, Web) orientada a la eficiencia y el control en el hogar, desarrollada utilizando el ecosistema de React Native y Firebase. Incluye autenticación, base de datos en tiempo real y sincronización en la nube mediante Cloud Functions.',
+    note: 'Proyecto colaborativo.',
+    imagesCount: 5,
+    links: [],
+    slug: 'ecohome-webapp',
+    tags: ['TypeScript', 'React Native', 'Firebase', 'Node.js', 'Cross-Platform']
+  },
+  {
+    name: 'Canvassing App (CCTV FB Lead)',
+    description: 'Aplicación web progresiva (PWA) construida para la gestión de leads en campo. Cuenta con integración de datos a través de GoHighLevel (GHL) y servicios en la nube para sincronizar información en tiempo real de los clientes y ventas.',
+    imagesCount: 5,
+    links: [],
+    slug: 'canvassing-app',
+    tags: ['TypeScript', 'React', 'PWA', 'Tailwind CSS']
+  },
+  {
     name: 'Plataforma Crowdfunding',
     description: 'Un sitio web basado en crowdfunding de donación con la finalidad de gestionar pagos fácilmente en distintas plataformas y promocionar proyectos de impacto social en Venezuela, con la intención de apoyar y dar visibilidad a personas de bajo recursos, en un estado de necesidad, vulnerabilidad y todo tipo de causas sociales en general.',
     imagesCount: 9,
@@ -127,38 +152,38 @@ export const projects: Project[] = [
 export const experience = [
   {
     name: 'Desarrollador Full-Stack | Proyectos Freelance',
-    description: 'Diseñé, desarrollé y desplegué tres sitios web a medida (seguros, bienes raíces y e‑commerce de joyería). Utilicé TypeScript, Tailwind CSS, Node.js, funciones serverless y SQL para entregar soluciones robustas, escalables y responsivas. Proyectos oficiales: CP Global Insurance, All City Gold Jewelry y Melissa Barba Real Estate.',
+    description: 'Diseñé, desarrollé y desplegué sitios web a medida (seguros, bienes raíces, e‑commerce de joyería) con TypeScript, Tailwind CSS, Node.js, funciones serverless y SQL. Proyectos oficiales: CP Global Insurance, All City Gold Jewelry, Melissa Barba Real Estate.',
     year: '2025'
   },
   {
     name: 'Tomodachi Events | Desarrollo Web Full-Stack',
-    description: 'Mantenimiento y desarrollo de aplicaciones cliente‑servidor internas (gestión de eventos, administración). Stack: TypeScript, React y Express.js/Node.js con PostgreSQL, logrando ~20% de mejora de desempeño mediante optimización de API y consultas/BD.',
+    description: 'Mantenimiento y desarrollo de apps cliente‑servidor internas (eventos, administración). TypeScript, React y Express/Node.js con PostgreSQL; ~20% de mejora en desempeño vía optimización de API/BD.',
     year: '2025'
   },
   {
     name: 'Sabe de Seguros | Desarrollo Web Full-Stack',
-    description: 'Desarrollé y administré sistemas de cotización web responsivos con un plugin personalizado de WordPress (PHP, MySQL, Vue, Vuetify), reduciendo el tiempo de cotización en ~40%. Gestioné el CMS de WordPress e integré sistemas de cotizadores basados en Excel, mejorando la eficiencia de datos.',
+    description: 'Plugin WordPress (PHP, MySQL, Vue, Vuetify) para cotizadores web responsivos; ~40% menos tiempo de cotización. Gestión de CMS e integración con sistemas basados en Excel.',
     year: '2024'
   },
   {
     name: 'Universidad Rafael Belloso Chacín | Desarrollo Web Full-Stack',
-    description: 'Trabajo de grado: desarrollé una aplicación web de crowdfunding responsive con FastAPI (Python), React y Bootstrap, mejorando significativamente la accesibilidad para contribuciones a iniciativas sociales.',
+    description: 'Trabajo de grado: app de crowdfunding responsive con FastAPI (Python), React y Bootstrap; mejora de accesibilidad para aportes a iniciativas sociales.',
     year: '2024'
   },
   {
-    name: 'Regalado Group: Bienes Raíces | Encargado de Departamento de Redes',
-    description: 'Administración del sitio web comercial y contenido con Joomla CMS; supervisión de listados de inmuebles; soporte directo a usuarios internos/asesores y al equipo de publicidad.',
-    year: '2023'
-  },
-  {
     name: "Romano's Pizza | Desarrollo Web Full-Stack",
-    description: 'Proyecto freelance: desarrollo de una aplicación web POS utilizando un framework personal en PHP, MySQL, Vue.js y Vuetify para agilizar ventas y gestión de inventario.',
+    description: 'Proyecto POS web con framework personal (PHP, MySQL, Vue.js, Vuetify) para ventas e inventario.',
     year: '2022'
   },
   {
     name: 'SysModelers | Desarrollo Web Front-end',
-    description: 'Experiencias UI/UX centradas en el usuario y accesibles con componentes React y CoreUI. Optimización proactiva de funcionalidades CRUD y responsividad mediante mejoras de rendimiento y consultas.',
+    description: 'UI/UX accesibles con React y CoreUI. Optimización de funcionalidades CRUD y responsividad, incluyendo mejoras de rendimiento.',
     year: '2022'
+  },
+  {
+    name: 'Regalado Group: Bienes Raíces | Encargado de Departamento de Redes',
+    description: 'Administración del sitio (Joomla CMS), listados de propiedades y soporte a usuarios/asesores y a la agencia publicitaria.',
+    year: '2023'
   }
 ]
 
