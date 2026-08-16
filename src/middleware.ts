@@ -47,7 +47,7 @@ export async function middleware (request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    '/((?!_next|assets|favicon.ico).*)'
+    '/((?!_next|assets|favicon.ico|portfolio).*)'
     // Optional: only run on root (/) URL
     // '/'
   ]
