@@ -47,41 +47,45 @@
   --cyan-900: 210 238 236;
 }
 
-/* --- Dark theme: same layout, palette built from dark_purple + brighter teals --- */
+/* --- Dark theme ---
+   Same layout, palette ported from the standalone dark portfolio
+   (public/portfolio/index.html): near-black blue-teal ground, thin white
+   borders instead of shadows, and a bright cyan accent. */
 :root[data-theme='dark'] {
-  --bg: 15 10 28;
-  --surface: 27 21 51;
-  --band: 22 17 42;
-  --ink: 243 240 247;
-  --line: 146 212 221;
+  --bg: 6 12 16;
+  --surface: 12 24 30;
+  --band: 9 18 23;
+  --ink: 234 242 245;
+  --line: 226 240 243;
+  /* used at low alpha → reads as the "white 9–16%" border of the dark design */
 
-  --glass-bg: 40 32 70;
-  --glass-alpha: 0.55;
-  --glass-border: 146 212 221;
-  --glass-border-alpha: 0.18;
+  --glass-bg: 14 27 34;
+  --glass-alpha: 0.72;
+  --glass-border: 255 255 255;
+  --glass-border-alpha: 0.1;
 
-  /* Accent ramps shift up: what was deep teal now reads as light teal on the dark page */
-  --caribbean: 92 191 204;
-  --caribbean-100: 201 234 238;
-  --caribbean-200: 146 212 221;
-  --caribbean-300: 120 204 199;
-  --caribbean-400: 92 191 204;
-  --caribbean-500: 75 187 181;
-  --caribbean-600: 54 157 171;
-  --caribbean-700: 44 115 112;
-  --caribbean-800: 29 86 93;
-  --caribbean-900: 22 64 70;
+  /* Accent ramps: bright cyan on top, deep teal at the bottom */
+  --caribbean: 54 204 204;
+  --caribbean-100: 214 245 245;
+  --caribbean-200: 180 238 238;
+  --caribbean-300: 128 226 226;
+  --caribbean-400: 90 214 214;
+  --caribbean-500: 54 204 204;
+  --caribbean-600: 20 173 175;
+  --caribbean-700: 16 140 143;
+  --caribbean-800: 14 110 113;
+  --caribbean-900: 12 80 83;
 
-  --cyan: 120 204 199;
-  --cyan-100: 210 238 236;
-  --cyan-200: 165 221 218;
-  --cyan-300: 120 204 199;
-  --cyan-400: 100 196 190;
-  --cyan-500: 75 187 181;
-  --cyan-600: 54 143 139;
-  --cyan-700: 44 115 112;
-  --cyan-800: 33 87 84;
-  --cyan-900: 22 58 56;
+  --cyan: 45 212 191;
+  --cyan-100: 204 251 241;
+  --cyan-200: 167 243 228;
+  --cyan-300: 110 231 214;
+  --cyan-400: 78 222 202;
+  --cyan-500: 45 212 191;
+  --cyan-600: 20 184 166;
+  --cyan-700: 15 148 136;
+  --cyan-800: 17 115 107;
+  --cyan-900: 19 78 74;
 
   color-scheme: dark;
 }
@@ -127,6 +131,24 @@ html {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Faint technical grid — borrowed from the dark portfolio's hero.
+     Only paints under the dark theme; in light it stays invisible. */
+  .bg-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -27;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-out-strong);
+    background-image:
+      linear-gradient(to right, rgb(var(--line) / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
   }
 
   /* Reusable glass surface — same recipe as the NavBar pill, theme-aware */
@@ -356,6 +378,15 @@ html {
 
 .cue-bounce {
   animation: cueBounce 2.2s ease-in-out infinite;
+}
+
+:root[data-theme='dark'] .bg-grid::before {
+  opacity: 1;
+}
+
+/* The film grain reads as noise over the near-black ground — ease it off */
+:root[data-theme='dark'] .bg-grain::after {
+  opacity: 0.25;
 }
 
 /* Film grain texture overlay (subtle, sits above ambient blobs, below content) */

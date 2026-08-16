@@ -145,12 +145,12 @@ export function Header () {
   })
 
   return (
-    <header id="header" className="relative bg-grain flex h-auto lg:p-10 lg:pb-0 lg:max-2xl:h-screen">
+    <header id="header" className="relative bg-grain bg-grid flex h-auto lg:p-10 lg:pb-0 lg:max-2xl:h-screen">
       {/* Ambient background atmosphere */}
       <div aria-hidden className="absolute inset-0 -z-30 overflow-hidden">
-        <div className="blob absolute -top-40 -right-40 h-[34rem] w-[34rem] rounded-full bg-dark_cyan-800/50 blur-3xl" />
-        <div className="blob blob-slow absolute top-1/4 -left-48 h-[28rem] w-[28rem] rounded-full bg-desert_sand-700/60 blur-3xl dark:bg-desert_sand-300/25" />
-        <div className="blob absolute -bottom-24 right-1/4 h-[22rem] w-[22rem] rounded-full bg-caribbean_current-900/70 blur-3xl" />
+        <div className="blob absolute -top-40 -right-40 h-[34rem] w-[34rem] rounded-full bg-dark_cyan-800/50 blur-3xl dark:bg-dark_cyan-900/35" />
+        <div className="blob blob-slow absolute top-1/4 -left-48 h-[28rem] w-[28rem] rounded-full bg-desert_sand-700/60 blur-3xl dark:bg-desert_sand-200/20" />
+        <div className="blob absolute -bottom-24 right-1/4 h-[22rem] w-[22rem] rounded-full bg-caribbean_current-900/70 blur-3xl dark:bg-caribbean_current-900/25" />
       </div>
       {/* Side decoration — also the slide picker */}
       <div className="flex relative flex-col justify-center marker:text-xl text-desert_sand  before:block before:absolute before:-top-[50%] before:bottom-[65%] before:border-l-[3px] before:border-caribbean_current before:rounded-2xl after:block after:absolute after:top-[65%] after:-bottom-20 after:border-l-[3px] after:border-caribbean_current after:rounded-2xl after:overflow-hidden after:-z-10 max-lg:left-10">
@@ -196,7 +196,7 @@ export function Header () {
           </div>
           <div className="flex relative">
             {/* Backdrop shape behind the portrait */}
-            <div aria-hidden className="absolute left-1/2 bottom-0 top-16 w-[85%] -translate-x-1/2 -z-[25] rounded-t-[10rem] rounded-b-[2rem] bg-gradient-to-tr from-caribbean_current-800/60 via-dark_cyan-800/50 to-desert_sand-700/70" />
+            <div aria-hidden className="absolute left-1/2 bottom-0 top-16 w-[85%] -translate-x-1/2 -z-[25] rounded-t-[10rem] rounded-b-[2rem] bg-gradient-to-tr from-caribbean_current-800/60 via-dark_cyan-800/50 to-desert_sand-700/70 dark:from-caribbean_current-900/35 dark:via-dark_cyan-900/25 dark:to-desert_sand-100/20" />
             <i className="w-16 h-16 mt-2 lg:hidden">
               <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0" /><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" /><g id="SVGRepo_iconCarrier"> <path d="M12 5L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M8 16L12 20L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M16 8L12 4L8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> </g></svg>
             </i>
