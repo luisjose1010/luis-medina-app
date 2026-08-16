@@ -11,6 +11,7 @@ interface Project {
   note?: string
   links: ProjectLink[]
   imagesCount: number
+  cover?: number // 1-based index of the screenshot used as card cover (defaults to 1)
   slug: string
   tags: string[]
 }

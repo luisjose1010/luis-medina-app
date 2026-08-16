@@ -35,6 +35,7 @@ export const projects: Project[] = [
     description: 'Colaborador en esta aplicación multiplataforma (iOS, Android, Web) orientada a la eficiencia y el control en el hogar, desarrollada utilizando el ecosistema de React Native y Firebase. Incluye autenticación, base de datos en tiempo real y sincronización en la nube mediante Cloud Functions.',
     note: 'Proyecto colaborativo.',
     imagesCount: 5,
+    cover: 2,
     links: [],
     slug: 'ecohome-webapp',
     tags: ['TypeScript', 'React Native', 'Firebase', 'Node.js', 'Cross-Platform']

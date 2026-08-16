@@ -34,9 +34,10 @@ route: /[lang]/projects/:id → Detalle dinámico del proyecto
 | `Projects` & `ProjectCard` | `src/components/Projects.tsx` | Tarjetas de proyectos que consumen la data de `consts.ts`. |
 | `NavBar` / `Footer` | `src/components/` | Navegación global del sitio y enlaces sociales. |
 | `Button` | `src/components/Button.tsx` | Componentes base para botones y enlaces con estilos consistentes. |
+| `Stats` | `src/components/LandingPage/Stats.tsx` | Banda de métricas (años, proyectos, apps en vivo, tecnologías) calculadas desde `consts.ts` con count-up vía `IntersectionObserver`. |
 
 ### Data Model (`src/lib/consts.ts`)
-- **`projects`**: Array de objetos con `name`, `description`, `note`, `links` (tipo, label, url), `slug`, `tags`, `imagesCount`.
+- **`projects`**: Array de objetos con `name`, `description`, `note`, `links` (tipo, label, url), `slug`, `tags`, `imagesCount`, `cover?` (índice 1-based del screenshot usado como portada de card; default 1).
 - **`experience`**: Array de experiencia profesional (`name`, `description`, `year`).
 - **`skills` / `tools`**: Logos y nombres de herramientas.
 
@@ -54,8 +55,17 @@ route: /[lang]/projects/:id → Detalle dinámico del proyecto
 ---
 
 ## §T — Próximas Mejoras (Tasks)
-- [ ] Incorporar proyectos faltantes (`Traders Institute Academy`, `EcoHome WebApp`, `Canvassing App`).
-- [ ] Capturar y optimizar (WEBP) los screenshots de los nuevos proyectos locales.
-- [ ] Aplicar efecto "Glassmorphism" a los componentes flotantes como el NavBar.
-- [ ] Mejorar las transiciones de `hover` en `ProjectCard` (micro-animaciones).
+- [x] Incorporar proyectos faltantes (`Traders Institute Academy`, `EcoHome WebApp`, `Canvassing App`).
+- [x] Capturar y optimizar (WEBP) los screenshots de los nuevos proyectos locales.
+- [x] Aplicar efecto "Glassmorphism" a los componentes flotantes como el NavBar (nav desktop = píldora glass: `bg-seasalt/60` + `backdrop-blur-md`; nav móvil ya lo tenía).
+- [x] Mejorar las transiciones de `hover` en `ProjectCard` (micro-animaciones: lift + sombra en cards del landing, logos de skills, `active:scale` en botones).
 - [ ] (Opcional) Implementar un conmutador explícito para "Dark Mode".
+- [x] Tipografía display: `Fraunces` (variable `--font-display`, clase `font-display`) en h1/h2; `Inter` sigue como body.
+- [x] Accesibilidad: `prefers-reduced-motion` global + `focus-visible` ring de marca (`dark_cyan`) en `Button.tsx` (reemplaza ring azul genérico).
+- [x] Hero: badge "disponible", indicadores de slide clicables con temporizador, autoplay que pausa en hover, cue de scroll, blobs animados (`.blob`).
+- [x] Sección `Stats` con contadores animados derivados de `consts.ts` (sin números hardcodeados).
+- [x] Cards del landing con portada (`cover`), overlay y chips de tags; carrusel con snap en móvil (antes ocultas en `<lg`).
+- [x] Marquee infinito de logos en `Skills` (pausa en hover, máscara de bordes).
+- [x] Barra de progreso de scroll (CSS `animation-timeline: scroll()`, sin JS) + scrollbar/`::selection` de marca.
+- [x] Páginas internas (proyectos, detalle, contacto) alineadas a la marca: headers `font-display` con gradiente, atmósfera ambiental, panel glass, tags y formulario con paleta propia (`Decorations.tsx` recoloreado, clases Tailwind inválidas `border-[f0f0f0]`/`focus:border-primary` corregidas).
+- [x] SEO: metadata completa (OG/Twitter/robots/metadataBase) + `opengraph-image` generada con `next/og`.

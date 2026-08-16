@@ -42,7 +42,7 @@ function Solid ({
   const buttonSizeClass = getSizeClass(size) // Default to medium size if no size prop is provided.
 
   return (
-    <button onClick={onClick} type={type} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <button onClick={onClick} type={type} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold active:scale-[0.97] transition-[background-color,color,transform] duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-dark_cyan-600 focus-visible:ring-offset-2`}>
       {children}
     </button>
   )
@@ -54,7 +54,7 @@ function Outline ({
   const buttonSizeClass = getSizeClass(size)
 
   return (
-    <button onClick={onClick} type={type} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <button onClick={onClick} type={type} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold active:scale-[0.97] transition-[background-color,color,transform] duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-dark_cyan-600 focus-visible:ring-offset-2`}>
       {children}
     </button>
   )
@@ -66,7 +66,7 @@ function LinkSolid ({
   const buttonSizeClass = getSizeClass(size)
 
   return (
-    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold transition-colors duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'bg-seasalt hover:bg-desert_sand-600'} ${(!customColors && dark) && 'bg-caribbean_current hover:bg-dark_cyan-600'} rounded-3xl font-semibold active:scale-[0.97] transition-[background-color,color,transform] duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-dark_cyan-600 focus-visible:ring-offset-2`}>
       {children}
     </Link>
   )
@@ -78,7 +78,7 @@ function LinkOutline ({
   const buttonSizeClass = getSizeClass(size)
 
   return (
-    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold transition-[background-color] duration-200 ease-in-out focus:ring focus:ring-blue-300`}>
+    <Link href={href} target={target} rel={rel} className={`${buttonSizeClass} ${className} ${(!customColors && !dark) && 'hover:bg-seasalt hover:outline-seasalt'} ${(!customColors && dark) && 'hover:bg-caribbean_current hover:outline-caribbean_current'} outline outline-current outline-2 -outline-offset-1 text-base rounded-3xl font-semibold active:scale-[0.97] transition-[background-color,color,transform] duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-dark_cyan-600 focus-visible:ring-offset-2`}>
       {children}
     </Link>
   )

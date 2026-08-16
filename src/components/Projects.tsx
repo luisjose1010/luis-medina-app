@@ -5,16 +5,16 @@ import { useProjects } from '@/hooks/useProjects'
 import { useTranslation } from '@/hooks/useTranslation'
 import Image from 'next/image'
 
-export function ProjectCard ({ name, description, links: projectLinks, slug, note }: Project) {
+export function ProjectCard ({ name, description, links: projectLinks, slug, note, tags, cover }: Project) {
   const { UI } = useTranslation()
   const { links } = useLinks()
   const projectLink = projectLinks[0]
 
   return (
-    <article className="relative flex flex-col justify-between p-4 text-gray-700 bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-1 bg-clip-border rounded-xl border border-white/20">
+    <article className="reveal relative flex flex-col justify-between p-4 text-gray-700 bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-1 bg-clip-border rounded-xl border border-white/20">
       <section className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-gray-200 bg-clip-border rounded-xl group">
         <Image
-          src={`/assets/projects/${slug}/1.webp`}
+          src={`/assets/projects/${slug}/${cover ?? 1}.webp`}
           width={1680}
           height={1050}
           alt={name}
@@ -30,6 +30,15 @@ export function ProjectCard ({ name, description, links: projectLinks, slug, not
         <p className="line-clamp-3 text-sm font-normal leading-relaxed text-gray-700 opacity-80">
           {description}
         </p>
+        <ul className="mt-3 flex flex-wrap gap-1.5">
+          {
+            tags.slice(0, 5).map((tag, index) => (
+              <li key={index} className="rounded-full border border-caribbean_current/20 bg-caribbean_current/5 px-2 py-0.5 text-[11px] font-medium text-caribbean_current">
+                {tag}
+              </li>
+            ))
+          }
+        </ul>
         {
           note != null && (
             <p className="mt-3 text-xs text-gray-600 border-l-2 border-caribbean_current pl-2">

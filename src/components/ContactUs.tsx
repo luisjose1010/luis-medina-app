@@ -45,7 +45,7 @@ export function ContactUs () {
               className="
                   text-caribbean_current
                   mb-6
-                  uppercase
+                  uppercase font-display tracking-tight
                   font-bold
                   text-[32px]
                   sm:text-[40px]
@@ -61,7 +61,7 @@ export function ContactUs () {
           </div>
         </div>
         <div className="w-full lg:w-1/2 2xl:w-5/12 px-4">
-          <div className="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
+          <div className="glass relative rounded-2xl p-8 sm:p-12 shadow-xl shadow-caribbean_current/10">
             <form onSubmit={(e) => { onSubmit(e) }} aria-label="Contact form">
               <div className="mb-6">
                 <label htmlFor="contact-name" className="sr-only">{APP.CONTACT.FORM_NAME}</label>
@@ -72,14 +72,14 @@ export function ContactUs () {
                   placeholder={APP.CONTACT.FORM_NAME}
                   className="
                         w-full
-                        rounded
+                        rounded-xl
                         py-3
                         px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
+                        text-dark_purple text-base placeholder:text-dark_purple/40
+                        border border-caribbean_current/15 bg-seasalt/60
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
                         "
                   autoComplete="name"
                   required
@@ -94,14 +94,14 @@ export function ContactUs () {
                   placeholder={APP.CONTACT.FORM_EMAIL}
                   className="
                         w-full
-                        rounded
+                        rounded-xl
                         py-3
                         px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
+                        text-dark_purple text-base placeholder:text-dark_purple/40
+                        border border-caribbean_current/15 bg-seasalt/60
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
                         "
                   autoComplete="email"
                   required
@@ -116,14 +116,14 @@ export function ContactUs () {
                   placeholder={APP.CONTACT.FORM_PHONE}
                   className="
                         w-full
-                        rounded
+                        rounded-xl
                         py-3
                         px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
+                        text-dark_purple text-base placeholder:text-dark_purple/40
+                        border border-caribbean_current/15 bg-seasalt/60
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
                         "
                   autoComplete="tel"
                 />
@@ -137,15 +137,15 @@ export function ContactUs () {
                   placeholder={APP.CONTACT.FORM_MESSAGE}
                   className="
                         w-full
-                        rounded
+                        rounded-xl
                         py-3
                         px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
+                        text-dark_purple text-base placeholder:text-dark_purple/40
+                        border border-caribbean_current/15 bg-seasalt/60
                         resize-none
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
                         "
                   required
                 ></textarea>

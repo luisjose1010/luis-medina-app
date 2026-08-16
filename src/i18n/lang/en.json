@@ -14,6 +14,17 @@
       "PROJECTS_TITLE": "Projects",
       "PROJECTS_DESCRIPTION": "Throughout my professional and academic career, I have developed several projects that I will be presenting to you below."
     },
+    "HERO": {
+      "BADGE": "Available for new projects",
+      "SCROLL": "Scroll",
+      "SLIDE": "Slide"
+    },
+    "STATS": {
+      "YEARS": "Years building software",
+      "PROJECTS": "Projects delivered",
+      "LIVE": "Apps in production",
+      "TECHS": "Technologies used"
+    },
     "PROJECTS": {
       "TITLE": "Projects",
       "DESCRIPTION": "Explore my experience in software development and web solutions throughout my career path. In the section below, you will find details about the most notable projects I have worked on."

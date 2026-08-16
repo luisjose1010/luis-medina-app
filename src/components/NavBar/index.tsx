@@ -45,11 +45,11 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
         <LanguageSelector className={`${!open ? '-top-10' : 'top-6'} w-32 fixed z-20 md:hidden max-sm:right-0 max-sm:left-0 max-sm:mx-auto`} />
       </article>
 
-      <nav className="flex flex-grow text-sm font-bold lg:w-auto lg:justify-between max-lg:hidden items-center">
+      <nav className="flex flex-grow mt-4 px-8 py-3 text-sm font-bold items-center rounded-full border border-white/40 bg-seasalt/60 shadow-lg shadow-caribbean_current/5 backdrop-blur-md lg:w-auto lg:justify-between max-lg:hidden">
         {
           links?.map((link, index) => (
-            <Link key={index} href={link.url} target={link.target ?? '_self'}>
-              <span className="transition duration-300 ease-in-out hover:text-caribbean_current-800">{link.name}</span>
+            <Link key={index} href={link.url} target={link.target ?? '_self'} className="rounded-full px-3 py-1.5 transition duration-300 ease-in-out hover:bg-caribbean_current/10 hover:text-caribbean_current-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caribbean_current/60">
+              <span>{link.name}</span>
             </Link>
           ))
         }

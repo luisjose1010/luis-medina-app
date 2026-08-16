@@ -13,6 +13,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        display: ["var(--font-display)", "serif"],
+      },
       colors: {
         'caribbean_current': { DEFAULT: '#246a73', 100: '#071517', 200: '#0f2b2f', 300: '#164046', 400: '#1d565d', 500: '#246a73', 600: '#369dab', 700: '#5cbfcc', 800: '#92d4dd', 900: '#c9eaee' },
         'dark_cyan': { DEFAULT: '#368f8b', 100: '#0b1d1c', 200: '#163a38', 300: '#215754', 400: '#2c7370', 500: '#368f8b', 600: '#4bbbb5', 700: '#78ccc7', 800: '#A5ddda', 900: '#d2eeec' },

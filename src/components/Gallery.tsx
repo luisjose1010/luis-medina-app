@@ -41,11 +41,16 @@ export function Gallery ({ images, altBase, sizes }: GalleryProps) {
   }, [current, paused, nextSlide])
 
   return (
-    <article className='mx-auto bg-gray-200 overflow-hidden relative rounded-xl w-full lg:w-1/2 aspect-[16/10]'
+    <article className='group mx-auto bg-gradient-to-br from-desert_sand-900 via-seasalt to-dark_cyan-900 overflow-hidden relative rounded-2xl border border-white/50 shadow-xl shadow-caribbean_current/10 w-full lg:w-2/3 xl:w-1/2 aspect-[16/10]'
       onMouseEnter={() => { setPaused(true) }}
       onMouseLeave={() => { setPaused(false) }}
       aria-roledescription="carousel"
       aria-label="Project gallery"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === 'ArrowLeft') previousSlide()
+        if (event.key === 'ArrowRight') nextSlide()
+      }}
     >
       <section
         className="flex h-full transition ease-out duration-200"
@@ -78,14 +83,21 @@ export function Gallery ({ images, altBase, sizes }: GalleryProps) {
         </Button.Outline>
       </section>
 
+      <span className="absolute right-3 top-3 z-10 rounded-full glass px-2.5 py-0.5 text-xs font-semibold tabular-nums text-caribbean_current">
+        {current + 1} / {images.length}
+      </span>
+
       <div className='absolute flex justify-center bottom-0 py-2.5 gap-2 w-full z-10 md:py-4 md:gap-5'>
         {
           images.map((_src, index) => (
-            <div
+            <button
+              type="button"
               key={index}
+              aria-label={`${altBase ?? 'Project image'} ${index + 1}`}
+              aria-current={current === index}
               onClick={() => { setCurrent(index) }}
-              className={`${current === index ? 'bg-caribbean_current' : 'bg-desert_sand'} w-2 h-2 rounded-full cursor-pointer md:w-3 md:h-3`}
-            ></div>
+              className={`${current === index ? 'bg-caribbean_current w-5 md:w-7' : 'bg-desert_sand w-2 hover:bg-desert_sand-400 md:w-3'} h-2 rounded-full transition-all duration-300 md:h-3`}
+            ></button>
           ))
         }
       </div>

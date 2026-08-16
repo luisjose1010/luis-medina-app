@@ -26,44 +26,47 @@ export function Project ({ project, className = '' }: ProjectProps) {
         (_, i) => `/assets/projects/${project.slug}/${i + 1}.webp`
         )
       } />
-      <section className="p-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-medium leading-relaxed text-caribbean_current-100">
-            {project.name}
-          </h2>
-        </div>
-        <p className="text-base font-normal leading-normal text-gray-700 opacity-75">
+      <section className="mx-auto mt-8 max-w-3xl rounded-2xl glass p-6 shadow-lg shadow-caribbean_current/5">
+        <h2 className="font-display text-2xl font-bold tracking-tight text-caribbean_current">
+          {project.name}
+        </h2>
+        <p className="mt-2 text-base leading-relaxed text-dark_purple/70">
           {project.description}
         </p>
         {
           project.note != null && (
-            <p className="mt-2 text-sm font-normal leading-normal text-gray-600">
-              <strong className="font-bold opacity-90">{project.note}</strong>
+            <p className="mt-4 border-l-2 border-desert_sand pl-3 text-sm leading-relaxed text-dark_purple/60">
+              <strong className="font-semibold">{project.note}</strong>
             </p>
           )
         }
       </section>
 
       {/* Presentation Links Section */}
-      <LinkSection title={APP.PROJECT.PRESENTATION_LINKS} links={presentationLinks} className="ml-5" />
+      <LinkSection title={APP.PROJECT.PRESENTATION_LINKS} links={presentationLinks} className="mx-auto mt-4 max-w-3xl px-6" />
 
       {/* App Links Section */}
-      <LinkSection title={APP.PROJECT.APP_LINKS} links={appLinks} className="ml-5" />
+      <LinkSection title={APP.PROJECT.APP_LINKS} links={appLinks} className="mx-auto mt-4 max-w-3xl px-6" />
 
       {/* API Links Section */}
-      <LinkSection title={APP.PROJECT.API_LINKS} links={apiLinks} className="ml-5" />
+      <LinkSection title={APP.PROJECT.API_LINKS} links={apiLinks} className="mx-auto mt-4 max-w-3xl px-6" />
 
       {/* Monorepo Links Section */}
-      <LinkSection title={APP.PROJECT.FULLSTACK_LINKS} links={fullstackLinks} className="ml-5" />
+      <LinkSection title={APP.PROJECT.FULLSTACK_LINKS} links={fullstackLinks} className="mx-auto mt-4 max-w-3xl px-6" />
 
       {/* Other Links Section */}
-      <LinkSection title={APP.PROJECT.OTHERS_LINKS} links={otherLinks} className="ml-5" />
+      <LinkSection title={APP.PROJECT.OTHERS_LINKS} links={otherLinks} className="mx-auto mt-4 max-w-3xl px-6" />
 
-      <section className='p-6'>
-        <p className="mb-2 text-sm text-dark_purple/80">{APP.SKILLS.SKILLS_TITLE}</p>
-        <div aria-label={APP.SKILLS.SKILLS_TITLE}>
+      <section className='mx-auto max-w-3xl p-6'>
+        <p className="mb-2 text-xs font-bold uppercase tracking-widest text-caribbean_current">{APP.SKILLS.SKILLS_TITLE}</p>
+        <div aria-label={APP.SKILLS.SKILLS_TITLE} className="flex flex-wrap gap-2">
           {project.tags.map((tag, index) => (
-            <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tag}</span>
+            <span
+              key={index}
+              className="rounded-full border border-caribbean_current/20 bg-caribbean_current/5 px-3 py-1 text-sm font-semibold text-caribbean_current transition-colors duration-300 hover:bg-caribbean_current hover:text-seasalt"
+            >
+              {tag}
+            </span>
           ))}
         </div>
       </section>

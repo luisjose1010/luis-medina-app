@@ -6,35 +6,56 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
-body.dark {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* Sticky headings/anchors never land under the floating nav */
+  scroll-padding-top: 6rem;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
 }
 
+::selection {
+  background-color: #368f8b;
+  color: #fcfaf9;
+}
+
+/* Brand scrollbar (Firefox + WebKit) */
+html {
+  scrollbar-color: #368f8b #f1e5dc;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f2ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #368f8b, #246a73);
+  border-radius: 999px;
+  border: 2px solid #f8f2ed;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Reusable glass surface — same recipe as the NavBar pill */
+  .glass {
+    background-color: rgb(252 250 249 / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.4);
   }
 }
 
@@ -65,7 +86,6 @@ body {
   }
 
   to {
-    display: hidden;
     transform: translateY(-50vh);
   }
 }
@@ -73,7 +93,6 @@ body {
 @keyframes slideInBottom {
   from {
     transform: translateY(50vh);
-    display: hidden;
   }
 
   to {
@@ -91,4 +110,198 @@ body {
 
 .slide-in-bottom {
   animation: slideInBottom 0.3s ease-in-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s var(--ease-out-strong) both;
+}
+
+/* Scroll-linked reveals — progressive enhancement, no JS */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fadeUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+/* Scroll progress bar — scroll-driven, no JS */
+@keyframes growProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.scroll-progress {
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: growProgress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* Living gradient for display headings */
+@keyframes gradientFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-flow {
+  background-size: 200% 200%;
+  animation: gradientFlow 9s ease-in-out infinite;
+}
+
+/* Slow drift for the ambient blobs — keeps the hero alive without noise */
+@keyframes blobDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate3d(3%, -4%, 0) scale(1.06);
+  }
+
+  66% {
+    transform: translate3d(-3%, 3%, 0) scale(0.96);
+  }
+}
+
+.blob {
+  animation: blobDrift 22s ease-in-out infinite;
+}
+
+.blob-slow {
+  animation-duration: 32s;
+  animation-direction: reverse;
+}
+
+/* Infinite logo marquee (track is duplicated in markup) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  width: max-content;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-mask:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Availability dot */
+@keyframes pingSoft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  70%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.ping-soft {
+  animation: pingSoft 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Hero slide progress bar (matches the 5s autoplay) */
+@keyframes slideTimer {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.slide-timer {
+  transform-origin: 50% 0;
+  animation: slideTimer 5s linear both;
+}
+
+/* Bounce cue inviting the scroll */
+@keyframes cueBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+.cue-bounce {
+  animation: cueBounce 2.2s ease-in-out infinite;
+}
+
+/* Film grain texture overlay (subtle, sits above ambient blobs, below content) */
+.bg-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -26;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Accessibility: honor reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
