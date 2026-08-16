@@ -1,37 +1,12 @@
 'use client'
-import { useEffect, useState } from 'react'
-
-type Theme = 'light' | 'dark'
-
-export const THEME_STORAGE_KEY = 'lm-theme'
-export const DEFAULT_THEME: Theme = 'dark'
+import { useTheme } from '@/hooks/useTheme'
 
 interface ThemeToggleProps {
   className?: string
 }
 
 export function ThemeToggle ({ className = '' }: ThemeToggleProps) {
-  // The real theme is set by the inline script in the layout before paint;
-  // this only mirrors it so the icon matches on hydration.
-  const [theme, setTheme] = useState<Theme>(DEFAULT_THEME)
-
-  useEffect(() => {
-    const current = document.documentElement.dataset.theme
-    setTheme(current === 'light' ? 'light' : 'dark')
-  }, [])
-
-  const toggleTheme = (): void => {
-    const next: Theme = theme === 'dark' ? 'light' : 'dark'
-    document.documentElement.dataset.theme = next
-    setTheme(next)
-
-    try {
-      window.localStorage.setItem(THEME_STORAGE_KEY, next)
-    } catch {
-      // Storage can be unavailable (private mode); the toggle still works for this visit
-    }
-  }
-
+  const [theme, toggleTheme] = useTheme()
   const isDark = theme === 'dark'
 
   return (

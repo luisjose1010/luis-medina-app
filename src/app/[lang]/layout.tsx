@@ -1,8 +1,10 @@
-import { fraunces, inter } from '@/assets/styles/fonts'
+import { fraunces, inter, jetbrainsMono, spaceGrotesk } from '@/assets/styles/fonts'
 import '@/assets/styles/globals.css'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { TranslationProvider } from '@/contexts/translation'
+import { THEME_COOKIE, resolveTheme } from '@/lib/theme'
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 
 const SITE_URL = 'https://luis-medina-app.vercel.app'
 const DESCRIPTION = 'Portafolio de Luis José Medina Sandoval — ingeniero en informática y desarrollador full-stack (TypeScript, React, Next.js, Node.js).'
@@ -40,18 +42,11 @@ export default function RootLayout ({
   params: { lang: string }
 }>) {
   const { lang } = params
+  const theme = resolveTheme(cookies().get(THEME_COOKIE)?.value)
 
   return (
-    <html lang={lang} data-theme="dark">
-      <head>
-        {/* Applies the stored theme before first paint so there is no flash */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: '(function(){try{var t=localStorage.getItem("lm-theme");document.documentElement.dataset.theme=(t==="light"||t==="dark")?t:"dark"}catch(e){}})()'
-          }}
-        />
-      </head>
-      <body className={`${inter.className} ${fraunces.variable} antialiased`}>
+    <html lang={lang} data-theme={theme}>
+      <body className={`${inter.className} ${inter.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}>
         {/* Scroll progress — CSS scroll-driven, no JS */}
         <div aria-hidden className="fixed inset-x-0 top-0 z-50 h-1">
           <div className="scroll-progress h-full bg-gradient-to-r from-caribbean_current via-dark_cyan-600 to-desert_sand" />
