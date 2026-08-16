@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis José Medina Sandoval — Full-Stack Developer</title>
+<meta name="description" content="Portafolio de Luis José Medina Sandoval, ingeniero en informática y desarrollador full-stack. TypeScript, React, Next.js y Node.js.">
+<meta name="author" content="Luis José Medina Sandoval">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luis José Medina — Full-Stack Developer">
+<meta property="og:description" content="Ingeniero en informática y desarrollador full-stack. Diseño, construyo y despliego productos web completos.">
+<meta name="theme-color" content="#0b1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: oklch(13.5% 0.02 230);
+  --surface: oklch(17.5% 0.02 230);
+  --surface-2: oklch(22% 0.022 230);
+  --fg: oklch(95% 0.008 210);
+  --muted: oklch(70% 0.015 215);
+  --border: oklch(100% 0 0 / 0.09);
+  --border-strong: oklch(100% 0 0 / 0.16);
+  --accent: oklch(77% 0.12 195);
+  --accent-strong: oklch(66% 0.13 195);
+  --sand: oklch(80% 0.05 60);
+  --success: oklch(72% 0.15 150);
+  --on-accent: oklch(22% 0.03 220);
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --maxw: 1180px;
+  --radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+section[id], .hero { scroll-margin-top: 84px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: var(--on-accent); }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; }
+
+/* ambient background */
+.bg-glow {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 50% -10%, oklch(30% 0.07 210 / 0.55), transparent 70%),
+    radial-gradient(40% 35% at 85% 100%, oklch(24% 0.05 200 / 0.35), transparent 70%);
+}
+.bg-grid {
+  position: fixed; inset: 0; z-index: -3; pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(80% 60% at 50% 0%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(80% 60% at 50% 0%, #000 30%, transparent 100%);
+}
+
+/* scroll progress */
+#progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: linear-gradient(90deg, var(--accent), var(--sand)); z-index: 100; }
+
+/* nav */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px clamp(18px, 4vw, 44px);
+  background: oklch(15% 0.02 230 / 0.7);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; }
+.nav-logo .mono-mark {
+  width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px;
+  background: var(--accent); color: var(--on-accent); font-family: var(--font-mono); font-weight: 600; font-size: 13px;
+}
+.nav-links { display: flex; gap: 2px; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; padding: 9px 14px; border-radius: 9px; color: var(--muted);
+  transition: color .2s, background .2s; min-height: 44px; display: inline-flex; align-items: center;
+}
+.nav-links a:hover { color: var(--fg); background: var(--surface-2); }
+.nav-links .mobile-cv { display: none; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang-toggle { display: flex; border: 1px solid var(--border-strong); border-radius: 9px; overflow: hidden; }
+.lang-toggle button {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.02em; cursor: pointer;
+  padding: 8px 12px; background: transparent; color: var(--muted); border: none; min-height: 44px;
+}
+.lang-toggle button.active { background: var(--surface-2); color: var(--fg); }
+.nav-burger { display: none; background: none; border: 1px solid var(--border-strong); color: var(--fg); border-radius: 9px; width: 44px; height: 44px; cursor: pointer; }
+@media (max-width: 900px) {
+  .nav-links, .nav .btn-sm { display: none; }
+  .nav-burger { display: grid; place-items: center; }
+  .nav.open .nav-links {
+    display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+    background: oklch(15% 0.02 230 / 0.97); backdrop-filter: blur(14px); padding: 12px; border-bottom: 1px solid var(--border);
+  }
+  .nav.open .nav-links a { min-height: 48px; }
+  .nav-links .mobile-cv { display: inline-flex; margin-top: 6px; border-top: 1px solid var(--border); border-radius: 0; padding-top: 14px; }
+}
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+  padding: 13px 22px; border-radius: 11px; cursor: pointer; min-height: 46px;
+  transition: transform .15s, background .2s, border-color .2s, color .2s; white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); color: var(--on-accent); border: 1px solid transparent; }
+.btn-primary:hover { background: var(--accent-strong); }
+.btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--border-strong); }
+.btn-ghost:hover { background: var(--surface-2); border-color: var(--border-strong); }
+.btn-sm { padding: 9px 15px; font-size: 13.5px; min-height: 40px; border-radius: 9px; }
+.btn:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+/* sections */
+.section { max-width: var(--maxw); margin: 0 auto; padding: 96px clamp(20px, 4vw, 40px); }
+.eyebrow { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); }
+.sec-head { margin-bottom: 48px; }
+.sec-head h2 { font-size: clamp(30px, 4.5vw, 44px); margin-top: 14px; }
+.sec-head p { color: var(--muted); max-width: 62ch; margin-top: 12px; font-size: 16px; }
+
+/* hero */
+.hero { max-width: var(--maxw); margin: 0 auto; padding: 150px clamp(20px, 4vw, 40px) 64px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.badge {
+  display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em;
+  color: var(--success); border: 1px solid oklch(72% 0.15 150 / 0.3); background: oklch(72% 0.15 150 / 0.08);
+  padding: 7px 13px; border-radius: 999px; margin-bottom: 26px;
+}
+.dot { position: relative; width: 8px; height: 8px; }
+.dot::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--success); }
+.dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--success); animation: ping 1.8s cubic-bezier(0,0,.2,1) infinite; }
+@keyframes ping { 0% { transform: scale(1); opacity: .6; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
+.hero h1 { font-size: clamp(42px, 7vw, 72px); letter-spacing: -0.03em; }
+.hero .role { font-family: var(--font-display); font-size: clamp(20px, 2.4vw, 26px); font-weight: 500; color: var(--accent); margin-top: 10px; letter-spacing: -0.01em; }
+.hero .sub { color: var(--muted); font-size: 17px; max-width: 56ch; margin: 22px 0 30px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.social-links { display: flex; gap: 6px; }
+.social-links a {
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted); border: 1px solid var(--border);
+  padding: 10px 14px; border-radius: 9px; min-height: 44px; display: inline-flex; align-items: center; gap: 7px;
+  transition: color .2s, border-color .2s;
+}
+.social-links a:hover { color: var(--fg); border-color: var(--border-strong); }
+.hero-visual { position: relative; }
+.hero-photo {
+  border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border-strong);
+  background: var(--surface); aspect-ratio: 4 / 5; position: relative;
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.hero-photo::after {
+  content: ""; position: absolute; inset: 0; border-radius: var(--radius);
+  background: linear-gradient(180deg, transparent 55%, oklch(13.5% 0.02 230 / 0.75) 100%);
+}
+.code-card {
+  position: absolute; left: -20px; bottom: 24px; max-width: 92%;
+  background: oklch(20% 0.02 230 / 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-strong); border-radius: 12px; padding: 16px 18px;
+  font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; box-shadow: 0 20px 50px oklch(0% 0 0 / 0.5);
+}
+.code-card .kw { color: var(--accent); }
+.code-card .str { color: var(--sand); }
+.code-card .cm { color: var(--muted); }
+.hero-glow {
+  position: absolute; inset: -8% -6%; z-index: -1; border-radius: 30px;
+  background: radial-gradient(50% 50% at 60% 40%, oklch(60% 0.1 200 / 0.28), transparent 70%);
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 120px; }
+  .hero-visual { max-width: 420px; }
+  .code-card { left: 12px; }
+}
+
+/* stats */
+.stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
+.stats-inner { max-width: var(--maxw); margin: 0 auto; padding: 44px clamp(20px, 4vw, 40px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.stat .num { font-family: var(--font-display); font-size: clamp(34px, 4.5vw, 52px); font-weight: 700; letter-spacing: -0.02em; color: var(--fg); }
+.stat .num .plus { color: var(--accent); }
+.stat .lbl { color: var(--muted); font-size: 14px; margin-top: 4px; }
+@media (max-width: 720px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
+
+/* projects */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--border-strong); box-shadow: 0 24px 50px oklch(0% 0 0 / 0.45); }
+.card-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--surface-2); }
+.card-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .5s ease; }
+.card:hover .card-media img { transform: scale(1.05); }
+.card-chip {
+  position: absolute; top: 12px; right: 12px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em;
+  padding: 5px 10px; border-radius: 999px; background: oklch(13.5% 0.02 230 / 0.82); color: var(--fg);
+  border: 1px solid var(--border-strong); backdrop-filter: blur(6px);
+}
+.card-chip.live { color: var(--success); border-color: oklch(72% 0.15 150 / 0.4); }
+.card-chip.proto { color: var(--sand); border-color: oklch(80% 0.05 60 / 0.4); }
+.card-body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.card-body h3 { font-size: 20px; }
+.card-body p { color: var(--muted); font-size: 14.5px; line-height: 1.55; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em; color: var(--muted);
+  border: 1px solid var(--border); padding: 3px 9px; border-radius: 6px;
+}
+.card-links { display: flex; gap: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+.card-links:empty { display: none; }
+.card-links a { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.03em; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; min-height: 40px; }
+.card-links a:hover { color: var(--fg); }
+.card-links a .dim { color: var(--muted); }
+@media (max-width: 940px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+/* experience */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 1px; background: var(--border-strong); }
+.exp-item { position: relative; padding: 0 0 40px; }
+.exp-item:last-child { padding-bottom: 0; }
+.exp-item::before {
+  content: ""; position: absolute; left: -28px; top: 7px; width: 17px; height: 17px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--border-strong);
+}
+.exp-item::after {
+  content: ""; position: absolute; left: -25px; top: 10px; width: 11px; height: 11px; border-radius: 50%;
+  background: var(--accent);
+}
+.exp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.exp-head h3 { font-size: 19px; }
+.exp-head .period { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--muted); }
+.exp-item p { color: var(--muted); font-size: 15px; max-width: 76ch; margin-top: 8px; }
+
+/* skills */
+.skills-grid { display: grid; grid-template-columns: 1fr; gap: 44px; }
+.skills-block h3 { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee 34s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.chip {
+  font-family: var(--font-mono); font-size: 14px; color: var(--fg); border: 1px solid var(--border-strong);
+  background: var(--surface); padding: 12px 20px; border-radius: 10px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 9px;
+}
+.chip i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+
+/* contact */
+.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); }
+.contact-info h3 { font-size: 26px; margin-bottom: 14px; }
+.contact-info > p { color: var(--muted); max-width: 48ch; margin-bottom: 28px; }
+.contact-channels { display: flex; flex-direction: column; gap: 10px; }
+.contact-channels a {
+  display: flex; align-items: center; gap: 14px; border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px 18px; transition: border-color .2s, background .2s;
+}
+.contact-channels a:hover { border-color: var(--border-strong); background: var(--surface); }
+.contact-channels .k { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; }
+.contact-channels .v { font-size: 15px; color: var(--fg); }
+.contact-channels .v small { color: var(--muted); }
+.contact-form {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.field label { display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 7px; }
+.field input, .field textarea {
+  width: 100%; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
+  color: var(--fg); font-family: var(--font-body); font-size: 15px; padding: 13px 14px; outline: none;
+  transition: border-color .2s; resize: vertical;
+}
+.field input::placeholder, .field textarea::placeholder { color: oklch(70% 0.015 215 / 0.6); }
+.field input:focus, .field textarea:focus { border-color: var(--accent); }
+.field input:focus-visible, .field textarea:focus-visible { outline: 1px solid var(--accent); outline-offset: 0; }
+.form-note { font-size: 13px; color: var(--muted); }
+@media (max-width: 860px) { .contact-wrap { grid-template-columns: 1fr; } }
+
+/* footer */
+footer { border-top: 1px solid var(--border); margin-top: 40px; }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; padding: 44px clamp(20px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+.footer-inner .copy { color: var(--muted); font-size: 14px; }
+.footer-inner .made { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.footer-inner .made span { color: var(--accent); }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.card.reveal.in:hover { transform: translateY(-5px); box-shadow: 0 24px 50px oklch(0% 0 0 / 0.45); }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#top" aria-label="Luis Medina — inicio">
+    <span class="mono-mark">LM</span>
+    <span>Luis Medina</span>
+  </a>
+  <nav class="nav-links" aria-label="Navegación principal">
+    <a href="#proyectos" data-i18n="nav_proyectos">Proyectos</a>
+    <a href="#experiencia" data-i18n="nav_experiencia">Experiencia</a>
+    <a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a>
+    <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
+    <a href="assets/luis-medina-cv.pdf" target="_blank" rel="noopener" class="mobile-cv" data-i18n="nav_cv">Descargar CV</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Idioma">
+      <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-ghost btn-sm" href="assets/luis-medina-cv.pdf" target="_blank" rel="noopener" data-i18n="nav_cv">Descargar CV</a>
+    <button class="nav-burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top" data-od-id="hero">
+  <div>
+    <span class="badge"><span class="dot"></span><span data-i18n="hero_badge">Disponible para nuevos proyectos</span></span>
+    <h1>Luis José Medina<br>Sandoval</h1>
+    <p class="role" data-i18n="hero_role">Full-Stack Developer</p>
+    <p class="sub" data-i18n="hero_sub">Ingeniero en informática que diseña, construye y despliega productos web de principio a fin: TypeScript, React, Node.js y buenas prácticas de por medio. Antes gestioné software empresarial; hoy lo creo.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#proyectos" data-i18n="hero_cta1">Ver proyectos</a>
+      <a class="btn btn-ghost" href="assets/luis-medina-cv.pdf" target="_blank" rel="noopener" data-i18n="hero_cta2">Descargar CV</a>
+    </div>
+    <div class="social-links" style="margin-top:22px">
+      <a href="https://github.com/luisjose1010" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/luisjose1010/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-photo">
+      <img src="assets/luis-medina.webp" alt="Retrato de Luis José Medina Sandoval" width="640" height="800">
+    </div>
+    <div class="code-card" aria-hidden="true">
+      <div><span class="kw">const</span> luis = {</div>
+      <div>&nbsp;&nbsp;rol: <span class="str">"Full-Stack Dev"</span>,</div>
+      <div>&nbsp;&nbsp;stack: [<span class="str">"React"</span>, <span class="str">"Node"</span>, <span class="str">"TS"</span>],</div>
+      <div>&nbsp;&nbsp;disponible: <span class="kw">true</span>, <span class="cm">// para colaborar</span></div>
+      <div>};</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats" data-od-id="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="num"><span data-count="3">0</span><span class="plus">+</span></div>
+      <div class="lbl" data-i18n="stat_years">Años creando software</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span data-count="12">0</span></div>
+      <div class="lbl" data-i18n="stat_projects">Proyectos entregados</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span data-count="8">0</span></div>
+      <div class="lbl" data-i18n="stat_live">Apps en producción</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span data-count="20">0</span></div>
+      <div class="lbl" data-i18n="stat_techs">Tecnologías usadas</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proyectos" data-od-id="proyectos">
+  <div class="sec-head reveal">
+    <span class="eyebrow">01 · Portafolio</span>
+    <h2 data-i18n="sec_projects">Proyectos destacados</h2>
+    <p data-i18n="sec_projects_sub">Una selección de productos que he diseñado, construido y puesto en producción: desde sitios para clientes reales hasta plataformas completas con backend.</p>
+  </div>
+  <div class="grid">
+
+    <article class="card reveal" data-od-id="project-card-cp-global-insurance">
+      <a class="card-media" href="https://www.cpglobalinsurance.com/" target="_blank" rel="noopener">
+        <img src="assets/projects/cp-global-insurance.webp" alt="Captura del sitio web de CP Global Insurance" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>CP Global Insurance</h3>
+        <p>Sitio oficial de CP Global Insurance (EE.&nbsp;UU.) bilingüe EN/ES. SPA en React + TypeScript con SEO técnico, formulario validado, selector de idioma y despliegue en Vercel con dominio propio.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>i18next</span><span>Radix UI</span></div>
+        <div class="card-links"><a href="https://www.cpglobalinsurance.com/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-tomodachi-app">
+      <a class="card-media" href="https://tomodachi-app.vercel.app/" target="_blank" rel="noopener">
+        <img src="assets/projects/tomodachi-app.webp" alt="Captura de la plataforma de eventos Tomodachi App" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>Tomodachi App</h3>
+        <p>Plataforma integral de gestión de eventos: venta de entradas, stands y patrocinios, tipos de ticket con promociones, facturación y panel de roles para asistentes y expositores.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span></div>
+        <div class="card-links">
+          <a href="https://tomodachi-app.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/luisjose1010/tomodachi-app" target="_blank" rel="noopener">GitHub <span class="dim">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-traders-institute-academy">
+      <div class="card-media">
+        <img src="assets/projects/traders-institute-academy.webp" alt="Captura de la plataforma educativa Traders Institute Academy" loading="lazy">
+        <span class="card-chip">Privado</span>
+      </div>
+      <div class="card-body">
+        <h3>Traders Institute Academy</h3>
+        <p>Plataforma educativa completa de trading: landing, portal de estudiantes y panel administrativo. Monorepo con backend serverless, base de datos distribuida y autenticación por roles.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>Vite</span><span>Express</span><span>Drizzle ORM</span><span>Turso</span></div>
+        <div class="card-links"></div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-plataforma-crowdfunding">
+      <a class="card-media" href="https://plataforma-crowdfunding.vercel.app/" target="_blank" rel="noopener">
+        <img src="assets/projects/plataforma-crowdfunding.webp" alt="Captura de la plataforma de crowdfunding social" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>Plataforma Crowdfunding</h3>
+        <p>Crowdfunding de donación para promover proyectos de impacto social en Venezuela y dar visibilidad a personas en situación de vulnerabilidad. Frontend en React y API en FastAPI.</p>
+        <div class="tags"><span>React</span><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>Bootstrap</span></div>
+        <div class="card-links">
+          <a href="https://plataforma-crowdfunding.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/luisjose1010/plataforma-crowdfunding" target="_blank" rel="noopener">GitHub <span class="dim">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-melissabarba-realestate">
+      <a class="card-media" href="https://melissabarbarealestate.com/" target="_blank" rel="noopener">
+        <img src="assets/projects/melissabarba-realestate.webp" alt="Captura del sitio inmobiliario de Melissa Barba" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>Melissa Barba Real Estate</h3>
+        <p>Landing moderna y responsiva para asesora inmobiliaria, bilingüe EN/ES. Búsqueda de propiedades con validación, envío a función serverless y SEO dinámico.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>i18next</span><span>Radix UI</span></div>
+        <div class="card-links"><a href="https://melissabarbarealestate.com/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-all-city-gold-website">
+      <a class="card-media" href="https://allcitygold.vercel.app/" target="_blank" rel="noopener">
+        <img src="assets/projects/all-city-gold-website.webp" alt="Captura del sitio de joyería All City Gold" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>All City Gold Website</h3>
+        <p>Sitio oficial de la joyería All City Gold. Landing responsive con animaciones sutiles, colecciones destacadas y formulario de contacto con envío vía función serverless.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Radix UI</span></div>
+        <div class="card-links"><a href="https://allcitygold.vercel.app/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-romanos-system">
+      <a class="card-media" href="http://romanos-system.atwebpages.com/" target="_blank" rel="noopener">
+        <img src="assets/projects/romanos-system.webp" alt="Captura del sistema de ventas de Romano's Pizza" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>Romano's Pizza System</h3>
+        <p>Sistema de venta web para pizzería con catálogo completo de productos y combos, procesamiento de pedidos, gestión de clientes e impresión de facturas.</p>
+        <div class="tags"><span>JavaScript</span><span>Vue.js</span><span>PHP</span><span>Vuetify</span><span>Laravel</span></div>
+        <div class="card-links">
+          <a href="http://romanos-system.atwebpages.com/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/luisjose1010/romanos-system" target="_blank" rel="noopener">GitHub <span class="dim">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-sabedeseguros-quoters">
+      <a class="card-media" href="http://sabedeseguros.atwebpages.com/" target="_blank" rel="noopener">
+        <img src="assets/projects/sabedeseguros-quoters.webp" alt="Captura de los cotizadores de seguros de Sabe de Seguros" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>SabedeSeguros Quoters</h3>
+        <p>Cotizadores web responsivos para distintos tipos de seguros, desarrollados como plugin de WordPress para sustituir los archivos Excel locales.</p>
+        <div class="tags"><span>JavaScript</span><span>Vue.js</span><span>PHP</span><span>WordPress</span><span>Vuetify</span></div>
+        <div class="card-links">
+          <a href="http://sabedeseguros.atwebpages.com/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/luisjose1010/sabedeseguros-app" target="_blank" rel="noopener">GitHub <span class="dim">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-ecohome-webapp">
+      <div class="card-media">
+        <img src="assets/projects/ecohome-webapp.webp" alt="Captura de la aplicación EcoHome WebApp" loading="lazy">
+        <span class="card-chip">Colaborativo</span>
+      </div>
+      <div class="card-body">
+        <h3>EcoHome WebApp</h3>
+        <p>Aplicación multiplataforma (iOS, Android, Web) de eficiencia y control del hogar, desarrollada con React Native y Firebase: autenticación, base en tiempo real y Cloud Functions.</p>
+        <div class="tags"><span>TypeScript</span><span>React Native</span><span>Firebase</span><span>Node.js</span></div>
+        <div class="card-links"></div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-cognitive-monitoring-app">
+      <a class="card-media" href="https://www.figma.com/proto/v6iKAEnCPmwtclhkpuabqS/Cognitive-Monitoring-App?node-id=0-1" target="_blank" rel="noopener">
+        <img src="assets/projects/cognitive-monitoring-app.webp" alt="Captura del dashboard de monitoreo cognitivo" loading="lazy">
+        <span class="card-chip proto">Prototipo</span>
+      </a>
+      <div class="card-body">
+        <h3>Cognitive Monitoring App</h3>
+        <p>Prueba técnica: dashboard de monitoreo cognitivo en React Native con módulos de progreso, rendimiento y perfil para el seguimiento de métricas.</p>
+        <div class="tags"><span>TypeScript</span><span>React Native</span><span>Expo</span><span>Figma</span></div>
+        <div class="card-links">
+          <a href="https://www.figma.com/proto/v6iKAEnCPmwtclhkpuabqS/Cognitive-Monitoring-App?node-id=0-1" target="_blank" rel="noopener">Prototipo ↗</a>
+          <a href="https://github.com/luisjose1010/cogni-app" target="_blank" rel="noopener">GitHub <span class="dim">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-canvassing-app">
+      <div class="card-media">
+        <img src="assets/projects/canvassing-app.webp" alt="Captura de la PWA de gestión de leads Canvassing App" loading="lazy">
+        <span class="card-chip">Privado</span>
+      </div>
+      <div class="card-body">
+        <h3>Canvassing App</h3>
+        <p>PWA para la gestión de leads en campo, con integración de datos vía GoHighLevel y servicios en la nube para sincronizar clientes y ventas en tiempo real.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>PWA</span><span>Tailwind CSS</span></div>
+        <div class="card-links"></div>
+      </div>
+    </article>
+
+    <article class="card reveal" data-od-id="project-card-luis-medina-app">
+      <a class="card-media" href="https://luis-medina-app.vercel.app/" target="_blank" rel="noopener">
+        <img src="assets/projects/luis-medina-app.webp" alt="Captura del portafolio Luis Medina App" loading="lazy">
+        <span class="card-chip live">En vivo</span>
+      </a>
+      <div class="card-body">
+        <h3>Luis Medina App</h3>
+        <p>Mi portafolio profesional: aplicación Next.js bilingüe y responsiva con i18n por enrutamiento, contenido centralizado y despliegue en Vercel.</p>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Tailwind CSS</span></div>
+        <div class="card-links">
+          <a href="https://luis-medina-app.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/luisjose1010/luis-medina-app" target="_blank" rel="noopener">GitHub <span class="dim">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" id="experiencia" data-od-id="experiencia">
+  <div class="sec-head reveal">
+    <span class="eyebrow">02 · Trayectoria</span>
+    <h2 data-i18n="sec_experience">Experiencia laboral</h2>
+    <p data-i18n="sec_experience_sub">Del desarrollo freelance al mantenimiento de software empresarial: una trayectoria enfocada en entregar producto real y en producción.</p>
+  </div>
+  <div class="timeline">
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>Desarrollador Full-Stack · Proyectos Freelance</h3><span class="period">Abr 2025 – Sep 2025</span></div>
+      <p>Diseñé, desarrollé y desplegué sitios web a medida (seguros, bienes raíces y e-commerce de joyería) con TypeScript, Tailwind CSS, Node.js, funciones serverless y SQL. Proyectos oficiales: CP Global Insurance, All City Gold Jewelry y Melissa Barba Real Estate.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>Tomodachi Events · Desarrollo Web Full-Stack</h3><span class="period">Sep 2024 – Presente</span></div>
+      <p>Mantenimiento y desarrollo de aplicaciones cliente-servidor internas (gestión de eventos y administración) con TypeScript, React y Express/Node.js con PostgreSQL; ~20% de mejora de desempeño vía optimización de API y consultas.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>Sabe de Seguros · Desarrollo Web Full-Stack</h3><span class="period">Jul 2021 – Oct 2024</span></div>
+      <p>Plugin de WordPress (PHP, MySQL, Vue, Vuetify) para cotizadores web responsivos; ~40% menos tiempo de cotización. Gestión del CMS e integración con sistemas basados en Excel.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>Universidad Rafael Belloso Chacín · Desarrollo Web Full-Stack</h3><span class="period">Ene 2024 – Abr 2024</span></div>
+      <p>Trabajo de grado: aplicación web de crowdfunding responsive con FastAPI (Python), React y Bootstrap, mejorando la accesibilidad para aportes a iniciativas sociales.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>Regalado Group · Encargado de Departamento de Redes</h3><span class="period">Mar 2022 – Oct 2023</span></div>
+      <p>Administración del sitio comercial y contenido con Joomla CMS, supervisión de listados de inmuebles y soporte a usuarios, asesores y al equipo de publicidad.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>SysModelers · Desarrollo Web Front-end</h3><span class="period">Ago 2021 – Feb 2022</span></div>
+      <p>Experiencias UI/UX accesibles con React y CoreUI. Optimización de funcionalidades CRUD y responsividad mediante mejoras de rendimiento.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-head"><h3>Romano's Pizza · Desarrollo Web Full-Stack</h3><span class="period">Jul 2021 – Nov 2022</span></div>
+      <p>Proyecto freelance: aplicación web POS con framework propio (PHP, MySQL, Vue.js, Vuetify) para agilizar ventas y gestión de inventario.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="habilidades" data-od-id="habilidades">
+  <div class="sec-head reveal">
+    <span class="eyebrow">03 · Stack</span>
+    <h2 data-i18n="sec_skills">Habilidades y tecnologías</h2>
+    <p data-i18n="sec_skills_sub">Herramientas y lenguajes con los que trabajo a diario, del frontend al backend y la infraestructura.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skills-block reveal">
+      <h3 data-i18n="skill_label">Habilidades</h3>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="chip"><i></i>TypeScript</span><span class="chip"><i></i>React</span><span class="chip"><i></i>Next.js</span><span class="chip"><i></i>Vue.js</span><span class="chip"><i></i>JavaScript</span><span class="chip"><i></i>Tailwind CSS</span><span class="chip"><i></i>Node.js</span><span class="chip"><i></i>Express</span><span class="chip"><i></i>Python</span><span class="chip"><i></i>FastAPI</span><span class="chip"><i></i>PHP</span><span class="chip"><i></i>Laravel</span><span class="chip"><i></i>PostgreSQL</span><span class="chip"><i></i>MySQL</span><span class="chip"><i></i>Firebase</span><span class="chip"><i></i>React Native</span><span class="chip"><i></i>WordPress</span><span class="chip"><i></i>Bootstrap</span><span class="chip"><i></i>Vuetify</span><span class="chip"><i></i>HTML</span><span class="chip"><i></i>CSS</span><span class="chip"><i></i>C</span><span class="chip"><i></i>C#</span><span class="chip"><i></i>Java</span>
+          <span class="chip"><i></i>TypeScript</span><span class="chip"><i></i>React</span><span class="chip"><i></i>Next.js</span><span class="chip"><i></i>Vue.js</span><span class="chip"><i></i>JavaScript</span><span class="chip"><i></i>Tailwind CSS</span><span class="chip"><i></i>Node.js</span><span class="chip"><i></i>Express</span><span class="chip"><i></i>Python</span><span class="chip"><i></i>FastAPI</span><span class="chip"><i></i>PHP</span><span class="chip"><i></i>Laravel</span><span class="chip"><i></i>PostgreSQL</span><span class="chip"><i></i>MySQL</span><span class="chip"><i></i>Firebase</span><span class="chip"><i></i>React Native</span><span class="chip"><i></i>WordPress</span><span class="chip"><i></i>Bootstrap</span><span class="chip"><i></i>Vuetify</span><span class="chip"><i></i>HTML</span><span class="chip"><i></i>CSS</span><span class="chip"><i></i>C</span><span class="chip"><i></i>C#</span><span class="chip"><i></i>Java</span>
+        </div>
+      </div>
+    </div>
+    <div class="skills-block reveal">
+      <h3 data-i18n="tools_label">Herramientas</h3>
+      <div class="marquee">
+        <div class="marquee-track" style="animation-direction: reverse; animation-duration: 42s;">
+          <span class="chip"><i></i>Git</span><span class="chip"><i></i>GitHub</span><span class="chip"><i></i>Scrum</span><span class="chip"><i></i>Figma</span><span class="chip"><i></i>Vercel</span><span class="chip"><i></i>Drizzle ORM</span><span class="chip"><i></i>Turso</span><span class="chip"><i></i>Excel</span><span class="chip"><i></i>Word</span><span class="chip"><i></i>Joomla</span>
+          <span class="chip"><i></i>Git</span><span class="chip"><i></i>GitHub</span><span class="chip"><i></i>Scrum</span><span class="chip"><i></i>Figma</span><span class="chip"><i></i>Vercel</span><span class="chip"><i></i>Drizzle ORM</span><span class="chip"><i></i>Turso</span><span class="chip"><i></i>Excel</span><span class="chip"><i></i>Word</span><span class="chip"><i></i>Joomla</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto" data-od-id="contacto">
+  <div class="sec-head reveal">
+    <span class="eyebrow">04 · Contacto</span>
+    <h2 data-i18n="sec_contact">Trabajemos juntos</h2>
+    <p data-i18n="sec_contact_sub">¿Tienes un proyecto en mente o una posición abierta? Escríbeme y hablemos de cómo puedo aportar.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info reveal">
+      <div class="contact-channels">
+        <a href="https://github.com/luisjose1010" target="_blank" rel="noopener">
+          <span class="k">GitHub</span><span class="v">github.com/luisjose1010 <small>↗</small></span>
+        </a>
+        <a href="https://www.linkedin.com/in/luisjose1010/" target="_blank" rel="noopener">
+          <span class="k">LinkedIn</span><span class="v">linkedin.com/in/luisjose1010 <small>↗</small></span>
+        </a>
+        <a href="assets/luis-medina-cv.pdf" target="_blank" rel="noopener">
+          <span class="k" data-i18n="nav_cv">Descargar CV</span><span class="v">luis-medina-cv.pdf <small>↘</small></span>
+        </a>
+      </div>
+    </div>
+    <form class="contact-form reveal" action="https://formspree.io/f/movazdga" method="POST" aria-label="Formulario de contacto">
+      <div class="field">
+        <label for="cf-name" data-i18n="form_name">Nombre</label>
+        <input id="cf-name" type="text" name="name" placeholder="Tu nombre" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email" data-i18n="form_email">Correo electrónico</label>
+        <input id="cf-email" type="email" name="email" placeholder="tucorreo@empresa.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="cf-phone" data-i18n="form_phone">Número telefónico</label>
+        <input id="cf-phone" type="tel" name="phoneNumber" placeholder="+58 000 000 0000" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="cf-message" data-i18n="form_message">Mensaje</label>
+        <textarea id="cf-message" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto o posición." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" data-i18n="form_send">Enviar mensaje</button>
+      <p class="form-note" data-i18n="form_note">Enviado de forma segura a través de Formspree.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="copy">© <span id="year">2026</span> Luis José Medina Sandoval</p>
+    <p class="made">Hecho con <span>React · TypeScript · Node.js</span> por Luis Medina</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* scroll progress */
+  var bar = document.getElementById('progress');
+  function onScroll () {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    bar.style.width = p + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* mobile nav */
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burger');
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); });
+  });
+
+  /* reveal on scroll */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduce) { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+  else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* count-up */
+  function animateCount (el) {
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    if (reduce) { el.textContent = String(target); return; }
+    var dur = 1200; var start = null;
+    function step (ts) {
+      if (!start) start = ts;
+      var t = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = String(Math.round(eased * target));
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window && !reduce) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { cio.observe(el); });
+  } else {
+    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
+  }
+
+  /* i18n (ES / EN chrome) */
+  var DICT = {
+    es: {
+      nav_proyectos: 'Proyectos', nav_experiencia: 'Experiencia', nav_habilidades: 'Habilidades', nav_contacto: 'Contacto', nav_cv: 'Descargar CV',
+      hero_badge: 'Disponible para nuevos proyectos', hero_role: 'Full-Stack Developer',
+      hero_sub: 'Ingeniero en informática que diseña, construye y despliega productos web de principio a fin: TypeScript, React, Node.js y buenas prácticas de por medio. Antes gestioné software empresarial; hoy lo creo.',
+      hero_cta1: 'Ver proyectos', hero_cta2: 'Descargar CV',
+      stat_years: 'Años creando software', stat_projects: 'Proyectos entregados', stat_live: 'Apps en producción', stat_techs: 'Tecnologías usadas',
+      sec_projects: 'Proyectos destacados', sec_projects_sub: 'Una selección de productos que he diseñado, construido y puesto en producción: desde sitios para clientes reales hasta plataformas completas con backend.',
+      sec_experience: 'Experiencia laboral', sec_experience_sub: 'Del desarrollo freelance al mantenimiento de software empresarial: una trayectoria enfocada en entregar producto real y en producción.',
+      sec_skills: 'Habilidades y tecnologías', sec_skills_sub: 'Herramientas y lenguajes con los que trabajo a diario, del frontend al backend y la infraestructura.',
+      skill_label: 'Habilidades', tools_label: 'Herramientas',
+      sec_contact: 'Trabajemos juntos', sec_contact_sub: '¿Tienes un proyecto en mente o una posición abierta? Escríbeme y hablemos de cómo puedo aportar.',
+      form_name: 'Nombre', form_email: 'Correo electrónico', form_phone: 'Número telefónico', form_message: 'Mensaje',
+      form_send: 'Enviar mensaje', form_note: 'Enviado de forma segura a través de Formspree.'
+    },
+    en: {
+      nav_proyectos: 'Projects', nav_experiencia: 'Experience', nav_habilidades: 'Skills', nav_contacto: 'Contact', nav_cv: 'Download CV',
+      hero_badge: 'Available for new projects', hero_role: 'Full-Stack Developer',
+      hero_sub: 'Computer engineer who designs, builds and ships full web products end to end: TypeScript, React, Node.js and solid practices along the way. I used to manage enterprise software; now I build it.',
+      hero_cta1: 'View projects', hero_cta2: 'Download CV',
+      stat_years: 'Years building software', stat_projects: 'Projects delivered', stat_live: 'Apps in production', stat_techs: 'Technologies used',
+      sec_projects: 'Featured projects', sec_projects_sub: 'A selection of products I have designed, built and shipped: from real client websites to full platforms with a backend.',
+      sec_experience: 'Work experience', sec_experience_sub: 'From freelance development to maintaining enterprise software: a track record focused on shipping real, production product.',
+      sec_skills: 'Skills & technologies', sec_skills_sub: 'Tools and languages I work with daily, from frontend to backend and infrastructure.',
+      skill_label: 'Skills', tools_label: 'Tools',
+      sec_contact: "Let's work together", sec_contact_sub: 'Have a project in mind or an open role? Write to me and let’s talk about how I can contribute.',
+      form_name: 'Name', form_email: 'Email', form_phone: 'Phone number', form_message: 'Message',
+      form_send: 'Send message', form_note: 'Sent securely via Formspree.'
+    }
+  };
+
+  function applyLang (lang) {
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (DICT[lang] && DICT[lang][key]) el.textContent = DICT[lang][key];
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
+      var active = b.getAttribute('data-lang-btn') === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lm-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () { applyLang(btn.getAttribute('data-lang-btn')); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('lm-lang'); } catch (e) {}
+  if (saved && DICT[saved]) applyLang(saved);
+
+  /* year */
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
