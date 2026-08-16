@@ -68,7 +68,7 @@ const Stat = ({ value, label, suffix = '+' }: StatProps) => {
       >
         {count}{suffix}
       </span>
-      <span className="text-xs font-medium uppercase tracking-widest text-dark_purple/60 text-center">
+      <span className="text-xs font-medium uppercase tracking-widest text-ink/60 text-center">
         {label}
       </span>
     </li>

@@ -51,6 +51,7 @@ route: /[lang]/projects/:id → Detalle dinámico del proyecto
 | V3 | Los componentes de UI interactivos o que usen hooks de contexto (como el idioma) deben usar la directiva `'use client'`. |
 | V4 | Todo enlace a repositorios o sitios en vivo dentro de los proyectos debe ser renderizado mediante el sub-componente `Button.LinkSolid` o `Button.LinkOutline`. |
 | V5 | Los estilos globales no deben sobrescribir las utilidades de Tailwind a menos que sea estrictamente necesario para animaciones personalizadas o resets de base. |
+| V6 | **Roles de color.** Superficies que son oscuras en ambos temas (footer, botones sólidos, cards sobre foto) usan `brand-*` (hex fijo). Texto/acentos usan `caribbean_current`/`dark_cyan`, que son ramas dirigidas por variables CSS y se aclaran en oscuro. Fondos y texto de página usan los tokens semánticos `page`/`band`/`surface`/`ink`/`line`. NO usar `bg-white`, `text-gray-*` ni hex crudos: rompen el tema. |
 
 ---
 
@@ -59,7 +60,7 @@ route: /[lang]/projects/:id → Detalle dinámico del proyecto
 - [x] Capturar y optimizar (WEBP) los screenshots de los nuevos proyectos locales.
 - [x] Aplicar efecto "Glassmorphism" a los componentes flotantes como el NavBar (nav desktop = píldora glass: `bg-seasalt/60` + `backdrop-blur-md`; nav móvil ya lo tenía).
 - [x] Mejorar las transiciones de `hover` en `ProjectCard` (micro-animaciones: lift + sombra en cards del landing, logos de skills, `active:scale` en botones).
-- [ ] (Opcional) Implementar un conmutador explícito para "Dark Mode".
+- [x] Conmutador explícito de tema (claro/oscuro). Layout único: la paleta se resuelve por variables CSS (`:root` vs `:root[data-theme='dark']`) que alimentan los colores de Tailwind, así los componentes no cambian de clases. Arranca en **oscuro**; la preferencia vive en `localStorage['lm-theme']` y se aplica con un script inline en `<head>` para evitar flash.
 - [x] Tipografía display: `Fraunces` (variable `--font-display`, clase `font-display`) en h1/h2; `Inter` sigue como body.
 - [x] Accesibilidad: `prefers-reduced-motion` global + `focus-visible` ring de marca (`dark_cyan`) en `Button.tsx` (reemplaza ring azul genérico).
 - [x] Hero: badge "disponible", indicadores de slide clicables con temporizador, autoplay que pausa en hover, cue de scroll, blobs animados (`.blob`).

@@ -16,7 +16,7 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
   const projectLink = project.links[0]
 
   return (
-    <article className={`reveal group flex flex-col justify-between gap-4 bg-caribbean_current/75 backdrop-blur-md border border-seasalt/20 text-seasalt rounded-2xl shadow-md p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-caribbean_current/90 hover:shadow-2xl hover:shadow-dark_purple/40 ${className}`}>
+    <article className={`reveal group flex flex-col justify-between gap-4 bg-brand/75 backdrop-blur-md border border-seasalt/20 text-seasalt rounded-2xl shadow-md p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-brand/90 hover:shadow-2xl hover:shadow-dark_purple/40 ${className}`}>
       <section className="relative -mx-2 -mt-2 mb-1 overflow-hidden rounded-xl border border-seasalt/10 bg-dark_purple/20">
         <Image
           src={`/assets/projects/${project.slug}/${project.cover ?? 1}.webp`}
@@ -25,7 +25,7 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
           alt={project.name}
           className="aspect-[16/9] w-full object-contain transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-caribbean_current/50 via-transparent to-transparent" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-brand/50 via-transparent to-transparent" />
       </section>
 
       <section>
@@ -43,7 +43,7 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
       </section>
 
       <section className="flex gap-3">
-        <Button.LinkSolid href={`${links.projectsPage.url}/${project.slug}`} size="small" className="text-caribbean_current">
+        <Button.LinkSolid href={`${links.projectsPage.url}/${project.slug}`} size="small" className="text-brand">
           {UI.BUTTON.EXPLORE}
         </Button.LinkSolid>
         {projectLink !== undefined && (
@@ -51,7 +51,7 @@ function ProjectCard ({ project, className = '' }: ProjectProps) {
             size="small"
             href={projectLink.url}
             target="_blank"
-            className="hover:text-caribbean_current"
+            className="hover:text-brand"
           >
             {projectLink.label}
           </Button.LinkOutline>
@@ -69,7 +69,7 @@ export function Projects () {
   return (
     <section id="projects" className="relative flex h-auto p-6 flex-col-reverse gap-2 text-seasalt justify-evenly items-center bg-forest bg-cover bg-center bg-fixed lg:p-12 xl:min-h-screen">
       {/* Scrim: keeps the copy readable over the forest photo */}
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-dark_purple/60 via-dark_purple/25 to-caribbean_current-200/50" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-dark_purple/60 via-dark_purple/25 to-brand-200/50" />
       <article className="relative py-6 sm:w-full md:px-6 md:self-start lg:w-1/2">
         <h2 className="font-display text-5xl font-bold mb-3 tracking-tight">{APP.PROJECTS.TITLE}</h2>
         <p className="mb-5">

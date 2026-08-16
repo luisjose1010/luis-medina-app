@@ -8,6 +8,82 @@
   --background-end-rgb: 255, 255, 255;
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* --- Light theme: the original Figma palette --- */
+  --bg: 252 250 249;
+  /* seasalt */
+  --surface: 255 255 255;
+  --band: 248 242 237;
+  --ink: 22 15 41;
+  /* dark_purple */
+  --line: 36 106 115;
+  /* caribbean_current, always used with an alpha */
+
+  --glass-bg: 252 250 249;
+  --glass-alpha: 0.6;
+  --glass-border: 255 255 255;
+  --glass-border-alpha: 0.4;
+
+  --caribbean: 36 106 115;
+  --caribbean-100: 7 21 23;
+  --caribbean-200: 15 43 47;
+  --caribbean-300: 22 64 70;
+  --caribbean-400: 29 86 93;
+  --caribbean-500: 36 106 115;
+  --caribbean-600: 54 157 171;
+  --caribbean-700: 92 191 204;
+  --caribbean-800: 146 212 221;
+  --caribbean-900: 201 234 238;
+
+  --cyan: 54 143 139;
+  --cyan-100: 11 29 28;
+  --cyan-200: 22 58 56;
+  --cyan-300: 33 87 84;
+  --cyan-400: 44 115 112;
+  --cyan-500: 54 143 139;
+  --cyan-600: 75 187 181;
+  --cyan-700: 120 204 199;
+  --cyan-800: 165 221 218;
+  --cyan-900: 210 238 236;
+}
+
+/* --- Dark theme: same layout, palette built from dark_purple + brighter teals --- */
+:root[data-theme='dark'] {
+  --bg: 15 10 28;
+  --surface: 27 21 51;
+  --band: 22 17 42;
+  --ink: 243 240 247;
+  --line: 146 212 221;
+
+  --glass-bg: 40 32 70;
+  --glass-alpha: 0.55;
+  --glass-border: 146 212 221;
+  --glass-border-alpha: 0.18;
+
+  /* Accent ramps shift up: what was deep teal now reads as light teal on the dark page */
+  --caribbean: 92 191 204;
+  --caribbean-100: 201 234 238;
+  --caribbean-200: 146 212 221;
+  --caribbean-300: 120 204 199;
+  --caribbean-400: 92 191 204;
+  --caribbean-500: 75 187 181;
+  --caribbean-600: 54 157 171;
+  --caribbean-700: 44 115 112;
+  --caribbean-800: 29 86 93;
+  --caribbean-900: 22 64 70;
+
+  --cyan: 120 204 199;
+  --cyan-100: 210 238 236;
+  --cyan-200: 165 221 218;
+  --cyan-300: 120 204 199;
+  --cyan-400: 100 196 190;
+  --cyan-500: 75 187 181;
+  --cyan-600: 54 143 139;
+  --cyan-700: 44 115 112;
+  --cyan-800: 33 87 84;
+  --cyan-900: 22 58 56;
+
+  color-scheme: dark;
 }
 
 html {
@@ -17,7 +93,9 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--ink));
+  background-color: rgb(var(--bg));
+  transition: background-color 0.4s var(--ease-out-strong), color 0.4s var(--ease-out-strong);
 }
 
 ::selection {
@@ -27,7 +105,7 @@ body {
 
 /* Brand scrollbar (Firefox + WebKit) */
 html {
-  scrollbar-color: #368f8b #f1e5dc;
+  scrollbar-color: rgb(var(--caribbean-500)) rgb(var(--bg));
   scrollbar-width: thin;
 }
 
@@ -37,13 +115,13 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8f2ed;
+  background: rgb(var(--bg));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #368f8b, #246a73);
+  background: linear-gradient(180deg, rgb(var(--cyan-500)), rgb(var(--caribbean-500)));
   border-radius: 999px;
-  border: 2px solid #f8f2ed;
+  border: 2px solid rgb(var(--bg));
 }
 
 @layer utilities {
@@ -51,11 +129,11 @@ html {
     text-wrap: balance;
   }
 
-  /* Reusable glass surface — same recipe as the NavBar pill */
+  /* Reusable glass surface — same recipe as the NavBar pill, theme-aware */
   .glass {
-    background-color: rgb(252 250 249 / 0.6);
+    background-color: rgb(var(--glass-bg) / var(--glass-alpha));
     backdrop-filter: blur(12px);
-    border: 1px solid rgb(255 255 255 / 0.4);
+    border: 1px solid rgb(var(--glass-border) / var(--glass-border-alpha));
   }
 }
 

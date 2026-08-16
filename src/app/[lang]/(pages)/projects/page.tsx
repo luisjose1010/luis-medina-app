@@ -17,7 +17,7 @@ export default function ProjectsPage () {
         <h1 className="font-display my-3 text-4xl font-bold tracking-tight text-flow bg-gradient-to-r from-caribbean_current-300 via-dark_cyan-500 to-caribbean_current-600 bg-clip-text text-transparent lg:text-5xl">
           {APP.PROJECTS.TITLE}
         </h1>
-        <p className="max-w-3xl text-dark_purple/60">{APP.PROJECTS.DESCRIPTION}</p>
+        <p className="max-w-3xl text-ink/60">{APP.PROJECTS.DESCRIPTION}</p>
         <hr className="mt-4 h-px bg-caribbean_current/40 border-0 rounded-full" />
       </header>
 

@@ -1,6 +1,7 @@
 'use client'
 import { CloseIcon } from '@/assets/Icons'
 import { LanguageSelector } from '@/components/NavBar/LanguageSelector'
+import { ThemeToggle } from '@/components/ThemeToggle'
 import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useEffect, useRef, useState, type FocusEvent } from 'react'
@@ -45,7 +46,7 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
         <LanguageSelector className={`${!open ? '-top-10' : 'top-6'} w-32 fixed z-20 md:hidden max-sm:right-0 max-sm:left-0 max-sm:mx-auto`} />
       </article>
 
-      <nav className="flex flex-grow mt-4 px-8 py-3 text-sm font-bold items-center rounded-full border border-white/40 bg-seasalt/60 shadow-lg shadow-caribbean_current/5 backdrop-blur-md lg:w-auto lg:justify-between max-lg:hidden">
+      <nav className="flex flex-grow mt-4 px-8 py-3 text-sm font-bold items-center rounded-full glass shadow-lg shadow-caribbean_current/5 backdrop-blur-md lg:w-auto lg:justify-between max-lg:hidden">
         {
           links?.map((link, index) => (
             <Link key={index} href={link.url} target={link.target ?? '_self'} className="rounded-full px-3 py-1.5 transition duration-300 ease-in-out hover:bg-caribbean_current/10 hover:text-caribbean_current-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caribbean_current/60">
@@ -57,10 +58,12 @@ export function NavBar ({ links, className = '' }: NavBarProps) {
 
       <LanguageSelector className="absolute z-20 max-md:hidden md:top-6 md:right-24 lg:top-10 lg:right-10" />
 
+      <ThemeToggle className="z-30 max-md:fixed max-md:top-5 max-md:right-16 md:absolute md:top-5 md:right-[12.5rem] lg:top-9 lg:right-[11.5rem]" />
+
       <nav
         ref={navRef}
         onBlur={(event) => { handleBlur(event) }}
-        className={`${!open && '-translate-x-[200%]'} z-20 flex flex-col shrink-0 grow-0 justify-around gap-4 p-2.5 shadow-lg backdrop-blur-md rounded-lg border border-slate-600/60 bg-slate-500/40 text-caribbean_current fixed top-2/4 -translate-y-2/4 transition-transform duration-200 left-6 max-h-[90dvh] min-w-[64px] lg:hidden`}
+        className={`${!open && '-translate-x-[200%]'} z-20 flex flex-col shrink-0 grow-0 justify-around gap-4 p-2.5 shadow-lg rounded-lg glass text-caribbean_current fixed top-2/4 -translate-y-2/4 transition-transform duration-200 left-6 max-h-[90dvh] min-w-[64px] lg:hidden`}
       >
         {
           links?.map((link, index) => (

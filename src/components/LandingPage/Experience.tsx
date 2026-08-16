@@ -13,8 +13,8 @@ interface ExperienceItemProps {
 const ExperienceItem = ({ title, description, year, period, children }: ExperienceItemProps) => (
     <li data-before={`${year}`} className="reveal relative my-3 rounded-2xl glass p-4 text-left shadow-sm transition-all duration-300 ease-out max-w-max hover:-translate-y-1 hover:shadow-xl hover:shadow-caribbean_current/10 sm:max-w-sm md:max-w-md md:p-6 lg:max-w-3xl before:absolute before:content-[attr(data-before)] before:bg-desert_sand before:w-16 before:h-16 before:rounded-full before:-left-7 before:text-dark_purple before:text-center before:font-medium before:flex before:items-center before:justify-center before:lg:-left-14">
       <h3 className="mb-1 text-xl font-semibold">{title}</h3>
-      { period != null && <p className="mb-2 text-sm text-dark_purple/60">{period}</p> }
-      <p className="text-dark_purple/60 leading-relaxed">{description}</p>
+      { period != null && <p className="mb-2 text-sm text-ink/60">{period}</p> }
+      <p className="text-ink/60 leading-relaxed">{description}</p>
       {
         children != null && (
           <div className="flex p-6 justify-center">

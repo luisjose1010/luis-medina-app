@@ -7,9 +7,9 @@ export function Skills () {
   const { APP } = useTranslation()
 
   return (
-    <section id="skills" className="flex flex-col h-auto p-4 gap-4 justify-center items-center bg-gradient-to-b from-white via-desert_sand-900 to-white lg:h-screen sm:p-6 lg:p-12">
+    <section id="skills" className="flex flex-col h-auto p-4 gap-4 justify-center items-center bg-gradient-to-b from-page via-band to-page lg:min-h-screen sm:p-6 lg:p-12">
       <h2 className="font-display text-center mt-4 text-4xl font-bold tracking-tight text-caribbean_current relative pb-3 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:rounded-full after:bg-gradient-to-r after:from-caribbean_current after:to-dark_cyan-600">{APP.SKILLS.TITLE}</h2>
-      <p className="text-dark_purple/60 text-lg text-center mt-2">
+      <p className="text-ink/60 text-lg text-center mt-2">
         {APP.SKILLS.DESCRIPTION}
       </p>
 
@@ -38,7 +38,7 @@ export function Skills () {
       <ul className="flex flex-wrap w-3/4 p-4 gap-4 justify-center items-stretch">
         {
           skills.map((logo, index) => (
-            <li key={index} className="reveal flex flex-col items-center justify-center gap-2 w-28 py-4 px-2 rounded-2xl border border-caribbean_current/10 bg-seasalt/80 backdrop-blur-sm shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-caribbean_current/30 hover:bg-seasalt">
+            <li key={index} className="reveal flex flex-col items-center justify-center gap-2 w-28 py-4 px-2 rounded-2xl border border-caribbean_current/10 bg-surface/80 backdrop-blur-sm shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-caribbean_current/30 hover:bg-surface">
               <Image
                 src={`/assets/logos/${logo.src}.svg`}
                 alt={logo.alt}
@@ -46,7 +46,7 @@ export function Skills () {
                 height={48}
                 className="h-10 w-10 object-contain"
               />
-              <span className="text-xs font-medium text-dark_purple/70 text-center">{logo.alt.replace(/\s*Logo$/i, '')}</span>
+              <span className="text-xs font-medium text-ink/70 text-center">{logo.alt.replace(/\s*Logo$/i, '')}</span>
             </li>
           ))
         }
@@ -58,7 +58,7 @@ export function Skills () {
       <ul className="flex flex-wrap w-3/4 p-4 gap-4 justify-center items-stretch">
         {
           tools.map((logo, index) => (
-            <li key={index} className="reveal flex flex-col items-center justify-center gap-2 w-28 py-4 px-2 rounded-2xl border border-caribbean_current/10 bg-seasalt/80 backdrop-blur-sm shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-caribbean_current/30 hover:bg-seasalt">
+            <li key={index} className="reveal flex flex-col items-center justify-center gap-2 w-28 py-4 px-2 rounded-2xl border border-caribbean_current/10 bg-surface/80 backdrop-blur-sm shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-caribbean_current/30 hover:bg-surface">
               <Image
                 src={`/assets/logos/${logo.src}.svg`}
                 alt={logo.alt}
@@ -66,7 +66,7 @@ export function Skills () {
                 height={48}
                 className="h-10 w-10 object-contain"
               />
-              <span className="text-xs font-medium text-dark_purple/70 text-center">{logo.alt.replace(/\s*Logo$/i, '')}</span>
+              <span className="text-xs font-medium text-ink/70 text-center">{logo.alt.replace(/\s*Logo$/i, '')}</span>
             </li>
           ))
         }

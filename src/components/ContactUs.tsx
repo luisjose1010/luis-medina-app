@@ -55,7 +55,7 @@ export function ContactUs () {
             >
               {APP.CONTACT.SUBTITLE}
             </h2>
-            <p className="text-base text-dark_purple/60 leading-relaxed mb-9">
+            <p className="text-base text-ink/60 leading-relaxed mb-9">
               {APP.CONTACT.DESCRIPTION}
             </p>
           </div>
@@ -75,8 +75,8 @@ export function ContactUs () {
                         rounded-xl
                         py-3
                         px-[14px]
-                        text-dark_purple text-base placeholder:text-dark_purple/40
-                        border border-caribbean_current/15 bg-seasalt/60
+                        text-ink text-base placeholder:text-ink/40
+                        border border-line/25 bg-surface/50
                         outline-none
                         focus-visible:shadow-none
                         focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
@@ -97,8 +97,8 @@ export function ContactUs () {
                         rounded-xl
                         py-3
                         px-[14px]
-                        text-dark_purple text-base placeholder:text-dark_purple/40
-                        border border-caribbean_current/15 bg-seasalt/60
+                        text-ink text-base placeholder:text-ink/40
+                        border border-line/25 bg-surface/50
                         outline-none
                         focus-visible:shadow-none
                         focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
@@ -119,8 +119,8 @@ export function ContactUs () {
                         rounded-xl
                         py-3
                         px-[14px]
-                        text-dark_purple text-base placeholder:text-dark_purple/40
-                        border border-caribbean_current/15 bg-seasalt/60
+                        text-ink text-base placeholder:text-ink/40
+                        border border-line/25 bg-surface/50
                         outline-none
                         focus-visible:shadow-none
                         focus:border-dark_cyan focus:ring-2 focus:ring-dark_cyan/25 transition-all duration-200
@@ -140,8 +140,8 @@ export function ContactUs () {
                         rounded-xl
                         py-3
                         px-[14px]
-                        text-dark_purple text-base placeholder:text-dark_purple/40
-                        border border-caribbean_current/15 bg-seasalt/60
+                        text-ink text-base placeholder:text-ink/40
+                        border border-line/25 bg-surface/50
                         resize-none
                         outline-none
                         focus-visible:shadow-none
@@ -182,7 +182,7 @@ export function ContactUs () {
           display: show ? '' : 'none'
         }}>
         <div
-          className="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded z-50 overflow-y-auto">
+          className="border border-caribbean_current/40 shadow-lg modal-container bg-surface w-11/12 md:max-w-md mx-auto rounded z-50 overflow-y-auto">
           <div className="modal-content py-4 text-left px-6">
             {/* Title */}
             <div className="flex justify-between items-center pb-3">
@@ -192,7 +192,7 @@ export function ContactUs () {
                   : <p className="text-2xl font-bold">{APP.CONTACT.SUCCESS_TITLE}</p>
               }
               <div className="modal-close cursor-pointer z-50">
-                <svg className="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                <svg className="fill-current text-ink" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                   viewBox="0 0 18 18">
                   <path
                     d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">

@@ -30,12 +30,12 @@ export function Project ({ project, className = '' }: ProjectProps) {
         <h2 className="font-display text-2xl font-bold tracking-tight text-caribbean_current">
           {project.name}
         </h2>
-        <p className="mt-2 text-base leading-relaxed text-dark_purple/70">
+        <p className="mt-2 text-base leading-relaxed text-ink/70">
           {project.description}
         </p>
         {
           project.note != null && (
-            <p className="mt-4 border-l-2 border-desert_sand pl-3 text-sm leading-relaxed text-dark_purple/60">
+            <p className="mt-4 border-l-2 border-desert_sand pl-3 text-sm leading-relaxed text-ink/60">
               <strong className="font-semibold">{project.note}</strong>
             </p>
           )
@@ -63,7 +63,7 @@ export function Project ({ project, className = '' }: ProjectProps) {
           {project.tags.map((tag, index) => (
             <span
               key={index}
-              className="rounded-full border border-caribbean_current/20 bg-caribbean_current/5 px-3 py-1 text-sm font-semibold text-caribbean_current transition-colors duration-300 hover:bg-caribbean_current hover:text-seasalt"
+              className="rounded-full border border-caribbean_current/20 bg-caribbean_current/5 px-3 py-1 text-sm font-semibold text-caribbean_current transition-colors duration-300 hover:bg-brand hover:text-seasalt"
             >
               {tag}
             </span>

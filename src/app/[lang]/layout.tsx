@@ -42,7 +42,15 @@ export default function RootLayout ({
   const { lang } = params
 
   return (
-    <html lang={lang}>
+    <html lang={lang} data-theme="dark">
+      <head>
+        {/* Applies the stored theme before first paint so there is no flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: '(function(){try{var t=localStorage.getItem("lm-theme");document.documentElement.dataset.theme=(t==="light"||t==="dark")?t:"dark"}catch(e){}})()'
+          }}
+        />
+      </head>
       <body className={`${inter.className} ${fraunces.variable} antialiased`}>
         {/* Scroll progress — CSS scroll-driven, no JS */}
         <div aria-hidden className="fixed inset-x-0 top-0 z-50 h-1">

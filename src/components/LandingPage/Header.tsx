@@ -16,7 +16,7 @@ interface PresentationProps {
 const Presentation = ({ title = 'Luis José Medina Sandoval', text, children }: PresentationProps) => (
     <>
       <h1 className="font-display text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-balance text-flow bg-gradient-to-r from-caribbean_current-300 via-dark_cyan-500 to-caribbean_current-600 bg-clip-text text-transparent">{title}</h1>
-      <span className="text-dark_purple/60">{text}</span>
+      <span className="text-ink/60">{text}</span>
       <div className="flex flex-wrap gap-1 mt-3 ml-1 mb-1 lg:gap-3 z-10">
         {children}
       </div>
@@ -149,7 +149,7 @@ export function Header () {
       {/* Ambient background atmosphere */}
       <div aria-hidden className="absolute inset-0 -z-30 overflow-hidden">
         <div className="blob absolute -top-40 -right-40 h-[34rem] w-[34rem] rounded-full bg-dark_cyan-800/50 blur-3xl" />
-        <div className="blob blob-slow absolute top-1/4 -left-48 h-[28rem] w-[28rem] rounded-full bg-desert_sand-700/60 blur-3xl" />
+        <div className="blob blob-slow absolute top-1/4 -left-48 h-[28rem] w-[28rem] rounded-full bg-desert_sand-700/60 blur-3xl dark:bg-desert_sand-300/25" />
         <div className="blob absolute -bottom-24 right-1/4 h-[22rem] w-[22rem] rounded-full bg-caribbean_current-900/70 blur-3xl" />
       </div>
       {/* Side decoration — also the slide picker */}

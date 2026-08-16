@@ -41,7 +41,7 @@ export function Gallery ({ images, altBase, sizes }: GalleryProps) {
   }, [current, paused, nextSlide])
 
   return (
-    <article className='group mx-auto bg-gradient-to-br from-desert_sand-900 via-seasalt to-dark_cyan-900 overflow-hidden relative rounded-2xl border border-white/50 shadow-xl shadow-caribbean_current/10 w-full lg:w-2/3 xl:w-1/2 aspect-[16/10]'
+    <article className='group mx-auto bg-gradient-to-br from-band via-surface to-dark_cyan-900 overflow-hidden relative rounded-2xl border border-line/20 shadow-xl shadow-caribbean_current/10 w-full lg:w-2/3 xl:w-1/2 aspect-[16/10]'
       onMouseEnter={() => { setPaused(true) }}
       onMouseLeave={() => { setPaused(false) }}
       aria-roledescription="carousel"

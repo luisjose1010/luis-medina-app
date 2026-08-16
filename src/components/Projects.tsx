@@ -11,8 +11,8 @@ export function ProjectCard ({ name, description, links: projectLinks, slug, not
   const projectLink = projectLinks[0]
 
   return (
-    <article className="reveal relative flex flex-col justify-between p-4 text-gray-700 bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-1 bg-clip-border rounded-xl border border-white/20">
-      <section className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-gray-200 bg-clip-border rounded-xl group">
+    <article className="reveal relative flex flex-col justify-between p-4 text-ink bg-surface/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-1 bg-clip-border rounded-xl border border-line/15">
+      <section className="relative mx-4 mt-4 overflow-hidden text-ink bg-ink/5 bg-clip-border rounded-xl group">
         <Image
           src={`/assets/projects/${slug}/${cover ?? 1}.webp`}
           width={1680}
@@ -23,11 +23,11 @@ export function ProjectCard ({ name, description, links: projectLinks, slug, not
       </section>
       <section className="p-6">
         <div className="flex items-center justify-between mb-2">
-          <p className="block font-sans text-lg font-bold leading-relaxed text-blue-gray-900 tracking-tight">
+          <p className="block font-sans text-lg font-bold leading-relaxed text-ink tracking-tight">
             {name}
           </p>
         </div>
-        <p className="line-clamp-3 text-sm font-normal leading-relaxed text-gray-700 opacity-80">
+        <p className="line-clamp-3 text-sm font-normal leading-relaxed text-ink/75">
           {description}
         </p>
         <ul className="mt-3 flex flex-wrap gap-1.5">
@@ -41,7 +41,7 @@ export function ProjectCard ({ name, description, links: projectLinks, slug, not
         </ul>
         {
           note != null && (
-            <p className="mt-3 text-xs text-gray-600 border-l-2 border-caribbean_current pl-2">
+            <p className="mt-3 text-xs text-ink/60 border-l-2 border-caribbean_current pl-2">
               <strong className="font-semibold opacity-90">{note}</strong>
             </p>
           )
